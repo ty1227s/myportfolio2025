@@ -2,6 +2,7 @@
   font-family: "sicprintempspetit", sans-serif;
   font-weight: 400;
   font-style: normal;
+  margin: 0;
 }
 
 footer {
@@ -10,6 +11,16 @@ footer {
   height: 400px;
   
 
+}
+
+.footer__nav {
+  display: flex;
+}
+
+@media screen and (min-width: 1000px) {
+  .footer__nav {
+    display: inline;
+  }
 }
 
 small {
