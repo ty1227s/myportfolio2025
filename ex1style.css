@@ -1,0 +1,20 @@
+* {
+  font-family: "sicprintempspetit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer {
+  background: linear-gradient(345deg, #fff, #18943b);
+  color: #fff;
+  height: 400px;
+  
+
+}
+
+small {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
