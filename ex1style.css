@@ -7,6 +7,46 @@
   margin: 0;
 }
 
+header {
+  display: flex;
+}
+
+.header__companyName {
+  background-color: #18943b;
+  color: #fff;
+}
+
+.header__forContact {
+  align-content: center;
+  border: 2px solid #18943b;
+  border-radius: 60px;
+  color: #18943b;
+  text-align: center;
+  width: 150px;
+}
+
+.mv {
+  background-color: #dcfedc;
+  height: 400px;
+}
+
+input, textarea {
+  border: 3px solid #4f4f4f;
+  border-radius: 5px;
+  font-size: 16px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  padding: 2px 10px;
+  width: calc(100% - 30px);
+}
+
+input:focus {
+  color: #18943b;
+  border: 3px solid #18943b;
+}
+
+
+
 footer {
   background: linear-gradient(345deg, #fff, #18943b);
   color: #fff;
