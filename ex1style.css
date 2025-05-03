@@ -8,12 +8,33 @@
 }
 
 header {
+  background-color: #fff;
   display: flex;
+  height: 60px;
+  position: fixed;
+  width: 100%;
 }
 
 .header__companyName {
   background-color: #18943b;
   color: #fff;
+  width: 300px;
+}
+
+.header__companyName-ja {
+  font-size: 24px;
+  text-align: center;
+}
+
+.header__companyName-en {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.header__nav {
+  width: calc(100% - 450px);
 }
 
 .header__forContact {
@@ -21,8 +42,18 @@ header {
   border: 2px solid #18943b;
   border-radius: 60px;
   color: #18943b;
+  margin: 10px;
   text-align: center;
   width: 150px;
+}
+
+.header__forContact:hover {
+  background-color: #18943b;
+  color: #fff;
+}
+
+.empty {
+  height: 60px;
 }
 
 .mv {
