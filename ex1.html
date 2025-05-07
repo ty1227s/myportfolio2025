@@ -19,9 +19,11 @@
 
         </nav>
 
-        <div class="header__forContact">
-          お問い合わせ
-        </div>  
+        <a href="#contact" style="text-decoration: none;">
+          <div class="header__forContact">
+            お問い合わせ
+          </div>
+        </a>
       </div>
     </div>
   </header>
@@ -38,7 +40,8 @@
 
   <div class="concept">
     <div class="inner">
-      <h2>コンセプト</h2> <!-- 仮見出し -->
+      <h2 class="title-ja">コンセプト</h2> <!-- 仮見出し -->
+      <p class="title-en">CONCEPT</p>
       <div class="concept__img">
 
       </div>
@@ -56,7 +59,8 @@
 
   <div class="member">
     <div class="inner">
-      <h2>メンバー</h2> <!-- 仮見出し -->
+      <h2 class="title-ja">メンバー</h2> <!-- 仮見出し -->
+      <p class="title-en">MEMBER</p>
       <div class="member__person">
         <div class="member__person-img">
     
@@ -78,29 +82,31 @@
 
   <div class="business">
     <div class="inner">
-      <h2>事業内容</h2> <!-- 仮見出し -->
+      <h2 class="title-ja">事業内容</h2> <!-- 仮見出し -->
+      <p class="title-en">BUSINESS</p>
     </div>
   </div>
 
   <div class="process">
     <div class="inner">
-      <h2>企画プロセス</h2> <!-- 仮見出し -->
+      <h2 class="title-ja">企画プロセス</h2> <!-- 仮見出し -->
+      <p class="title-en">PROCESS</p>
       <div class="process__content">
-        <div class="process__content-img"></div> <!--img-->
+        <div class="process__content-img" style="background-image: url(img/process1.png)"></div> <!--img-->
         <div class="process__content-about">
           <h3 class="process__content-about-title">ヒアリング</h3>
           <p class="process__content-about-text">イベントの目的やターゲットを明確にします。</p>
         </div>
       </div>
       <div class="process__content">
-        <div class="process__content-img"></div> <!--img-->
+        <div class="process__content-img" style="background-image: url(img/process2.png)"></div> <!--img-->
         <div class="process__content-about">
           <h3 class="process__content-about-title">企画立案</h3>
           <p class="process__content-about-text">コンセプトやタイムスケジュールを提案します。</p>
         </div>
       </div>
       <div class="process__content">
-        <div class="process__content-img"></div> <!--img-->
+        <div class="process__content-img" style="background-image: url(img/process3.png)"></div> <!--img-->
         <div class="process__content-about">
           <h3 class="process__content-about-title">制作・運営サポート</h3>
           <p class="process__content-about-text">チラシ制作、SNS発信、会場設営まで一貫して支援します。</p>
@@ -111,7 +117,8 @@
 
   <div class="achievement">
     <div class="inner">
-      <h2>実績</h2> <!-- 仮見出し -->
+      <h2 class="title-ja">実績</h2> <!-- 仮見出し -->
+      <p class="title-en">ACHIEVEMENT</p>
       <div class="achievement__content-wrapper">
         <div class="achievement__content">
           <div class="achievement__content-image">
@@ -161,9 +168,10 @@
     </div>
   </div>
 
-  <div class="contact">
+  <div class="contact" id="contact">
     <div class="inner">
-      <h2>お問い合わせ</h2> <!-- 仮見出し -->
+      <h2 class="title-ja">お問い合わせ</h2> <!-- 仮見出し -->
+      <p class="title-en">CONTACT</p>
       <form action="">
         <div class="contact__form-content">
           <label for="name" class="contact__form-content-label">氏名</label>
@@ -194,7 +202,12 @@
           <label for="detail" class="contact__form-content-label">お問い合わせ内容</label>
           <textarea name="" id="detail"></textarea>
         </div>
-        <button class="contact__form-content-submit">送　信</button>
+
+        <div class="contact__form-content-submit-flex">
+          <div class="contact__form-content-submit-flex-empty"></div>
+          <button class="contact__form-content-submit">送 信</button>
+          <div class="contact__form-content-submit-flex-empty"></div>
+        </div>
 
       </form>
     </div>

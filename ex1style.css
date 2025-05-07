@@ -21,6 +21,21 @@
   max-width: 1400px;
 }
 
+.title-ja {
+  font-size: 45px;
+  text-align: center;
+}
+
+.title-en {
+  color: var(--main-color);
+  font-size: 24px;
+  text-align: center;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
 /* header .inner {
   margin: 0 auto;
 } */
@@ -118,8 +133,8 @@ header {
 
 .process__content-img {
   background-color: var(--sub-color); /* 仮設定 */
-  height: 300px;
-  width: 420px;
+  height: 400px;
+  width: 600px;
 }
 
 .process__content-about {
@@ -146,6 +161,10 @@ header {
 /* 実績ブロック ------------------------------------------------------------------------------------ */
 .achievement {
   background-color: #e2f0e5;
+}
+
+.achievement .inner .title-en {
+  color: var(--sub-color2);
 }
 
 .achievement__content-wrapper {
@@ -233,17 +252,27 @@ input, textarea {
   }
 }
 
-input:focus {
-  color: var(--main-color);
+input:focus, textarea:focus {
+  background-color: #e2f0e5;
+  color: var(--sub-color2);
   border: 3px solid var(--main-color);
+}
+
+.contact__form-content-submit-flex {
+  display: flex;
+}
+
+.contact__form-content-submit-flex-empty {
+  width: 15%;
 }
 
 .contact__form-content-submit {
   background-color: var(--main-color);
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 5px 5px 5px var(--sub-color2);
   color: #fff;
+  cursor: pointer;
   font-size: 30px;
   height: 50px;
   margin-left: auto;
@@ -255,6 +284,7 @@ input:focus {
 
 .contact__form-content-submit:hover {
   background-color: var(--sub-color3);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact__form-content-submit:focus {
