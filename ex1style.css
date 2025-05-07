@@ -1,41 +1,69 @@
 @charset "utf-8";
 
+/* 共通設定 */
 :root {
   --main-color: #18943b; /* 緑色 */
   --sub-color: #67a4db; 
   --sub-color2: #606060; /* グレー */
+  --sub-color3: #939019; /* 黄土色 */
 }
 
 * {
+  box-sizing: border-box;
   font-family: "sicprintempspetit", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin: 0;
 }
 
+.inner {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* header .inner {
+  margin: 0 auto;
+} */
+
+
+/* ヘッダー ------------------------------------------------------------------------------------------ */
 header {
+  align-items: center;
   background-color: #fff;
-  display: flex;
   height: 60px;
+  margin: 0 auto;
   position: fixed;
+  width: 100%;
+}
+
+.header__wrapper {
+  display: flex;
+  margin: 0 auto;
   width: 100%;
 }
 
 .header__companyName {
   background-color: var(--main-color);
   color: #fff;
-  width: 300px;
+  /* display: block; */
+  /* height: 100%; */
+  /* line-height: 1.5; */
+  /* padding: 12px; */
+  vertical-align: top;
+  max-width: 300px;
+  min-width: 300px;
 }
 
 .header__companyName-ja {
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
 }
 
 .header__companyName-en {
   font-family: "futura-pt", sans-serif;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -64,8 +92,55 @@ header {
 
 /* メインビジュアル -------------------------------------------------------------------------------- */
 .mv {
-  background-color: #dcfedc;
-  height: 400px;
+  background-color: var(--sub-color2); /* 仮設定 */
+  height: 600px;
+}
+
+/* 企画プロセスブロック ----------------------------------------------------------------------------- */
+.process__content {
+  border: 2px solid var(--sub-color);
+  border-radius: 20px;
+  display: flex;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  padding: 20px 80px 20px;
+}
+
+.process__content:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+
+.process__content:last-of-type {
+  margin-bottom: 70px;
+}
+
+
+
+.process__content-img {
+  background-color: var(--sub-color); /* 仮設定 */
+  height: 300px;
+  width: 420px;
+}
+
+.process__content-about {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.process__content-about-title {
+  font-size: 32px;
+}
+
+.process__content:nth-of-type(2n) .process__content-about-title {
+  text-align: right;
+}
+
+.process__content-about-text {
+  font-size: 23px;
+}
+
+.process__content:nth-of-type(2n) .process__content-about-text {
+  text-align: right;
 }
 
 /* 実績ブロック ------------------------------------------------------------------------------------ */
@@ -112,15 +187,50 @@ header {
 }
 
 
+/* お問い合わせブロック -------------------------------------------------------------------------------- */
+.contact__form-content {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .contact__form-content {
+    display: inline-block;
+  }
+}
+
+.contact__form-content-label {
+  line-height: 3.4;
+  width: 150px;
+}
+
+@media screen and (max-width: 900px) {
+  .contact__form-content-label {
+    line-height: 0.88;
+    width: 100%;
+  }
+}
+
+
 
 input, textarea {
+  background-color: #e9e9e9;
   border: 3px solid var(--sub-color2);
   border-radius: 5px;
   font-size: 16px;
+  margin-top: 15px;
   /* margin-left: 10px;
   margin-right: 10px; */
+  margin-bottom: 15px;
   padding: 2px 10px;
-  width: calc(100% - 30px);
+  width: calc(100% - 150px);
+}
+
+@media screen and (max-width: 900px) {
+  input, textarea {
+    margin-top: 5px;
+    width: 100%;
+  }
 }
 
 input:focus {
@@ -128,8 +238,35 @@ input:focus {
   border: 3px solid var(--main-color);
 }
 
+.contact__form-content-submit {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px var(--sub-color2);
+  color: #fff;
+  font-size: 30px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 300px;
+}
+
+.contact__form-content-submit:hover {
+  background-color: var(--sub-color3);
+}
+
+.contact__form-content-submit:focus {
+  box-shadow: none;
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
 
 
+
+/* フッター ------------------------------------------------------------------------------------------ */
 footer {
   background: linear-gradient(345deg, #fff, var(--main-color));
   color: #fff;
