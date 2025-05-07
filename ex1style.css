@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+:root {
+  --main-color: #18943b; /* 緑色 */
+  --sub-color: #67a4db; 
+  --sub-color2: #606060; /* グレー */
+}
+
 * {
   font-family: "sicprintempspetit", sans-serif;
   font-weight: 400;
@@ -16,7 +22,7 @@ header {
 }
 
 .header__companyName {
-  background-color: #18943b;
+  background-color: var(--main-color);
   color: #fff;
   width: 300px;
 }
@@ -39,16 +45,16 @@ header {
 
 .header__forContact {
   align-content: center;
-  border: 2px solid #18943b;
+  border: 2px solid var(--main-color);
   border-radius: 60px;
-  color: #18943b;
+  color: var(--main-color);
   margin: 10px;
   text-align: center;
   width: 150px;
 }
 
 .header__forContact:hover {
-  background-color: #18943b;
+  background-color: var(--main-color);
   color: #fff;
 }
 
@@ -56,13 +62,59 @@ header {
   height: 60px;
 }
 
+/* メインビジュアル -------------------------------------------------------------------------------- */
 .mv {
   background-color: #dcfedc;
   height: 400px;
 }
 
+/* 実績ブロック ------------------------------------------------------------------------------------ */
+.achievement {
+  background-color: #e2f0e5;
+}
+
+.achievement__content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) { /* レスポンシブ対応 */
+  .achievement__content-wrapper {
+    display: inline;
+  }
+}
+
+.achievement__content {
+  border: 2px solid var(--sub-color2);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 30px;
+  width: 400px;
+}
+
+
+.achievement__content-image {
+  background-color: var(--sub-color2); /* 仮設定 */
+  height: 200px;
+  margin: auto;
+  width: 300px;
+}
+
+.achievement__content-about-title {
+  color: var(--sub-color2);
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.achievement__content-about-text {
+  color: var(--sub-color2);
+}
+
+
+
 input, textarea {
-  border: 3px solid #4f4f4f;
+  border: 3px solid var(--sub-color2);
   border-radius: 5px;
   font-size: 16px;
   /* margin-left: 10px;
@@ -72,14 +124,14 @@ input, textarea {
 }
 
 input:focus {
-  color: #18943b;
-  border: 3px solid #18943b;
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
 }
 
 
 
 footer {
-  background: linear-gradient(345deg, #fff, #18943b);
+  background: linear-gradient(345deg, #fff, var(--main-color));
   color: #fff;
   height: 400px;
   
