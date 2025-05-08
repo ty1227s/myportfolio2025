@@ -42,18 +42,21 @@
     <div class="inner">
       <h2 class="title-ja">コンセプト</h2> <!-- 仮見出し -->
       <p class="title-en">CONCEPT</p>
-      <div class="concept__img">
+      <div class="concept__flex">
+        <div class="concept__img">
 
+        </div>
+        <div class="concept__content">
+          <h3 class="concept__content-title">「つなぐ力が、未来を変える」</h3>
+          <p class="concept__content-text">
+            地域密着型にイベント企画や<br>
+            地方創生プロジェクトを手がけるスタートアップ企業です。<br>
+            若手メンバーを中心に、<br>
+            柔軟でクリエイティブな発想を生かしたサービスを展開しています。
+          </p>
+        </div>
       </div>
-      <div class="concept__content">
-        <h3>「つなぐ力が、未来を変える」</h3>
-        <p>
-          地域密着型にイベント企画や<br>
-          地方創生プロジェクトを手がけるスタートアップ企業をです。<br>
-          若手メンバーを中心に、<br>
-          柔軟でクリエイティブな発想を生かしたサービスを展開しています。
-        </p>
-      </div>  
+      
     </div>
   </div>
 
@@ -62,19 +65,23 @@
       <h2 class="title-ja">メンバー</h2> <!-- 仮見出し -->
       <p class="title-en">MEMBER</p>
       <div class="member__person">
-        <div class="member__person-img">
-    
+        <div class="member__person-img" style="background-image: url(img/member1.png);">
+          
         </div>
         <div class="member__person-introduce">
-          
+          <p>代表取締役</p>
+          <p>大和 夏樹</p>
+          <p>「このまちの“面白さ”を、もっと広く、もっと深く届けたい。」</p>
         </div>
       </div>
       <div class="member__person">
-        <div class="member__person-img">
+        <div class="member__person-img" style="background-image: url(img/member2.png);">
 
         </div>
         <div class="member__person-introduce">
-          
+          <p>広報担当</p>
+          <p>小浦 愛海</p>
+          <p>「“伝える”は“伝わる”から。地域の魅力、発信中です！」</p>
         </div>
       </div>
     </div>
@@ -84,6 +91,33 @@
     <div class="inner">
       <h2 class="title-ja">事業内容</h2> <!-- 仮見出し -->
       <p class="title-en">BUSINESS</p>
+      <div class="business__target-flex">
+        <div class="business__target">
+          <p class="business__target-content">
+            地域で何か<br>
+            始めたい<br>
+            <span class="business__target-content-user">個人</span>
+            や
+            <span class="business__target-content-user">団体</span>
+          </p>
+        </div>
+        <div class="business__target">
+          <p class="business__target-content">
+            自治体の<br>
+            <span class="business__target-content-user">
+              地域振興課<br>
+              担当者
+            </span>
+          </p>
+        </div>
+      </div>
+      <p style="font-size: 35px; text-align: center;">などを対象に…</p>
+      <div class="business__works-flex">
+        <div class="business__works"><p class="business__works-content">地域イベントの<br>企画・運営</p></div>
+        <div class="business__works"><p class="business__works-content">地方自治体との<br>タイアップ事業</p></div>
+        <div class="business__works"><p class="business__works-content">オンライン<br>コミュニティの<br>構築支援</p></div>
+        <div class="business__works"><p class="business__works-content">地域産品の<br>ブランディング<br>・販売支援</p></div>
+      </div>
     </div>
   </div>
 
@@ -121,7 +155,7 @@
       <p class="title-en">ACHIEVEMENT</p>
       <div class="achievement__content-wrapper">
         <div class="achievement__content">
-          <div class="achievement__content-image">
+          <div class="achievement__content-image" style="background-image: url(img/achievement1.png)">
 
           </div>
           <div class="achievement__content-about">
@@ -136,7 +170,7 @@
           </div>
         </div>
         <div class="achievement__content">
-          <div class="achievement__content-image">
+          <div class="achievement__content-image" style="background-image: url(img/achievement2.png)">
 
           </div>
           <div class="achievement__content-about">
@@ -150,7 +184,7 @@
           </div>
         </div>
         <div class="achievement__content">
-          <div class="achievement__content-image">
+          <div class="achievement__content-image" style="background-image: url(img/achievement3.png)">
 
           </div>
           <div class="achievement__content-about">
@@ -174,33 +208,33 @@
       <p class="title-en">CONTACT</p>
       <form action="">
         <div class="contact__form-content">
-          <label for="name" class="contact__form-content-label">氏名</label>
-          <input type="text" name="" id="name">
+          <label for="name" class="contact__form-content-label">氏名<span class="contact__form-content-label-required">必須</span></label>
+          <input type="text" name="" id="name" placeholder="例：山田太郎">
         </div>
         
         <div class="contact__form-content">
-          <label for="furigana" class="contact__form-content-label">フリガナ</label>
-          <input type="text" name="" id="furigana">
+          <label for="furigana" class="contact__form-content-label">フリガナ<span class="contact__form-content-label-required">必須</span></label>
+          <input type="text" name="" id="furigana" placeholder="例：ヤマダタロウ">
         </div>
 
         <div class="contact__form-content">
           <label for="company" class="contact__form-content-label">貴社名</label>
-          <input type="text" name="" id="company">
+          <input type="text" name="" id="company" placeholder="例：山田システム株式会社">
         </div>
         
         <div class="contact__form-content">
           <label for="email" class="contact__form-content-label">メールアドレス</label>
-          <input type="email" name="" id="email">
+          <input type="email" name="" id="email" placeholder="例：example@example.co.jp">
         </div>
         
         <div class="contact__form-content">
           <label for="tel" class="contact__form-content-label">電話番号</label>
-          <input type="tel" name="" id="tel">
+          <input type="tel" name="" id="tel" placeholder="例：0XX-XXX-XXXX">
         </div>
         
         <div class="contact__form-content">
-          <label for="detail" class="contact__form-content-label">お問い合わせ内容</label>
-          <textarea name="" id="detail"></textarea>
+          <label for="detail" class="contact__form-content-label">お問い合わせ内容<span class="contact__form-content-label-required">必須</span></label>
+          <textarea name="" id="detail" placeholder="お問い合わせ内容"></textarea>
         </div>
 
         <div class="contact__form-content-submit-flex">
