@@ -92,11 +92,19 @@ header {
 .header__nav-link {
   color: var(--sub-color2);
   font-size: 22px;
+  line-height: 100%;
   height: 100%;
   padding-left: 14px;
   padding-right: 14px;
   padding-top: 34px;
   text-decoration: none;
+  vertical-align: middle;
+}
+
+.header__nav-link:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  
 }
 
 .header__forContact {
