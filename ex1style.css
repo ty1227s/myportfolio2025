@@ -40,6 +40,8 @@
   margin: 0 auto;
 } */
 
+/* 左右marginは35pxで統一？ */
+
 
 /* ヘッダー ------------------------------------------------------------------------------------------ */
 header {
@@ -87,6 +89,16 @@ header {
   width: calc(100% - 450px);
 }
 
+.header__nav-link {
+  color: var(--sub-color2);
+  font-size: 22px;
+  height: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 34px;
+  text-decoration: none;
+}
+
 .header__forContact {
   align-content: center;
   border: 2px solid var(--main-color);
@@ -121,6 +133,7 @@ header {
 
 .concept__img {
   background-image: url(img/concept.jpg);
+  background-size: cover;
   border-radius: 50%;
   height: 300px;
   width: 400px;
@@ -212,8 +225,9 @@ header {
   border: 2px solid var(--sub-color);
   border-radius: 20px;
   display: flex;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  /* margin-top: 35px; */
+  /* margin-bottom: 35px; */
+  margin: 35px;
   padding: 20px 80px 20px;
 }
 
@@ -229,6 +243,7 @@ header {
 
 .process__content-img {
   background-color: var(--sub-color); /* 仮設定 */
+  background-size: cover;
   height: 400px;
   width: 600px;
 }
@@ -286,6 +301,7 @@ header {
 
 .achievement__content-image {
   background-color: var(--sub-color2); /* 仮設定 */
+  background-size: cover;
   height: 200px;
   margin: auto;
   width: 300px;
@@ -305,6 +321,8 @@ header {
 /* お問い合わせブロック -------------------------------------------------------------------------------- */
 .contact__form-content {
   display: flex;
+  margin: auto;
+  justify-content: center;
   width: 100%;
 }
 
@@ -317,7 +335,8 @@ header {
 .contact__form-content-label {
   font-size: 24px;
   line-height: 3.4;
-  width: 300px;
+  /* margin-left: 15px; ? */
+  width: 270px;
 }
 
 @media screen and (max-width: 900px) {
@@ -346,7 +365,7 @@ input, textarea {
   margin-right: 10px; */
   margin-bottom: 15px;
   padding: 2px 10px;
-  width: calc(100% - 300px);
+  width: calc(100% - 335px);
 }
 
 textarea {
@@ -406,21 +425,84 @@ input:focus, textarea:focus {
 
 /* フッター ------------------------------------------------------------------------------------------ */
 footer {
-  background: linear-gradient(345deg, #fff, var(--main-color));
+  background-image: url(img/footer.png);
+  background-size: cover;
   color: #fff;
   height: 400px;
-  
+  overflow: hidden;
+  position: relative;
+}
 
+.footer__color {
+  background-image: linear-gradient(135deg, #18943b, #ffffff);
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  z-index: 2;
+}
+
+.footer__content {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+.footer__detail {
+  display: flex;
+}
+
+.footer__detail-company {
+  width: 50%;
+}
+
+.footer__detail-company-ja {
+  font-size: 56px;
+  text-align: right;
+}
+
+.footer__detail-company-en {
+  font-size: 30px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: right;
+}
+
+.footer__detail-address {
+  width: 50%;
+}
+
+.footer__detail-address {
+  font-size: 25px;
 }
 
 .footer__nav {
   display: flex;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (min-width: 1000px) {
   .footer__nav {
     display: inline;
   }
+}
+
+.footer__nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__nav-link:hover {
+  opacity: 0.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 small {
