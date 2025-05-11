@@ -1,5 +1,74 @@
 @charset "utf-8";
 
+:root {
+  --main-color: #06b9ff;
+}
+
 * {
   margin: 0;
+}
+
+.inner {
+  margin:0 auto;
+  max-width: 1400px;
+}
+
+/* ヘッダー --------------------------------------------------------------------- */
+header {
+  background-color: var(--main-color);
+  color: #fff;
+  display: flex;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+/* MV -------------------------------------------------------------------------- */
+.mv {
+  background-image: url(img/mv2-min.jpg);
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  top: 80%;
+  left: 0%;
+  width: 100%;
+  z-index: 90;
+}
+
+/* スローガンブロック ----------------------------------------------------------- */
+.slogan {
+  text-align: center;
+}
+
+
+
+/* Q&A ------------------------------------------------------------------------- */
+.qanda {
+
+}
+
+.qanda__unit {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.qanda__unit-question {
+  background-color: var(--main-color);
+  border-radius: 60px;
+  color: #fff;
+}
+
+.qanda__unit-question-content-Q {
+  font-family: "futura-pt", sans-serif;
+  font-style: normal;
+  font-size: 36px;
+  font-weight: 400;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* フッター --------------------------------------------------------------------- */
+footer {
+
 }
