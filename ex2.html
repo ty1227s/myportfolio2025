@@ -9,7 +9,7 @@
 <body>
   <header class="header">
     <div class="header__logo">
-      <p>APPLICATION</p>
+      <p class="header__logo-content">APPLICATION</p>
     </div>
     <div class="header__empty"></div>
     <div class="header__download">
@@ -21,13 +21,20 @@
 
   <main>
     <section class="mv">
-      
+      <div class="mv__img"></div>
+      <div class="mv__name">
+        <p class="mv__name-content">APPLICATION</p>
+      </div>
     </section>
 
     <section class="slogan">
       <div class="inner">
-        <p class="slogan__content">「理想の自分に、最短で近づけ。」<br>
-            時間がないあなたへ。毎日15分からはじめる変化。
+        <p class="slogan__content"><span class="slogan__content-clause">「理想の自分に、</span>
+          <span class="slogan__content-clause">最短で近づけ。」</span><br>
+            <span class="slogan__content-clause">時間がない</span>
+            <span class="slogan__content-clause">あなたへ。</span>
+            <span class="slogan__content-clause">毎日15分から</span>
+            <span class="slogan__content-clause">はじめる変化。</span>
         </p>
       </div>
     </section>
@@ -38,30 +45,53 @@
 
         <div class="plan__about">
           <div class="plan__about-table">
-            <div class="plan__about-table-row">
-              <div class="plan__about-table-row-cell plan-free">
-                無料プラン
+            <div class="plan__about-table-column">
+              <div class="plan__about-table-column-head"></div>
+              <div class="plan__about-table-column-data">トレーニングメニュー</div>
+              <div class="plan__about-table-column-data">カレンダー記録</div>
+              <div class="plan__about-table-column-data">スマホ連携・同期</div>
+              <div class="plan__about-table-column-data">広告除去機能</div>
+            </div>
+
+            <div class="plan__about-table-column">
+              <div class="plan__about-table-column-head-paid">
+                <span>
+                  <span class="plan__about-table-column-head-clause">有料</span>
+                  <span class="plan__about-table-column-head-clause">プラン</span>
+                </span>
               </div>
-              <div class="plan__about-table-row-cell plan-paid">
-                有料プラン
+              <div class="plan__about-table-column-data-paid">
+                <img class="plan__about-table-column-data-img" src="img/maru2.png" alt="〇">
+              </div>
+              <div class="plan__about-table-column-data-paid">
+                <img class="plan__about-table-column-data-img" src="img/maru2.png" alt="〇">
+              </div>
+              <div class="plan__about-table-column-data-paid">
+                <img class="plan__about-table-column-data-img" src="img/maru2.png" alt="〇">
+              </div>
+              <div class="plan__about-table-column-data-paid">
+                <img class="plan__about-table-column-data-img" src="img/maru2.png" alt="〇">
               </div>
             </div>
 
-            <div class="plan__about-table-row">
-              <div class="plan__about-table-row-cell plan-free">
-                0円
+            <div class="plan__about-table-column">
+              <div class="plan__about-table-column-head-free">
+                <span>
+                  <span class="plan__about-table-column-head-clause">無料</span>
+                  <span class="plan__about-table-column-head-clause">プラン</span>
+                </span>
               </div>
-              <div class="plan__about-table-row-cell plan-paid">
-                980円/月
+              <div class="plan__about-table-column-data-free">
+                <img class="plan__about-table-column-data-img" src="img/maru1.png" alt="×">
               </div>
-            </div>
-
-            <div class="plan__about-table-row">
-              <div class="plan__about-table-row-cell plan-free">
-                一部機能制限あり
+              <div class="plan__about-table-column-data-free">
+                <img class="plan__about-table-column-data-img" src="img/batsu1.png" alt="×">
               </div>
-              <div class="plan__about-table-row-cell plan-paid">
-                全機能利用可能
+              <div class="plan__about-table-column-data-free">
+                <img class="plan__about-table-column-data-img" src="img/batsu1.png" alt="×">
+              </div>
+              <div class="plan__about-table-column-data-free">
+                <img class="plan__about-table-column-data-img" src="img/batsu1.png" alt="×">
               </div>
             </div>
           </div>

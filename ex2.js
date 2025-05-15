@@ -35,12 +35,15 @@ $(document).ready(function() {
 //(クラス名に「」を付与する)
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
+  const logo = document.querySelector('.header__logo-content');
   const slogan = document.querySelector('.slogan');
   const sloganHeight = slogan.offsetHeight;
   if (window.scrollY > sloganHeight) {
     header.classList.add('top');
+    logo.classList.add('top');
   } else {
     header.classList.remove('top');
+    logo.classList.remove('top');
   }
 });
 

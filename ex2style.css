@@ -23,7 +23,7 @@
   box-shadow:2px 5px 10px 1px #333333;
   color: #fff;
   display: flex;
-  height: 100px;
+  height: 60px;
   margin: 25px;
   position: fixed;
   transition: all 0.3s ease;
@@ -34,7 +34,7 @@
 @media screen and (max-width: 767px) {
   .header {
     border-radius: 0;
-    height: 60px;
+    height: 50px;
     margin: 0;
     width: 100%;
   }
@@ -46,17 +46,28 @@
   width: 100%;
 }
 
-.header__logo p {
+.header__logo-content {
+  cursor: default;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: 700;
-  margin: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 35px;
+  opacity: 0;
   transition: all 0.3s ease;
 }
 
+.header__logo-content.top {
+  cursor: auto;
+  opacity: 1;
+}
+
 @media screen and (max-width: 767px) {
-  .header__logo p {
-    margin: 13px;
+  .header__logo-content {
+    margin: 8px;
+    margin-left: 13px;
+    opacity: 1;
   }
 }
 
@@ -69,6 +80,7 @@
   background-color: #333;
   border-radius:  30px;
   cursor: pointer;
+  line-height: 40px;
   margin: 10px;
   text-align: center;
   transition: all 0.3s ease;
@@ -88,6 +100,7 @@
 .header.top .header__download {
   border-radius:  0px;
   border-bottom-right-radius:  0px;
+  line-height: 55px;
   margin: 0;
 }
 
@@ -102,14 +115,53 @@
 
 /* MV -------------------------------------------------------------------------- */
 .mv {
-  background-image: url(img/mv2-min.jpg);
-  background-size: cover;
+  display: flex;
   height: 700px;
-  position: relative;
-  top: 80%;
-  left: 0%;
   width: 100%;
   z-index: 90;
+}
+
+@media screen and (max-width: 767px) {
+  .mv {
+    display: inline;
+  }
+} 
+
+.mv__img {
+  background-image: url(img/mv2-min.jpg);
+  background-size: cover;
+  height: 100%;
+  left: 0%;
+  position: relative;
+  width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .mv__img {
+    height: 350px;
+    width: 100%;
+  }
+}
+
+.mv__name {
+  background-color: #000;
+  display: grid;
+  place-items: center;
+  width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .mv__name {
+    display: none;
+  }
+}
+
+.mv__name-content {
+  align-items: center;
+  color: #fff;
+  font-size: 36px;
+  justify-items: center;
+  text-align: center;
 }
 
 /* スローガンブロック ----------------------------------------------------------- */
@@ -126,36 +178,137 @@
   font-weight: 500;
 }
 
-/* プランブロック --------------------------------------------------------------- */
-.plan__about {
-  margin: 0 auto;
+@media screen and (max-width: 767px) {
+  .slogan__content {
+    font-size: 24px;
+  }
 }
 
-.plan__about-table {
+.slogan__content-clause {
+  margin: 0 -4px;
+  white-space: nowrap;
+}
+
+/* プランブロック --------------------------------------------------------------- */
+.plan__about {
   margin: 0 auto;
   text-align: center;
 }
 
-.plan__about-table-row {
+.plan__about-table {
   display: flex;
-  border-style: solid;
+  margin: 0 auto;
+  max-width: 900px;
+  display: inline-block;
 }
 
-.plan__about-table-row-cell {
-  /* border-style: solid;
-
-  border-width: 2px;
-  border-right: none; */
-  font-size: 24px;
-  height: 100px;
-  padding: 10px;
-  width: 200px;
+.plan__about-table-column {
+  display: inline-block;
+  flex-direction: column;
 }
 
-.plan__about-table-row-cell:first-of-type {
-  border-right: 2px;
+
+.plan__about-table-column-data {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 80px;
 }
 
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-data {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
+
+/* プラン別のスタイル */
+.plan__about-table-column-head-paid,  
+.plan__about-table-column-data-paid /* 有料 */ {
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(255, 227, 202);
+  color: #f70;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head-paid,
+  .plan__about-table-column-data-paid {
+    font-size: 24px;
+  }
+}
+
+.plan__about-table-column-head-free,
+.plan__about-table-column-data-free /* 無料 */ {
+  background-color: #e8e8e8;
+  color: #888;
+  font-size: 32px;
+  line-height: 45px;
+}
+
+/* 表位置別 */
+.plan__about-table-column-head ,
+.plan__about-table-column-head-paid ,
+.plan__about-table-column-head-free /* head */{
+  height: 70px;
+  width: 220px;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head ,
+  .plan__about-table-column-head-paid ,
+  .plan__about-table-column-head-free /* head */{
+    width: 120px;
+    line-height: 20px;
+  }
+}
+
+
+
+.plan__about-table-column-head span,
+.plan__about-table-column-head-paid span,
+.plan__about-table-column-head-free span/* head */{
+  line-height: 70px;
+}
+
+.plan__about-table-column-head-clause {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  /* 「プラン」の文字のみ */
+  .plan__about-table-column div span .plan__about-table-column-head-clause:nth-of-type(2) {
+    font-size: 20px;
+  }
+}
+
+
+.plan__about-table-column-data ,
+.plan__about-table-column-data-paid,
+.plan__about-table-column-data-free /* セル */{
+  height: 50px;
+  width: 220px;
+  line-height: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-data ,
+  .plan__about-table-column-data-paid,
+  .plan__about-table-column-data-free /* セル */{
+    width: 120px;
+  }
+}
+
+.plan__about-table-column-data-img {
+  height: 27px;
+  margin: 0 auto;
+  margin-top: 12px;
+  width: 27px;
+}
 
 
 /* Q&A ------------------------------------------------------------------------- */
