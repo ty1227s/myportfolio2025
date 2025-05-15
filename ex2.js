@@ -31,6 +31,19 @@ $(document).ready(function() {
   });
 });
 
+//表示位置によりheaderの表示方法を変更
+//(クラス名に「」を付与する)
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  const slogan = document.querySelector('.slogan');
+  const sloganHeight = slogan.offsetHeight;
+  if (window.scrollY > sloganHeight) {
+    header.classList.add('top');
+  } else {
+    header.classList.remove('top');
+  }
+});
+
 
 
 

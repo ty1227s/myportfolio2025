@@ -1,4 +1,7 @@
 @charset "utf-8";
+/*
+レスポンシブ ブレークポイント : 767px
+*/
 
 :root {
   --main-color: #06b9ff;
@@ -14,15 +17,88 @@
 }
 
 /* ヘッダー --------------------------------------------------------------------- */
-header {
+.header {
   background-color: var(--main-color);
+  border-radius: 30px;
+  box-shadow:2px 5px 10px 1px #333333;
   color: #fff;
   display: flex;
   height: 100px;
+  margin: 25px;
   position: fixed;
-  width: 100%;
+  transition: all 0.3s ease;
+  width: calc(100% - 50px);
   z-index: 100;
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    border-radius: 0;
+    height: 60px;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.header.top {/*(一番上にいる時のみ）*/
+  border-radius: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.header__logo p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 25px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .header__logo p {
+    margin: 13px;
+  }
+}
+
+.header__empty {
+  width: calc(100% - 300px);
+}
+
+
+.header__download {
+  background-color: #333;
+  border-radius:  30px;
+  cursor: pointer;
+  margin: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+@media screen and (max-width: 767px) {
+  .header__download {
+    display: none;
+  }
+}
+
+.header__download:hover {
+  background-color: #999;
+}
+
+.header.top .header__download {
+  border-radius:  0px;
+  border-bottom-right-radius:  0px;
+  margin: 0;
+}
+
+.header__download-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+
 
 /* MV -------------------------------------------------------------------------- */
 .mv {
@@ -39,6 +115,15 @@ header {
 /* スローガンブロック ----------------------------------------------------------- */
 .slogan {
   text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.slogan__content {
+  color: #0c6cd3;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
 }
 
 /* プランブロック --------------------------------------------------------------- */
@@ -140,5 +225,6 @@ header {
 
 /* フッター --------------------------------------------------------------------- */
 footer {
-
+  background-color: #333;
+  color: #fff;
 }

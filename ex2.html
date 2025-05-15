@@ -7,9 +7,15 @@
   <link rel="stylesheet" href="ex2style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <p >APPLICATION</p>
+  <header class="header">
+    <div class="header__logo">
+      <p>APPLICATION</p>
+    </div>
+    <div class="header__empty"></div>
+    <div class="header__download">
+      <a class="header__download-link" href="#">
+        <p>ダウンロード</p>
+      </a>
     </div>
   </header>
 
@@ -20,7 +26,7 @@
 
     <section class="slogan">
       <div class="inner">
-        <p>「理想の自分に、最短で近づけ。」<br>
+        <p class="slogan__content">「理想の自分に、最短で近づけ。」<br>
             時間がないあなたへ。毎日15分からはじめる変化。
         </p>
       </div>
@@ -33,28 +39,28 @@
         <div class="plan__about">
           <div class="plan__about-table">
             <div class="plan__about-table-row">
-              <div class="plan__about-table-row-cell">
+              <div class="plan__about-table-row-cell plan-free">
                 無料プラン
               </div>
-              <div class="plan__about-table-row-cell">
+              <div class="plan__about-table-row-cell plan-paid">
                 有料プラン
               </div>
             </div>
 
             <div class="plan__about-table-row">
-              <div class="plan__about-table-row-cell">
+              <div class="plan__about-table-row-cell plan-free">
                 0円
               </div>
-              <div class="plan__about-table-row-cell">
+              <div class="plan__about-table-row-cell plan-paid">
                 980円/月
               </div>
             </div>
 
             <div class="plan__about-table-row">
-              <div class="plan__about-table-row-cell">
+              <div class="plan__about-table-row-cell plan-free">
                 一部機能制限あり
               </div>
-              <div class="plan__about-table-row-cell">
+              <div class="plan__about-table-row-cell plan-paid">
                 全機能利用可能
               </div>
             </div>
@@ -147,7 +153,7 @@
   </main>
 
   <footer>
-
+    <small style="text-align: center;">&copy; 2025 inc.</small>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
