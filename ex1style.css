@@ -42,6 +42,8 @@
 
 /* 左右marginは35pxで統一？ */
 
+/* レスポンシブ ブレークポイント 767px */
+
 
 /* ヘッダー ------------------------------------------------------------------------------------------ */
 header {
@@ -68,6 +70,7 @@ header {
   /* line-height: 1.5; */
   /* padding: 12px; */
   vertical-align: top;
+  max-height: 60px;
   max-width: 300px;
   min-width: 300px;
 }
@@ -85,17 +88,25 @@ header {
   text-align: center;
 }
 
+/* ナビゲーションメニュー */
 .header__nav {
   width: calc(100% - 450px);
 }
 
+@media screen and (max-width: 1000px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+/* ナビゲーションメニュー内各リンク */
 .header__nav-link {
   color: var(--sub-color2);
   font-size: 22px;
-  line-height: 100%;
+  line-height: 52px;
   height: 100%;
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 18px;
+  padding-right: 18px;
   padding-top: 34px;
   text-decoration: none;
   vertical-align: middle;
@@ -107,6 +118,7 @@ header {
   
 }
 
+/* お問い合わせフォームへページ内リンク */
 .header__forContact {
   align-content: center;
   border: 2px solid var(--main-color);
@@ -117,10 +129,117 @@ header {
   width: 150px;
 }
 
+@media screen and (max-width: 1000px) {
+  .header__forContact {
+    display: none;
+  }
+}
+
 .header__forContact:hover {
   background-color: var(--main-color);
   color: #fff;
 }
+
+/* レスポンシブメニュー用ボタン */
+
+.header__menuButton {
+  width: 30px;
+  height: 25px;
+  position:fixed;
+  top: 14px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media screen and (min-width: 1001px) {
+  .header__menuButton {
+    display: none;
+  }
+}
+
+.header__menuButton span {
+  display: block;
+  height: 3px;
+  background: var(--main-color);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.header__menuButton.active span:nth-of-type(1) {
+  transform: translateY(6px) rotate(-45deg);
+}
+
+.header__menuButton.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.header__menuButton.active span:nth-of-type(3) {
+  transform: translateY(-11px) rotate(45deg);
+}
+
+.header__menu-sp {
+  background-color: var(--main-color);
+  color: white;
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.header__menu-sp.active {
+  display: block;
+}
+
+.header__menu-sp-nav-list-item-link {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header__menu-sp-nav-list-item-link:hover {
+  opacity: 0.7;
+}
+
+.header__menu-sp-nav-list-item {
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header__menu-sp-forContact {
+  border: 2px solid #fff;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  position: relative;
+  width: 400px;
+}
+
+.header__menu-sp-forContact:hover {
+  background-color: #fff;
+}
+
+
+.header__menu-sp-forContact-link {
+  color: #fff;
+  display: block;
+  height: 100%;
+  margin-top: 14px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.header__menu-sp-forContact:hover .header__menu-sp-forContact-link .header__menu-sp-forContact-link-text {
+  color: var(--main-color);
+}
+
+
 
 .empty {
   height: 60px;

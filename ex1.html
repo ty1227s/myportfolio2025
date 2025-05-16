@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>デモサイト１（コーポレートサイト）</title>
   <link rel="stylesheet" href="ex1style.css">
 </head>
 <body>
@@ -19,7 +19,6 @@
           <a class="header__nav-link" href="">会社情報</a>
           <a class="header__nav-link" href="">サービス</a>
           <a class="header__nav-link" href="">実績</a>
-          <a class="header__nav-link" href="">お問い合わせ</a>
           <a class="header__nav-link" href="">採用情報</a>
         </nav>
 
@@ -28,6 +27,38 @@
             お問い合わせ
           </div>
         </a>
+
+        <div class="header__menuButton">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="header__menu-sp">
+          <div class="">
+            <nav class="header__menu-sp-nav">
+              <ul class="header__menu-sp-nav-list">
+                <a class="header__menu-sp-nav-list-item-link" href="">
+                  <li class="header__menu-sp-nav-list-item">会社情報</li>
+                </a>
+                <a class="header__menu-sp-nav-list-item-link" href="">
+                  <li class="header__menu-sp-nav-list-item">サービス</li>
+                </a>
+                <a class="header__menu-sp-nav-list-item-link" href="">
+                  <li class="header__menu-sp-nav-list-item">実績</li>
+                </a>
+                <a class="header__menu-sp-nav-list-item-link" href="">
+                  <li class="header__menu-sp-nav-list-item">採用情報</li>
+                </a>
+              </ul>
+            </nav>
+            <div class="header__menu-sp-forContact">
+              <a class="header__menu-sp-forContact-link" href="">
+                <span class="header__menu-sp-forContact-link-text">お問い合わせ</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -280,6 +311,34 @@
   </footer>
   
   <script src="ex1.js"></script>
+  <script> 
+    /* ハンバーガーメニューボタン用 wx1.jsに移植する？*/
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.querySelectorAll('.header__menuButton'); /*? */
+      
+      
+      menuBtn.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          this.classList.toggle('active');
+
+          const menuSp = document.querySelector('.header__menu-sp');
+          if (menuSp) {
+            menuSp.classList.toggle('active');
+          }
+
+        });
+      });
+    });
+
+    // 画面サイズ変更時にメニューを自動で閉じる → 要改善
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1000) {
+        menuBtn.classList.remove('active');
+        menuSp.classList.remove('active');
+      }
+    });
+
+  </script>
   <script>
     (function(d) {
       var config = {
