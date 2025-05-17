@@ -49,6 +49,18 @@ if (window.innerWidth > 768) {
   });
 }
 
+// ページを読み込んでから3秒後にシンボルマークを表示
+window.addEventListener('load', () => {
+  const target1 = document.querySelector('.mv__symbol-img');
+  const target2 = document.querySelector('.mv__symbol-sp-img');
+
+  // ページ読み込み後すぐにクラスを追加
+  setTimeout(() => {
+    target1.classList.add('fade-in');
+    target2.classList.add('fade-in');
+  }, 0);
+});
+
 
 
 
