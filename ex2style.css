@@ -20,7 +20,7 @@
   max-width: 1400px;
 }
 
-.bg {
+.bg { /* 背景境界 */
   height: auto;
   margin-bottom: -2px;
   width: 100%;
@@ -217,7 +217,7 @@
 
 .mv__img2 {
   background-image: url(img/mv2m-min.jpg);
-  background-position: 20% 50%;
+  background-position: 34% 80%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -411,6 +411,112 @@
   width: 27px;
 }
 
+/* レビュー --------------------------------------------------------------------- */
+.review {
+  background-color: var(--sub-color1);
+  color: var(--sub-color3);
+  /* padding-bottom: 120px; */
+  margin-top: -5px;
+  margin-bottom: -25px;
+}
+
+.review__title {
+  font-size: 42px;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .review__title {
+    font-size: 28px;
+  }
+}
+
+.review__icon {
+  height: 40px;
+  margin: 0 20px -5px;
+  width: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .review__icon {
+    height: 30px;
+    margin: 0 20px -5px;
+    width: 30px;
+  }
+}
+
+.review__container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 767px) {
+  .review__container {
+    flex-direction: column;
+  }
+}
+
+.review__unit {
+  border: 2px double var(--sub-color3);
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .review__unit {
+    display: block;
+    font-size: 16px;
+  }
+}
+
+.review__unit-wrapper { /* 横並び */
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) { /* レスポンシブ時は縦並び */
+  .review__unit-wrapper {
+    flex-direction: column;
+    padding-left: 0;
+  }
+}
+
+.review__unit-icon {
+  background-size: cover;
+  height: 150px;
+  margin-right: 20px;
+  min-height: 150px;
+  min-width: 150px;
+  width: 150px;
+}
+
+.review__unit:nth-of-type(1) .review__unit-icon { /* レビュー１のアイコン */
+  background-image: url(img/review1.jpg);
+}
+
+.review__unit:nth-of-type(2) .review__unit-icon { /* レビュー２のアイコン */
+  background-image: url(img/review2.jpg);
+}
+
+/* @media screen and (max-width: 767px) {
+  .review__unit-icon {
+    mr  
+  }
+} */
+
+.review__unit-attribute {
+  display: flex;
+  flex-direction: column;
+}
+
+.review__unit-content-text {
+  font-style: italic;
+}
 
 /* Q&A ------------------------------------------------------------------------- */
 .qanda {
@@ -581,20 +687,70 @@ footer {
   margin-top: -3px;
   background-color: var(--sub-color2);
   color: var(--sub-color3);
+  text-align: center;
 }
 
-.footer__appli-name {
+/* .footer__appli-name {
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 32px;
   font-style: italic;
+} */
+
+.footer__symbol-img {
+  height: 240px;
+  margin: 0 auto;
+  text-align: center;
+  width: auto;
 }
 
-.footer__privacy-policy {
+@media screen and (max-width: 767px) {
+  .footer__symbol-img {
+    height: 140px;
+    width: auto;
+  }
+}
+
+.footer__company-about {
+  text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__company-about {
+    text-align: center;
+  }
+}
+
+.footer__sns {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__sns-link {
+  /* margin: 0 auto; */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.footer__sns-link:hover {
+  opacity: 0.5;
+}
+
+.footer__sns-link-img {
+  margin: 0 10px;
+  height: 40px;
+  width: 40px;
+}
+
+
+
+.footer__menu-item {
   color: var(--sub-color3);
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.footer__privacy-policy:hover {
-
+.footer__menu-item:hover {
+  opacity: 0.5;
 }
