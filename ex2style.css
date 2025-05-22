@@ -162,13 +162,16 @@
 
 @media screen and (max-width: 767px) {
   .mv {
+    background-color: #000;
+    background-image: url(img/mv2-min.jpg);
+    background-size: cover;
     display: block;
-    height: 50vh;
+    height: calc(100vh - 50px);
   }
 }
 
 .mv__symbol-sp {
-  background-color: #000;
+  opacity: 0.5;
   height: 50vh;
   text-align: center;
   width: 100%;
@@ -181,11 +184,12 @@
 }
 
 .mv__symbol-sp-img {
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 30vh;
   margin-bottom: auto;
-  height: 100px;
+  object-position: bottom 25% left 25%;
   opacity: 0;
   transition: opacity 3s ease;
   width: auto;
@@ -313,12 +317,14 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 80px;
+  width: 120px;
 }
 
 @media screen and (max-width: 767px) {
   .plan__about-table-column-data {
     font-size: 14px;
     line-height: 20px;
+    width: 70px;
   }
 }
 
@@ -334,12 +340,14 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 45px;
+  width: 120px;
 }
 
 @media screen and (max-width: 767px) {
   .plan__about-table-column-head-paid,
   .plan__about-table-column-data-paid {
     font-size: 24px;
+    width: 70px;
   }
 }
 
@@ -360,19 +368,38 @@
 }
 
 @media screen and (max-width: 767px) {
-  .plan__about-table-column-head ,
-  .plan__about-table-column-head-paid ,
+  .plan__about-table-column-head,
+  .plan__about-table-column-head-paid,
   .plan__about-table-column-head-free /* head */{
-    width: 120px;
     line-height: 20px;
+    height: 225px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 70px;
+    writing-mode: vertical-rl;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head-paid span,
+  .plan__about-table-column-head-free span {
+    justify-content: center;
+    height: 40%;
+    width: 100%;
+    position: relative;
+    top: 0%;
+    right: 47px;
+    text-align: center;
   }
 }
 
 
 
-.plan__about-table-column-head span,
+/* .plan__about-table-column-head span,
 .plan__about-table-column-head-paid span,
-.plan__about-table-column-head-free span/* head */{
+.plan__about-table-column-head-free spanhead{
   line-height: 70px;
 }
 
@@ -381,11 +408,11 @@
 }
 
 @media screen and (max-width: 767px) {
-  /* 「プラン」の文字のみ */
+  「プラン」の文字のみ
   .plan__about-table-column div span .plan__about-table-column-head-clause:nth-of-type(2) {
     font-size: 20px;
   }
-}
+} */
 
 
 .plan__about-table-column-data ,
@@ -397,12 +424,17 @@
 }
 
 @media screen and (max-width: 767px) {
-  .plan__about-table-column-data ,
+  .plan__about-table-column-data {
+    width: 200px;
+  }
+
   .plan__about-table-column-data-paid,
   .plan__about-table-column-data-free /* セル */{
     width: 120px;
   }
 }
+
+
 
 .plan__about-table-column-data-img {
   height: 27px;
@@ -411,13 +443,72 @@
   width: 27px;
 }
 
+/* Usage ----------------------------------------------------------------------- */
+.usage {
+
+}
+
+.usage__unit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.usage__unit:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 767px) {
+  .usage__unit {
+    margin: 0 auto;
+    display: inline;
+  }
+}
+
+.usage__unit-img {
+  background-size: cover;
+  border-radius: 30px;
+  height: 350px;
+  width: 350px;
+}
+
+@media screen and (max-width: 767px) {
+  .usage__unit-img {
+    height: 400px;
+    margin: 0 auto;
+    width: calc(100% - 50px);
+  }
+}
+
+.usage__unit:first-of-type .usage__unit-img {
+  background-image: url(img/usage1.jpg);
+}
+
+.usage__unit:last-of-type .usage__unit-img {
+  background-image: url(img/usage2.jpg);
+}
+
+.usage__unit-content {
+  width: 400px;
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+
+.usage__unit-content-text {
+  font-size: 24px;
+}
+
 /* レビュー --------------------------------------------------------------------- */
 .review {
   background-color: var(--sub-color1);
   color: var(--sub-color3);
   /* padding-bottom: 120px; */
   margin-top: -5px;
-  margin-bottom: -25px;
+  margin-bottom: -20px;
 }
 
 .review__title {
@@ -487,20 +578,28 @@
 }
 
 .review__unit-icon {
-  background-size: cover;
+  background-size: 150%;
+  background-repeat: no-repeat;
   height: 150px;
   margin-right: 20px;
   min-height: 150px;
   min-width: 150px;
+  transition: all 0.5s ease;
   width: 150px;
+}
+
+.review__unit:hover .review__unit-wrapper .review__unit-icon {
+  background-size: 170%;
 }
 
 .review__unit:nth-of-type(1) .review__unit-icon { /* レビュー１のアイコン */
   background-image: url(img/review1.jpg);
+  background-position: 30% 40%;
 }
 
 .review__unit:nth-of-type(2) .review__unit-icon { /* レビュー２のアイコン */
   background-image: url(img/review2.jpg);
+  background-position: 30% 40%;
 }
 
 /* @media screen and (max-width: 767px) {
@@ -556,7 +655,9 @@
 
 .qanda__unit-question-content {
   line-height: 1.5;
-  margin: 0;
+  /* margin: 0; */
+  margin-top: auto;
+  margin-bottom: auto;
   padding-bottom: 1px;
   text-align: left;
   width: calc(100% - 60px);
@@ -576,6 +677,7 @@
   font-weight: 400;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 10px;
 }
 
 .qanda__unit-question-button {
@@ -586,6 +688,7 @@
   height: 30px;
   width: 30px;
   margin: 5px;
+  margin-top: 15px;
   transition: transform 0.3s ease;
 }
 
@@ -593,7 +696,7 @@
   transform: rotate(180deg);
 }
 
-.qanda__unit-answer {
+.qanda__unit-answer { /* Q&A 解答エリア */
   background-color: var(--sub-color3); /* 仮 */
   border: 2px solid var(--main-color);
   border-bottom-left-radius: 30px;
@@ -609,6 +712,11 @@
 
 .qanda__unit.active .qanda__unit-answer { /* active指定すべきはunit */
   height: 200px;
+}
+
+.qanda__unit-answer-content {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
 .qanda__unit-answer-content-A {
@@ -690,6 +798,18 @@ footer {
   text-align: center;
 }
 
+.footer__container {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 766px) {
+  .footer__container {
+    display: inline;
+  }
+}
+
 /* .footer__appli-name {
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
@@ -699,7 +819,7 @@ footer {
 
 .footer__symbol-img {
   height: 240px;
-  margin: 0 auto;
+  margin-left: auto;
   text-align: center;
   width: auto;
 }
@@ -711,8 +831,20 @@ footer {
   }
 }
 
+.footer__wrapper {
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__wrapper {
+    margin-left: auto;
+  }
+}
+
 .footer__company-about {
   text-align: left;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 767px) {
@@ -721,14 +853,30 @@ footer {
   }
 }
 
+.footer__company-about-name {
+  font-size: 30px;
+  margin: 3px 0;
+}
+
+.footer__company-about-address-clause {
+  white-space: nowrap;
+}
+
 .footer__sns {
   display: flex;
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
+}
+
+@media screen and (max-width: 767px)  {
+  .footer__sns {
+    justify-content: center;
+    gap: 8px;
+  }
 }
 
 .footer__sns-link {
-  /* margin: 0 auto; */
+  display: inline-block;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -737,20 +885,89 @@ footer {
   opacity: 0.5;
 }
 
+.footer__sns-link:last-of-type {
+  margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__sns-link:first-of-type {
+    margin-left: auto;
+  }
+}
+
 .footer__sns-link-img {
   margin: 0 10px;
   height: 40px;
   width: 40px;
 }
 
+.footer__sns-link:first-of-type .footer__sns-link-img {
+  margin-left: 0;
+}
 
+
+
+@media screen and (max-width: 767px) {
+  .footer__sns-link-img {
+    height: 25px;
+    width: 25px;
+  }
+
+  /* .footer__sns-link-img:first-of-type {
+    margin-left: auto;
+  }
+
+  .footer__sns-link-img:last-of-type {
+    margin-right: auto;
+  } */
+}
+
+
+.footer__menu-list {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
 
 .footer__menu-item {
+  /* border-right: 1px solid var(--sub-color3); */
+  color: var(--sub-color3);
+  font-size: 14px;
+  list-style: none;
+  padding: 0 10px;
+  position: relative;
+}
+
+.footer__menu-item a {
+  display: block;
   color: var(--sub-color3);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.footer__menu-item:hover {
+.footer__menu-item a:hover {
   opacity: 0.5;
 }
+
+.footer__menu-item + .footer__menu-item::before { /* メニュー項目の区切り線 */
+  content: '';
+  position:absolute;
+  left: 0;
+  top: 25%;
+  width: 1px;
+  height: 50%;
+  background-color: var(--sub-color3);
+  /* margin: 0 8px; */
+}
+
+.footer__menu-item:last-child:after {
+  display: none;
+}
+
+.footer__menu-item:last-child {
+  border-right: none;
+}
+
+
+
+
