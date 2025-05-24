@@ -189,28 +189,33 @@ header {
 }
 
 .header__menuButton.active span:nth-of-type(3) {
-  transform: translateY(-8px) rotate(45deg);
+  transform: translateY(-7.2px) rotate(45deg);
 }
 
-.header__menu-sp {
-  background-color: var(--main-color);
-  color: white;
-  display: none;
-  height: 670px;
+.header__menu-sp { /* レスポンシブメニュー領域 */ 
+  background-color: #fff;
+  color: var(--main-color);
+  height: calc(100vh - 60px);
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   top: 60px;
+  transition: opacity 0.3s ease;
+  visibility: hidden;
   width: 100%;
-  transition: all 0.3s ease;
 }
 
-.header__menu-sp.active {
-  display: block;
+.header__menu-sp.active /* レスポンシブメニューが開いている時 */{
+  /* display: block; */
+  opacity: 1;
   overflow: hidden;
+  pointer-events: auto;
   position: fixed;
+  visibility: visible;
 }
 
 .header__menu-sp-nav-list-item-link {
-  color: #fff;
+  color: var(--main-color);
   font-size: 24px;
   left: 0;
   position: relative;
@@ -223,35 +228,35 @@ header {
   left: 10px;
 }
 
-.header__menu-sp-nav-list-item {
+.header__menu-sp-nav-list-item /* レスポンシブメニュー内項目 */ {
   /* left: 0; */
   list-style: none;
   padding-top: 10px;
   padding-bottom: 10px;
-  /* transition: all 0.3s ease; */
 }
 
 /* .header__menu-sp-nav-list-item-link:hover .header__menu-sp-nav-list-item {
   left: 10px;
 } */
 
-.header__menu-sp-forContact {
-  border: 2px solid #fff;
+.header__menu-sp-forContact /* レスポンシブメニューお問い合わせボタン */{
+  border: 2px solid var(--main-color);
   border-radius: 30px;
   margin-left: auto;
   margin-right: auto;
   height: 60px;
   position: relative;
+  transition: all 0.3s ease;
   width: 400px;
 }
 
-.header__menu-sp-forContact:hover {
-  background-color: #fff;
+.header__menu-sp-forContact:hover /* お問い合わせボタンhover時 */ {
+  background-color: var(--main-color);
 }
 
 
 .header__menu-sp-forContact-link {
-  color: #fff;
+  color: var(--main-color);
   display: block;
   height: 100%;
   margin-top: 14px;
@@ -261,7 +266,7 @@ header {
 }
 
 .header__menu-sp-forContact:hover .header__menu-sp-forContact-link .header__menu-sp-forContact-link-text {
-  color: var(--main-color);
+  color: #fff;
 }
 
 
@@ -655,13 +660,20 @@ input:focus, textarea:focus {
 
 
 /* フッター ------------------------------------------------------------------------------------------ */
-footer {
+footer { 
   background-image: url(img/footer.png);
+  background-position: 50% 0%; /* 中心：横方向中央 縦方向上 */
   background-size: cover;
   color: #fff;
   height: 400px;
   overflow: hidden;
   position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+  footer {
+    height: 800px;
+  }
 }
 
 .footer__color {
@@ -679,6 +691,7 @@ footer {
 }
 
 .footer__content {
+  /* display: inline; */
   position: absolute;
   width: 100%;
   z-index: 3;
@@ -689,7 +702,7 @@ footer {
 }
 
 .footer__detail-company {
-  width: 50%;
+  width: 500px;
 }
 
 .footer__detail-company-ja {
@@ -716,29 +729,52 @@ footer {
 .footer__nav {
   display: flex;
   font-size: 25px;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   width: 100%;
 }
 
 @media screen and (min-width: 1000px) {
   .footer__nav {
-    display: inline;
+    flex-direction: row;
   }
 }
 
-.footer__nav-link {
+.footer__nav-link /* footer内ナビゲーションメニュー各項目リンク */{
   color: #fff;
+  margin: 0px 20px;
   text-decoration: none;
 }
 
-.footer__nav-link:hover {
+.footer__nav-link:nth-of-type(1) { /* 最初の項目 */
+  margin-left: 0;
+}
+
+.footer__nav-link:nth-of-type(5) { /* 最後の項目 */
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__nav-link {
+    margin: 10px;
+  }
+}
+
+
+
+.footer__nav-link:hover /* 各項目リンクhover時 */ {
   opacity: 0.5;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-small {
+.footer__content small /* footer内copyright表示 */{
+  display: block;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
+  width: 100%;
 }

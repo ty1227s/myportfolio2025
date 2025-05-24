@@ -879,46 +879,47 @@ footer {
   white-space: nowrap;
 }
 
-.footer__sns {
+.footer__sns /* SNSブロック */{
   display: flex;
   margin: 0 auto;
   /* text-align: center; */
 }
 
 @media screen and (max-width: 767px)  {
-  .footer__sns {
+  .footer__sns /* SNSブロック */ {
     justify-content: center;
     gap: 8px;
   }
 }
 
-.footer__sns-link {
+.footer__sns-link /* 各SNSリンク */ {
   display: inline-block;
   text-align: center;
   transition: all 0.3s ease;
 }
 
-.footer__sns-link:hover {
+.footer__sns-link:hover /* 各SNSリンクhover時 */ {
   opacity: 0.5;
 }
 
-.footer__sns-link:last-of-type {
+.footer__sns-link:last-of-type /* 一番右のSNSアイコン */ {
   margin-right: auto;
 }
 
 @media screen and (max-width: 767px) {
-  .footer__sns-link:first-of-type {
+  .footer__sns-link:first-of-type /* 一番左のSNSアイコン */ {
     margin-left: auto;
   }
 }
 
-.footer__sns-link-img {
+.footer__sns-link-img /* SNSアイコンの画像 */ {
   margin: 0 10px;
   height: 40px;
   width: 40px;
 }
 
-.footer__sns-link:first-of-type .footer__sns-link-img {
+.footer__sns-link:first-of-type .footer__sns-link-img
+/* 一番左のSNSアイコンには左marginを適用しない */ {
   margin-left: 0;
 }
 
