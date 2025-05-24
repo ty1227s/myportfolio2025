@@ -22,18 +22,30 @@
 }
 
 .title-ja {
-  font-size: 45px;
+  font-size: 32px; /* 対応済 */
   text-align: center;
 }
 
-.title-en {
+@media screen and (max-width: 767px) { 
+  .title-ja {
+    font-size: 24px; /* 対応済 */
+  }
+}
+
+.title-en { /* すべてのセクションの見出し（英語）*/
   color: var(--main-color);
-  font-size: 24px;
+  font-size: 16px; /* 対応済み */
   text-align: center;
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .title-en {
+    font-size: 14px;
+  }
 }
 
 /* header .inner {
@@ -124,9 +136,11 @@ header {
   border: 2px solid var(--main-color);
   border-radius: 60px;
   color: var(--main-color);
+  height: 40px;
   margin: 10px;
   text-align: center;
-  width: 150px;
+  transition: all 0.3s ease;
+  width: 165px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -167,7 +181,7 @@ header {
 }
 
 .header__menuButton.active span:nth-of-type(1) {
-  transform: translateY(6px) rotate(-45deg);
+  transform: translateY(9px) rotate(-45deg);
 }
 
 .header__menuButton.active span:nth-of-type(2) {
@@ -175,14 +189,14 @@ header {
 }
 
 .header__menuButton.active span:nth-of-type(3) {
-  transform: translateY(-11px) rotate(45deg);
+  transform: translateY(-8px) rotate(45deg);
 }
 
 .header__menu-sp {
   background-color: var(--main-color);
   color: white;
   display: none;
-  height: 100vh;
+  height: 670px;
   position: fixed;
   top: 60px;
   width: 100%;
@@ -191,24 +205,35 @@ header {
 
 .header__menu-sp.active {
   display: block;
+  overflow: hidden;
+  position: fixed;
 }
 
 .header__menu-sp-nav-list-item-link {
   color: #fff;
   font-size: 24px;
+  left: 0;
+  position: relative;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .header__menu-sp-nav-list-item-link:hover {
   opacity: 0.7;
+  left: 10px;
 }
 
 .header__menu-sp-nav-list-item {
+  /* left: 0; */
   list-style: none;
   padding-top: 10px;
   padding-bottom: 10px;
+  /* transition: all 0.3s ease; */
 }
+
+/* .header__menu-sp-nav-list-item-link:hover .header__menu-sp-nav-list-item {
+  left: 10px;
+} */
 
 .header__menu-sp-forContact {
   border: 2px solid #fff;
@@ -282,28 +307,64 @@ header {
 }
 
 /* メンバーブロック -------------------------------------------------------------------------------- */
-.member__person {
+.member__person /* メンバーセット */{
   display: flex;
 }
 
-.member__person:nth-of-type(2n) {
+.member__person:nth-of-type(2n) /* 偶数人目は写真と説明を逆に配置 */{
   flex-direction: row-reverse;
 }
 
-.member__person-img {
+@media screen and (max-width: 767px) {
+  .member__person {
+    display: inline;
+  }
+}
+
+
+.member__person-img /* メンバー画像 */{
   height: 400px;
   width: 400px;
 }
 
+@media screen and (max-width: 767px) {
+  .member__person-img {
+    background-size: cover;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+  }
+}
+
+.member__person-introduce {
+
+}
+
+@media screen and (max-width: 767px) {
+  .member__person-introduce {
+    margin: 0 auto;
+    width: calc(100% - 60px);
+  }
+}
+
 
 /* ビジネスブロック -------------------------------------------------------------------------------- */
-.business__target-flex {
+.business__target-flex /* 顧客例配置用 */{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.business__target {
+@media screen and (max-width: 767px) {
+  .business__target-flex {
+    margin: 0 auto;
+    width: 300px;
+  }
+}
+
+
+.business__target /* 顧客例（枠） */ {
   border: 2px solid var(--sub-color2);
   border-radius: 40px;
   margin: 20px;
@@ -311,16 +372,36 @@ header {
   width: 350px;
 }
 
+@media screen and (max-width: 767px) {
+  .business__target {
+    border-radius: 20px;
+    height: 70px;
+    object-position: center;
+    width: 110px;
+  }
+}
+
+
 .business__target-content {
-  font-size: 37px;
+  font-size: 16px; /* 対応済み */
   text-align: center;
 }
 
-.business__target-content-user {
+@media screen and (max-width: 767px) {
+  .business__target-content {
+    font-size: 14px; /* 対応済み */
+  }
+}
+
+
+.business__target-content-user /* 顧客例（テキスト）*/ {
   color: var(--main-color);
 }
 
-.business__works-flex {
+/* 追加スペース */
+
+
+.business__works-flex /* 業務内容一覧 */ {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -328,13 +409,29 @@ header {
   width: 700px;
 }
 
-.business__works {
+@media screen and (max-width: 767px) {
+  .business__works-flex {
+    width: 400px;
+  }
+} 
+
+
+.business__works /* 業務内容の具体例 */{
   background-color: var(--sub-color);
   height: 300px;
   margin: 20px;
   position: relative;
   width: 300px;
 }
+
+@media screen and (max-width: 767px) {
+  .business__works {
+    height: 130px;
+    margin: 5px;
+    width: 140px;
+  }
+}
+
 
 .business__works-content {
   color: #fff;
@@ -344,6 +441,12 @@ header {
   top: 50%;
   left: 20%;
   transform: translate(-12%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .business__works-content {
+    font-size: 18px;
+  }
 }
 
 
@@ -473,7 +576,8 @@ header {
   }
 }
 
-.contact__form-content-label-required {
+
+.contact__form-content-label-required { /* 入力必須を示すラベル */
   background-color: #f00;
   color: #fff;
   margin-left: 8px;
@@ -481,8 +585,8 @@ header {
 }
 
 
-
-input, textarea {
+.contact__form-content input, 
+.contact__form-content textarea { /* contactエリア内の入力欄すべて */
   background-color: #e9e9e9;
   border: 3px solid var(--sub-color2);
   border-radius: 5px;

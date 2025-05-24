@@ -146,7 +146,7 @@
           </p>
         </div>
       </div>
-      <p style="font-size: 35px; text-align: center;">などを対象に…</p>
+      <p style="font-size: 35px; text-align: center;">などを対象に…</p> <!-- CSSに要追加-->
       <div class="business__works-flex">
         <div class="business__works"><p class="business__works-content">地域イベントの<br>企画・運営</p></div>
         <div class="business__works"><p class="business__works-content">地方自治体との<br>タイアップ事業</p></div>
@@ -241,7 +241,7 @@
     <div class="inner">
       <h2 class="title-ja">お問い合わせ</h2> <!-- 仮見出し -->
       <p class="title-en">CONTACT</p>
-      <form action="">
+      <form class="contact__form" action="">
         <div class="contact__form-content">
           <label for="name" class="contact__form-content-label">氏名<span class="contact__form-content-label-required">必須</span></label>
           <input type="text" name="" id="name" placeholder="例：山田太郎">
@@ -311,34 +311,6 @@
   </footer>
   
   <script src="ex1.js"></script>
-  <script> 
-    /* ハンバーガーメニューボタン用 wx1.jsに移植する？*/
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuBtn = document.querySelectorAll('.header__menuButton'); /*? */
-      
-      
-      menuBtn.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          this.classList.toggle('active');
-
-          const menuSp = document.querySelector('.header__menu-sp');
-          if (menuSp) {
-            menuSp.classList.toggle('active');
-          }
-
-        });
-      });
-    });
-
-    // 画面サイズ変更時にメニューを自動で閉じる → 要改善
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 1000) {
-        menuBtn.classList.remove('active');
-        menuSp.classList.remove('active');
-      }
-    });
-
-  </script>
   <script>
     (function(d) {
       var config = {
