@@ -323,19 +323,31 @@ header { /* header共通設定 */
 }
 
 .mv__heading /* 見出し */ {
+  animation: mv--heading 3s forwards;
+  animation-delay: 3s;
   color: #fff;
   font-size: 24px;
   font-weight: 600;
+  margin-right: 20px;
+  opacity: 0;
   text-shadow: 2px 2px 2px var(--sub-color2);
-  /* margin: 0 auto; */
-  /* position: absolute;
-  top: 45%;
-  right: 30px; */
+  transition: all 0.3s ease;
+  
+}
+
+@keyframes mv--heading {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .mv__heading {
     line-height: 100%;
+    margin-right: 0;
     right: 0px;
     text-align: center;
     width: 100%;
@@ -428,8 +440,14 @@ header { /* header共通設定 */
 }
 
 .member__person /* メンバーセット */{
+  border: 2px solid var(--main-color);
+  border-radius: 1rem;
   display: flex;
-  margin-top: 30px;
+  margin-top: 120px;
+  margin-left: 100px;
+  overflow: visible;
+  padding: 1.5rem;
+  position: relative;
   width: 100%;
 }
 
@@ -439,6 +457,7 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .member__person:first-of-type {
+  /* レスポンシブ時は縦並びになるため不要 */
     margin-right: 0;
   }
 }
@@ -454,7 +473,10 @@ header { /* header共通設定 */
   background-size: cover;
   border-radius: 200px;
   height: 200px;
+  left: -70px;
+  object-fit: cover; /* 要チェック */
   position: absolute;
+  top: -70px;
   width: 200px;
 }
 
@@ -470,11 +492,13 @@ header { /* header共通設定 */
 }
 
 .member__person-introduce /* 各メンバーの紹介項目のかたまり */{
-  border: 2px solid var(--sub-color2); /* 仮 要修正 */
-  margin-top: 100px;
-  margin-left: 100px;
-  padding-left: 100px;
-  padding-top: 40px;
+  /* 仮 要修正 */
+  /* border: 2px solid var(--sub-color2);  */
+  /* margin-top: 100px;
+  margin-left: 100px; */
+  margin-left: 130px;
+  left: -65px;
+  /* width: 270px; */
 }
 
 @media screen and (max-width: 767px) {
@@ -1162,19 +1186,19 @@ footer /* footerブロック全体 */{
 
 @media screen and (max-width: 1000px) {
   .footer__nav-link:nth-of-type(1) {
-    /* margin-left: 10px; */
+    margin-left: 20px;
   }
 }
 
 .footer__nav-link:nth-of-type(5) { /* 最後の項目 */
-  margin-right: 0;
+  margin-right: 0px;
 }
 
 @media screen and (max-width: 1000px) {
   .footer__nav-link {
     font-size: 15px;
     height: 40px;
-    margin: 0;
+    margin: 0 20px;
     padding-top: 8px;
     padding-left: 10px;
     padding-right: 5px;
