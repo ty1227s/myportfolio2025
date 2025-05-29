@@ -67,21 +67,21 @@
     <div class="inner"></div>
   </div>
 
-  <div class="mv">
+  <div class="mv fade-in">
     <div class="inner">
-      <h2>ＭＶ</h2> <!-- 仮見出し -->
+      <span class="mv__heading">人と人、<strong class="mv__heading-strong">人</strong>と<strong class="mv__heading-strong">地域</strong>をつなぐ。</span>
     </div>
   </div>
 
   <div class="concept">
     <div class="inner">
-      <h2 class="title-ja">コンセプト</h2> <!-- 仮見出し -->
-      <p class="title-en">CONCEPT</p>
+      <h2 class="title-ja fade-in">コンセプト</h2> <!-- 仮見出し -->
+      <p class="title-en fade-in">CONCEPT</p>
       <div class="concept__flex">
-        <div class="concept__img">
+        <div class="concept__img fade-in">
 
         </div>
-        <div class="concept__content">
+        <div class="concept__content fade-in">
           <h3 class="concept__content-title">「つなぐ力が、未来を変える」</h3>
           <p class="concept__content-text">
             地域密着型にイベント企画や<br>
@@ -97,28 +97,31 @@
 
   <div class="member">
     <div class="inner">
-      <h2 class="title-ja">メンバー</h2> <!-- 仮見出し -->
-      <p class="title-en">MEMBER</p>
-      <div class="member__person">
-        <div class="member__person-img" style="background-image: url(img/member1.png);">
-          
+      <h2 class="title-ja fade-in">メンバー</h2> <!-- 仮見出し -->
+      <p class="title-en fade-in">MEMBER</p>
+      <div class="member__person-flex">
+        <div class="member__person fade-in">
+          <!-- <div class="member__person-img" style="background-image: url(img/member1.png);">
+            
+          </div> -->
+          <img class="member__person-img" src="img/member1.png" alt="大和 夏樹"> <!-- クラス名 "member__person-img"-->
+          <div class="member__person-introduce">
+            <p class="member__person-introduce-name">大和 夏樹 <span class="member__person-introduce-post">代表取締役</span> </p>
+            <p class="member__person-introduce-phrase">「このまちの“面白さ”を、もっと広く、もっと深く届けたい。」</p>
+          </div>
         </div>
-        <div class="member__person-introduce">
-          <p>代表取締役</p>
-          <p>大和 夏樹</p>
-          <p>「このまちの“面白さ”を、もっと広く、もっと深く届けたい。」</p>
-        </div>
-      </div>
-      <div class="member__person">
-        <div class="member__person-img" style="background-image: url(img/member2.png);">
+        <div class="member__person fade-in">
+          <!-- <div class="member__person-img" style="background-image: url(img/member2.png);"> -->
 
-        </div>
-        <div class="member__person-introduce">
-          <p>広報担当</p>
-          <p>小浦 愛海</p>
-          <p>「“伝える”は“伝わる”から。地域の魅力、発信中です！」</p>
+          <!-- </div> -->
+          <img class="member__person-img" src="img/member2.png" alt="小浦 愛海"> <!-- クラス名 "member__person-img"-->
+          <div class="member__person-introduce">
+            <p class="member__person-introduce-name">小浦 愛海 <span class="member__person-introduce-post">広報担当</span></p>
+            <p class="member__person-introduce-phrase">「“伝える”は“伝わる”から。地域の魅力、発信中です！」</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -126,7 +129,7 @@
     <div class="inner">
       <h2 class="title-ja">事業内容</h2> <!-- 仮見出し -->
       <p class="title-en">BUSINESS</p>
-      <div class="business__target-flex">
+      <div class="business__target-flex fade-in">
         <div class="business__target">
           <p class="business__target-content">
             地域で何か<br>
@@ -146,8 +149,8 @@
           </p>
         </div>
       </div>
-      <p style="font-size: 35px; text-align: center;">などを対象に…</p> <!-- CSSに要追加-->
-      <div class="business__works-flex">
+      <p class="fade-in" style="font-size: 35px; text-align: center;">などを対象に…</p> <!-- CSSに要追加-->
+      <div class="business__works-flex fade-in">
         <div class="business__works"><p class="business__works-content">地域イベントの<br>企画・運営</p></div>
         <div class="business__works"><p class="business__works-content">地方自治体との<br>タイアップ事業</p></div>
         <div class="business__works"><p class="business__works-content">オンライン<br>コミュニティの<br>構築支援</p></div>
@@ -158,23 +161,27 @@
 
   <div class="process">
     <div class="inner">
-      <h2 class="title-ja">企画プロセス</h2> <!-- 仮見出し -->
-      <p class="title-en">PROCESS</p>
-      <div class="process__content">
+      <h2 class="title-ja fade-in">企画プロセス</h2> <!-- 仮見出し -->
+      <p class="title-en fade-in">PROCESS</p>
+      <div class="process__content fade-in">
+        <h3 class="process__content-about-title-sp">ヒアリング</h3>
         <div class="process__content-img" style="background-image: url(img/process1.png)"></div> <!--img-->
+        <!-- ↑画像の比率をうまく固定したい -->
         <div class="process__content-about">
           <h3 class="process__content-about-title">ヒアリング</h3>
           <p class="process__content-about-text">イベントの目的やターゲットを明確にします。</p>
         </div>
       </div>
-      <div class="process__content">
+      <div class="process__content fade-in">
+        <h3 class="process__content-about-title-sp">企画立案</h3>
         <div class="process__content-img" style="background-image: url(img/process2.png)"></div> <!--img-->
         <div class="process__content-about">
           <h3 class="process__content-about-title">企画立案</h3>
           <p class="process__content-about-text">コンセプトやタイムスケジュールを提案します。</p>
         </div>
       </div>
-      <div class="process__content">
+      <div class="process__content fade-in">
+        <h3 class="process__content-about-title-sp">制作・運営サポート</h3>
         <div class="process__content-img" style="background-image: url(img/process3.png)"></div> <!--img-->
         <div class="process__content-about">
           <h3 class="process__content-about-title">制作・運営サポート</h3>
@@ -186,10 +193,10 @@
 
   <div class="achievement">
     <div class="inner">
-      <h2 class="title-ja">実績</h2> <!-- 仮見出し -->
-      <p class="title-en">ACHIEVEMENT</p>
+      <h2 class="title-ja fade-in">実績</h2> <!-- 仮見出し -->
+      <p class="title-en fade-in">ACHIEVEMENT</p>
       <div class="achievement__content-wrapper">
-        <div class="achievement__content">
+        <div class="achievement__content fade-in">
           <div class="achievement__content-image" style="background-image: url(img/achievement1.png)">
 
           </div>
@@ -204,7 +211,7 @@
             </p>
           </div>
         </div>
-        <div class="achievement__content">
+        <div class="achievement__content fade-in">
           <div class="achievement__content-image" style="background-image: url(img/achievement2.png)">
 
           </div>
@@ -218,7 +225,7 @@
             </p>
           </div>
         </div>
-        <div class="achievement__content">
+        <div class="achievement__content fade-in">
           <div class="achievement__content-image" style="background-image: url(img/achievement3.png)">
 
           </div>
@@ -237,7 +244,7 @@
     </div>
   </div>
 
-  <div class="contact" id="contact">
+  <div class="contact fade-in" id="contact">
     <div class="inner">
       <h2 class="title-ja">お問い合わせ</h2> <!-- 仮見出し -->
       <p class="title-en">CONTACT</p>
@@ -258,7 +265,7 @@
         </div>
         
         <div class="contact__form-content">
-          <label for="email" class="contact__form-content-label">メールアドレス</label>
+          <label for="email" class="contact__form-content-label">メールアドレス<span class="contact__form-content-label-required">必須</span></label>
           <input type="email" name="" id="email" placeholder="例：example@example.co.jp">
         </div>
         
@@ -268,7 +275,7 @@
         </div>
         
         <div class="contact__form-content">
-          <label for="detail" class="contact__form-content-label">お問い合わせ内容<span class="contact__form-content-label-required">必須</span></label>
+          <label for="detail" class="contact__form-content-label">お問い合わせ内容<br class="contact__form-content-label-pc-only-br"><span class="contact__form-content-label-required">必須</span></label>
           <textarea name="" id="detail" placeholder="お問い合わせ内容"></textarea>
         </div>
 
@@ -286,17 +293,17 @@
     <div class="footer__color"></div>
     <div class="inner">
       <div class="footer__content">
-        <div class="footer__detail">
+        <dlv class="footer__detail">
           <div class="footer__detail-company">
             <p class="footer__detail-company-ja">株式会社ヒトツナ</p>
-            <p class="footer__detail-company-en">HITOTSUNA inc.</p>
           </div>
-          <div class="footer__detail-address">
-            150-0001
-            東京都渋谷区神宮前3-XX-XX
-            ○○ビル4階  
+
+          <div class="footer__detail-company-container">
+            <span class="footer__detail-company-en">HITOTSUNA inc.</span>
+            <span class="footer__detail-address">〒150-0001 東京都渋谷区神宮前3-XX-XX ○○ビル4階</span>
           </div>
-        </div>
+        </dlv>
+
         <nav class="footer__nav">
           <a class="footer__nav-link" href="">会社情報</a>
           <a class="footer__nav-link" href="">サービス</a>
@@ -306,7 +313,7 @@
         </nav>
         <small>&copy; 2025 HITOTSUNA inc.</small>
       </div>
-      
+
     </div>
   </footer>
   

@@ -2,13 +2,18 @@
 
 /* 共通設定 */
 :root {
+  /* 色に関する設定 */
   --main-color: #18943b; /* 緑色 */
   --sub-color: #67a4db; 
   --sub-color2: #606060; /* グレー */
   --sub-color3: #939019; /* 黄土色 */
+  
+  /* 寸法に関する設定 */
+  --header-height: 60px; /* headerの高さ */
 }
 
-* {
+
+* { /* 全体書式 */
   box-sizing: border-box;
   font-family: "sicprintempspetit", sans-serif;
   font-weight: 400;
@@ -16,13 +21,16 @@
   margin: 0;
 }
 
-.inner {
+
+.inner { /* インナー設定 */
   margin: 0 auto;
   max-width: 1400px;
 }
 
-.title-ja {
+
+.title-ja { /* すべてのセクションの見出し（日本語） */
   font-size: 32px; /* 対応済 */
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -31,6 +39,7 @@
     font-size: 24px; /* 対応済 */
   }
 }
+
 
 .title-en { /* すべてのセクションの見出し（英語）*/
   color: var(--main-color);
@@ -48,6 +57,17 @@
   }
 }
 
+
+.fade-in /* スクロール到達時にフェードインで表示させる単位 表示前*/ {
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.fade-in.active /* 同表示後 */{
+  opacity: 1;
+}
+
+
 /* header .inner {
   margin: 0 auto;
 } */
@@ -57,16 +77,18 @@
 /* レスポンシブ ブレークポイント 767px */
 
 
+
 /* ヘッダー ------------------------------------------------------------------------------------------ */
-header {
+header { /* header共通設定 */
   align-items: center;
   background-color: #fff;
-  height: 60px;
+  height: var(--header-height); /* 共通設定:rootに記述 */
   margin: 0 auto;
   position: fixed;
   width: 100%;
   z-index: 10000;
 }
+
 
 .header__wrapper {
   display: flex;
@@ -74,7 +96,8 @@ header {
   width: 100%;
 }
 
-.header__companyName {
+
+.header__companyName { /* header内会社名 */
   background-color: var(--main-color);
   color: #fff;
   /* display: block; */
@@ -82,17 +105,17 @@ header {
   /* line-height: 1.5; */
   /* padding: 12px; */
   vertical-align: top;
-  max-height: 60px;
+  max-height: var(--header-height);
   max-width: 300px;
   min-width: 300px;
 }
 
-.header__companyName-ja {
+.header__companyName-ja /* header内会社名（日本語）*/ {
   font-size: 28px;
   text-align: center;
 }
 
-.header__companyName-en {
+.header__companyName-en /* header内会社名（英語）*/ {
   font-family: "futura-pt", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -100,8 +123,8 @@ header {
   text-align: center;
 }
 
-/* ナビゲーションメニュー */
-.header__nav {
+
+.header__nav /* ナビゲーションメニュー */ {
   width: calc(100% - 450px);
 }
 
@@ -111,8 +134,8 @@ header {
   }
 }
 
-/* ナビゲーションメニュー内各リンク */
-.header__nav-link {
+
+.header__nav-link /* ナビゲーションメニュー内各リンク */ {
   color: var(--sub-color2);
   font-size: 22px;
   line-height: 52px;
@@ -130,8 +153,8 @@ header {
   
 }
 
-/* お問い合わせフォームへページ内リンク */
-.header__forContact {
+
+.header__forContact /* お問い合わせフォームへページ内リンク */ {
   align-content: center;
   border: 2px solid var(--main-color);
   border-radius: 60px;
@@ -154,9 +177,8 @@ header {
   color: #fff;
 }
 
-/* レスポンシブメニュー用ボタン */
 
-.header__menuButton {
+.header__menuButton /* レスポンシブメニュー用ボタン */ {
   width: 30px;
   height: 25px;
   position:fixed;
@@ -172,7 +194,8 @@ header {
   }
 }
 
-.header__menuButton span {
+
+.header__menuButton span /* ボタン内線の描画 */ {
   display: block;
   height: 3px;
   background: var(--main-color);
@@ -192,6 +215,7 @@ header {
   transform: translateY(-7.2px) rotate(45deg);
 }
 
+
 .header__menu-sp { /* レスポンシブメニュー領域 */ 
   background-color: #fff;
   color: var(--main-color);
@@ -200,7 +224,7 @@ header {
   pointer-events: none;
   position: fixed;
   top: 60px;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   visibility: hidden;
   width: 100%;
 }
@@ -214,7 +238,8 @@ header {
   visibility: visible;
 }
 
-.header__menu-sp-nav-list-item-link {
+.header__menu-sp-nav-list-item-link 
+/* レスポンシブメニュー内リンク */ {
   color: var(--main-color);
   font-size: 24px;
   left: 0;
@@ -227,6 +252,7 @@ header {
   opacity: 0.7;
   left: 10px;
 }
+
 
 .header__menu-sp-nav-list-item /* レスポンシブメニュー内項目 */ {
   /* left: 0; */
@@ -271,24 +297,75 @@ header {
 
 
 
-.empty {
-  height: 60px;
+.empty /* header固定部分に重なる部分 */{
+  height: var(--header-height); /* 共通設定:rootに記述 */
 }
 
 /* メインビジュアル -------------------------------------------------------------------------------- */
 .mv {
-  background-color: var(--sub-color2); /* 仮設定 */
-  height: 600px;
+  background: url(img/mv1.jpg);
+  background-position: 50% 70%;
+  background-size: cover;
+  height: 85vh;
 }
+
+.mv .inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .mv .inner {
+    justify-content: center;
+  }
+}
+
+.mv__heading /* 見出し */ {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 2px 2px 2px var(--sub-color2);
+  /* margin: 0 auto; */
+  /* position: absolute;
+  top: 45%;
+  right: 30px; */
+}
+
+@media screen and (max-width: 767px) {
+  .mv__heading {
+    line-height: 100%;
+    right: 0px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.mv__heading-strong {
+  /* color: var(--main-color); */
+  /* font-weight: 900; */
+}
+
+
 
 /* コンセプトブロック ------------------------------------------------------------------------------ */
 .concept__flex {
   display: flex;
+  flex-direction: row;
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-.concept__img {
+@media screen and (max-width: 767px) {
+  .concept__flex {
+    flex-direction: column;
+    
+  }
+}
+
+
+.concept__img /* コンセプトのイメージ画像 */{
   background-image: url(img/concept.jpg);
   background-size: cover;
   border-radius: 50%;
@@ -296,61 +373,135 @@ header {
   width: 400px;
 }
 
-.concept__content {
+@media screen and (max-width: 767px) {
+  .concept__img {
+    margin: 0 auto;
+    
+  }
+}
+
+
+.concept__content /* コンセプトの内容 */ {
   text-align: center;
   margin: 40px;
 }
 
-.concept__content-title {
+.concept__content-title /* コンセプトの大枠 */{
   color: var(--main-color);
   font-size: 36px;
 }
 
-.concept__content-text {
+@media screen and (max-width: 767px) {
+  .concept__content-title {
+    font-size: 26px;
+  }
+}
+
+
+.concept__content-text /* コンセプトの詳細 */ {
   color: var(--sub-color2);
   font-size: 28px;
 }
 
-/* メンバーブロック -------------------------------------------------------------------------------- */
-.member__person /* メンバーセット */{
-  display: flex;
-}
-
-.member__person:nth-of-type(2n) /* 偶数人目は写真と説明を逆に配置 */{
-  flex-direction: row-reverse;
-}
-
 @media screen and (max-width: 767px) {
-  .member__person {
-    display: inline;
+  .concept__content-text {
+      font-size: 22px;
   }
 }
 
 
+
+/* メンバーブロック -------------------------------------------------------------------------------- */
+.member /* メンバーブロック共通書式設定 */ {
+  
+}
+
+.member__person-flex /* メンバー紹介をflex配置用 */{
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 767px) {
+  .member__person-flex {
+    flex-direction: column;
+  }
+}
+
+.member__person /* メンバーセット */{
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.member__person:first-of-type /* 2人の紹介スペースの間にmarginを設定 */ {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .member__person:first-of-type {
+    margin-right: 0;
+  }
+}
+
+/* @media screen and (max-width: 767px) {
+  .member__person {
+    display: inline;
+  }
+} */
+
+
 .member__person-img /* メンバー画像 */{
-  height: 400px;
-  width: 400px;
+  background-size: cover;
+  border-radius: 200px;
+  height: 200px;
+  position: absolute;
+  width: 200px;
 }
 
 @media screen and (max-width: 767px) {
   .member__person-img {
-    background-size: cover;
-    height: 200px;
-    margin: 0 auto;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    width: 200px;
+    width: 150px;
+    left: 200px;
   }
 }
 
-.member__person-introduce {
-
+.member__person-introduce /* 各メンバーの紹介項目のかたまり */{
+  border: 2px solid var(--sub-color2); /* 仮 要修正 */
+  margin-top: 100px;
+  margin-left: 100px;
+  padding-left: 100px;
+  padding-top: 40px;
 }
 
 @media screen and (max-width: 767px) {
   .member__person-introduce {
     margin: 0 auto;
+    padding-left: 0;
+    padding-top: 75px;
+    left: auto;
+    right: auto;
+    bottom: -110px;
     width: calc(100% - 60px);
   }
+}
+
+.member__person-introduce-name {
+  font-size: 30px;
+}
+
+.member__person-introduce-post {
+  background-color: var(--sub-color);
+  color: #fff;
+  font-size: 15px;
+  padding: 3px 5px;
+}
+
+.member__person-introduce-phrase {
+  font-size: 24px;
 }
 
 
@@ -387,8 +538,8 @@ header {
 }
 
 
-.business__target-content {
-  font-size: 16px; /* 対応済み */
+.business__target-content /* 顧客例 */{
+  font-size: 36px; /* 対応済み */
   text-align: center;
 }
 
@@ -438,7 +589,7 @@ header {
 }
 
 
-.business__works-content {
+.business__works-content /* 業務例 */ {
   color: #fff;
   font-size: 34px;
   text-align: center;
@@ -455,61 +606,184 @@ header {
 }
 
 
+
 /* 企画プロセスブロック ----------------------------------------------------------------------------- */
-.process__content {
+.process__content /* プロセス単位の設定 */{
   border: 2px solid var(--sub-color);
   border-radius: 20px;
   display: flex;
+  flex-direction: row;
   /* margin-top: 35px; */
   /* margin-bottom: 35px; */
   margin: 35px;
   padding: 20px 80px 20px;
+  position: relative;
 }
 
-.process__content:nth-of-type(2n) {
+@media screen and (max-width: 900px) {
+  .process__content {
+    flex-direction: column;
+    margin: 20px;
+    padding: 15px 40px 15px;
+    position: relative;
+    left: -50px;
+  }
+}
+
+.process__content::after { /* プロセスごとに順番を示す数字を表示する */
+  bottom: -40px;
+  content: attr(data-index); /* jsで生成 */
+  color: var(--sub-color);
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 300px;
+  opacity: 0.3;
+  position: absolute;
+  transition: all 0.3s ease;
+  right: 5px;
+}
+
+.process__content:nth-of-type(2n)::after /* １つおきに番号を逆配置 */ {
+  right: initial;
+  left: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .process__content::after {
+    bottom: -20px;
+    font-size: 190px;
+    right: -95px;
+    opacity: 1;
+  }
+
+  .process__content:nth-of-type(2n)::after {
+    right: initial;
+    left: -95px;
+  }
+}
+
+.process__content:nth-of-type(2n) /* ひとつおきに表示順を入れ替える */{
   flex-direction: row-reverse;
 }
 
-.process__content:last-of-type {
+@media screen and (max-width: 900px) { /* レスポンシブ時は設定無効 */
+  .process__content:nth-of-type(2n) {
+    flex-direction: column;
+    margin: 20px;
+    padding: 15px 40px 15px;
+    left: 50px;
+  }
+}
+
+
+.process__content:last-of-type /* 最終プロセスの下のみmargin設定変更 */ {
   margin-bottom: 70px;
 }
 
 
+.process__content-about-title-sp /* プロセス名（レスポンシブ先頭表示用）*/{
+  display: none;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
 
-.process__content-img {
+.process__content:nth-of-type(2) .process__content-about-title-sp {
+  /* 一つおきに左右に配置 */
+  text-align: right;
+}
+
+@media screen and (max-width: 900px) {
+  .process__content-about-title-sp {
+    display: inline;
+  }
+}
+
+
+.process__content-img /* 各プロセス用画像 */{
   background-color: var(--sub-color); /* 仮設定 */
   background-size: cover;
   height: 400px;
   width: 600px;
 }
 
-.process__content-about {
+@media screen and (max-width: 900px) {
+  .process__content-img {
+    height: 160px;
+    margin: 0 auto;
+    margin-left: 0;
+    object-position: left;
+    width: 240px;
+  }
+
+  .process__content:nth-of-type(2) .process__content-img {
+    /* 配置場所の変更に伴うmargin設定の調整 */
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+
+.process__content-about /* 各プロセスに関しての説明 */{
   margin-left: 60px;
   margin-right: 60px;
 }
 
-.process__content-about-title {
+@media screen and (max-width: 900px) {
+  .process__content-about {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+
+.process__content-about-title /* 各プロセス項目名（PC表示のみ） */{
   font-size: 32px;
 }
 
+@media screen and (max-width: 900px) {
+  .process__content-about-title {
+    display: none;
+  }
+}
+
+
 .process__content:nth-of-type(2n) .process__content-about-title {
+  /* プロセス ひとつおきに表示方法変更 項目名右寄せ */
   text-align: right;
 }
 
+@media screen and (max-width: 900px) {
+  .process__content:nth-of-type(2n) .process__content-about-title {
+  /* レスポンシブ対応時は無効 */
+  text-align: left;
+  }
+}
+
 .process__content-about-text {
-  font-size: 23px;
+  /* プロセス説明文 */
+  font-size: 18px;
+}
+
+@media screen and (max-width: 900px) {
+  .process__content-about-text {
+    font-size: 16px;
+  }
 }
 
 .process__content:nth-of-type(2n) .process__content-about-text {
+  /* プロセス ひとつおきに表示方法変更 説明文右寄せ */
   text-align: right;
 }
 
 /* 実績ブロック ------------------------------------------------------------------------------------ */
-.achievement {
+.achievement /* 実績ブロック全体の設定 */{
   background-color: #e2f0e5;
 }
 
-.achievement .inner .title-en {
+.achievement .inner .title-en /*  */{
   color: var(--sub-color2);
 }
 
@@ -550,20 +824,32 @@ header {
 
 
 /* お問い合わせブロック -------------------------------------------------------------------------------- */
-.contact__form-content {
+.contact {
+
+}
+
+.contact__form {
+
+}
+
+.contact__form-content /* ラベル・フォームとのセット */{
   display: flex;
-  margin: auto;
+  flex-direction: row;
   justify-content: center;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
 }
 
 @media screen and (max-width: 900px) {
   .contact__form-content {
-    display: inline-block;
+    /* display: inline-block; */
+    flex-direction: column;
   }
 }
 
-.contact__form-content-label {
+.contact__form-content-label /* 各入力欄ラベル */{
   font-size: 24px;
   line-height: 3.4;
   /* margin-left: 15px; ? */
@@ -572,6 +858,7 @@ header {
 
 @media screen and (max-width: 900px) {
   .contact__form-content-label {
+    font-size: 20px;
     line-height: 0.88;
     width: 100%;
   }
@@ -585,6 +872,30 @@ header {
   padding: 5px;
 }
 
+/* 「お問い合わせ内容」のみ表示位置を変更 */
+.contact__form-content:nth-of-type(6) .contact__form-content-label .contact__form-content-label-required {
+  
+  margin-left: 0;
+  position: relative;
+  top: -40px;
+}
+
+@media screen and (max-width: 900px) {
+  .contact__form-content:nth-of-type(6) .contact__form-content-label .contact__form-content-label-required {
+   /* レスポンシブ時は他項目と表示位置を統一 */
+    margin-left: 8px;
+    /* position: initial; */
+    top: initial;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contact__form-content-label-pc-only-br {
+    display: none;
+  }
+}
+
+
 
 .contact__form-content input, 
 .contact__form-content textarea { /* contactエリア内の入力欄すべて */
@@ -597,56 +908,65 @@ header {
   margin-right: 10px; */
   margin-bottom: 15px;
   padding: 2px 10px;
-  width: calc(100% - 335px);
+  transition: all 0.3s ease;
+  width: calc(100% - 330px);
 }
 
-textarea {
+textarea /* お問い合わせ内容入力欄 高さのみ独自設定*/{
   height: 180px;
 }
 
 @media screen and (max-width: 900px) {
-  input, textarea {
-    margin-top: 5px;
+  /* レスポンシブ時は横方向全体に拡大 */
+  .contact__form-content input, 
+  .contact__form-content textarea {
+    margin-top: 10px;
     width: 100%;
   }
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus /* 入力欄編集時 */ {
   background-color: #e2f0e5;
   color: var(--sub-color2);
   border: 3px solid var(--main-color);
 }
 
-.contact__form-content-submit-flex {
+.contact__form-content-submit-flex /* 送信ボタンと左右の空白の横並びにする */{
   display: flex;
 }
 
-.contact__form-content-submit-flex-empty {
+.contact__form-content-submit-flex-empty /* 送信ボタン左右の空白スペース */{
   width: 15%;
 }
 
-.contact__form-content-submit {
+.contact__form-content-submit /* 送信ボタン */ {
   background-color: var(--main-color);
   border: none;
   border-radius: 10px;
   box-shadow: 5px 5px 5px var(--sub-color2);
   color: #fff;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 18px;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
   text-align: center;
-  width: 300px;
+  width: 160px;
 }
 
-.contact__form-content-submit:hover {
+@media screen and (max-width: 900px) {
+  .contact__form-content-submit {
+    font-size: 16px;
+  }
+}
+
+.contact__form-content-submit:hover /* 送信ボタンhover時 */{
   background-color: var(--sub-color3);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.contact__form-content-submit:focus {
+.contact__form-content-submit:focus /* 送信ボタンクリック時 */{
   box-shadow: none;
   position: relative;
   left: 5px;
@@ -656,7 +976,7 @@ input:focus, textarea:focus {
 
 
 /* フッター ------------------------------------------------------------------------------------------ */
-footer { 
+footer /* footerブロック全体 */{ 
   background-image: url(img/footer.png);
   background-position: 50% 0%; /* 中心：横方向中央 縦方向上 */
   background-size: cover;
@@ -668,11 +988,11 @@ footer {
 
 @media screen and (max-width: 1000px) {
   footer {
-    height: 800px;
+    height: 450px;
   }
 }
 
-.footer__color {
+.footer__color /* footerにグラデーション適用 */{
   background-image: linear-gradient(135deg, #18943b, #ffffff);
   height: 100%;
   opacity: 0.7;
@@ -686,9 +1006,17 @@ footer {
   z-index: 2;
 }
 
+@media screen and (max-width: 1000px) {
+  .footer__color {
+    height: 450px;
+  }
+}
+
 .footer__content {
   /* display: inline; */
   object-position: center;
+  margin-top: 25px;
+  padding-bottom: 20px;
   position: absolute;
   left: 0;
   width: 100%;
@@ -696,39 +1024,114 @@ footer {
 }
 
 .footer__detail {
+  align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 45px;
+  max-width: 1200px;
 }
 
-.footer__detail-company {
-  width: 500px;
+@media screen and (max-width: 1000px) {
+  .footer__detail {
+    display: inline;
+    margin-bottom: 0;
+  }
 }
 
-.footer__detail-company-ja {
-  font-size: 56px;
-  text-align: right;
-}
-
-.footer__detail-company-en {
-  font-size: 30px;
-  font-family: "futura-pt", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: right;
-}
-
-.footer__detail-address {
+.footer__detail-company /* footer会社名 */ {
+  /* width: 500px; */
+  flex: 1px 1px 300px;
+  margin-right: 20px;
   width: 50%;
 }
 
-.footer__detail-address {
-  font-size: 25px;
+@media screen and (max-width: 1000px) {
+  .footer__detail-company {
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+  }
 }
 
-.footer__nav {
+
+.footer__detail-company-ja /* footer会社名日本語表記 */ {
+  font-size: 45px;
+  line-height: 1.15;
+  margin-left: auto;
+  text-align: right;
+  width: 650px;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__detail-company-ja {
+    font-size: 30px;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+.footer__detail-company-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: auto;
+  width: calc(100% - 650px);
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__detail-company-container {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+
+.footer__detail-company-en /* footer会社名英語表記 */ {
+  font-size: 28px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__detail-company-en {
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+
+.footer__detail-address /* footer会社所在地 */{
+  font-size: 15px;
+  margin-left: 0;
+  padding-bottom: -16px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__detail-address {
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+.footer__nav /* footer内ナビゲーションメニュー */ {
   display: flex;
   font-size: 22px;
   flex-direction: column;
   justify-content: center;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -738,12 +1141,17 @@ footer {
 @media screen and (min-width: 1000px) {
   .footer__nav {
     flex-direction: row;
+    margin-top: 0;
   }
 }
 
 .footer__nav-link /* footer内ナビゲーションメニュー各項目リンク */{
   color: #fff;
+  font-size: 18px;
   margin: 0px 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -752,20 +1160,32 @@ footer {
   margin-left: 0;
 }
 
+@media screen and (max-width: 1000px) {
+  .footer__nav-link:nth-of-type(1) {
+    /* margin-left: 10px; */
+  }
+}
+
 .footer__nav-link:nth-of-type(5) { /* 最後の項目 */
   margin-right: 0;
 }
 
 @media screen and (max-width: 1000px) {
   .footer__nav-link {
-    margin: 10px;
+    font-size: 15px;
+    height: 40px;
+    margin: 0;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 5px;
   }
 }
 
 
 
 .footer__nav-link:hover /* 各項目リンクhover時 */ {
-  opacity: 0.5;
+  background-color: #fff;
+  color: var(--main-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -783,9 +1203,9 @@ footer {
 .footer__content small:before {
   background-color: #fff;
   content: ' ';
-  height: 1px;
+  height: 3px;
   position: absolute;
-  width: 90%;
+  width: calc(100% - 70px);
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
