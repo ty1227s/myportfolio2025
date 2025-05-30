@@ -73,3 +73,33 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 fadeTargets.forEach(target => observer.observe(target));
+
+
+
+// レスポンシブメニューを開いているとき、
+// どこかしらリンクをクリックしたら、自動的にメニューが閉じる
+
+// const navLinks = navMenu.querySelectorAll("a");
+
+
+// menuToggle.addEventListener("click", () => {
+//   navMenu.classList.toggle("hidden"); 
+// });
+
+// 各リンクをクリックした時にメニューを閉じる
+// navLinks.forEach(link => {
+//   link.addEventListener("click", () => {
+//     navMenu.classList.add("hidden");
+//   });
+// });
+
+//お問い合わせボタンをクリックした時にメニューを閉じる
+document.querySelector('.header__menu-sp-forContact').addEventListener("click", () => {
+  const menuToggle = document.querySelector('.header__menuButton.active');
+  const navMenu = document.querySelector('.header__menu-sp.active');
+
+  if (menuToggle && navMenu) {
+    menuToggle.classList.remove('active');
+    navMenu.classList.remove('active');  
+  }
+});

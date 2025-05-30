@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>デモサイト１（コーポレートサイト）</title>
+  <title>株式会社ヒトツナ - HITOTSUNA inc.</title>
   <link rel="stylesheet" href="ex1style.css">
+  <link rel="icon" type="image/png" href="img/favicon1.png">
 </head>
 <body>
   <header>
@@ -15,12 +16,29 @@
           <p class="header__companyName-en">HITOTSUNA inc.</p>
         </div>
 
-        <nav class="header__nav">
-          <a class="header__nav-link" href="">会社情報</a>
-          <a class="header__nav-link" href="">サービス</a>
-          <a class="header__nav-link" href="">実績</a>
-          <a class="header__nav-link" href="">採用情報</a>
-        </nav>
+        <!-- <nav class="header__nav">
+          <a class="header__nav-link" href=""></a>
+          <a class="header__nav-link" href=""></a>
+          <a class="header__nav-link" href=""></a>
+          <a class="header__nav-link" href=""></a>
+        </nav> -->
+
+        <div class="header__nav">
+          <ul>
+            <li class="header__nav-item">
+              <a class="header__nav-item-link" href="">会社情報</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-item-link" href="">サービス</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-item-link" href="">実績</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-item-link" href="">採用情報</a>
+            </li>
+          </ul>
+        </div>
 
         <a href="#contact" style="text-decoration: none;">
           <div class="header__forContact">
@@ -38,22 +56,22 @@
           <div class="">
             <nav class="header__menu-sp-nav">
               <ul class="header__menu-sp-nav-list">
-                <a class="header__menu-sp-nav-list-item-link" href="">
-                  <li class="header__menu-sp-nav-list-item">会社情報</li>
-                </a>
-                <a class="header__menu-sp-nav-list-item-link" href="">
-                  <li class="header__menu-sp-nav-list-item">サービス</li>
-                </a>
-                <a class="header__menu-sp-nav-list-item-link" href="">
-                  <li class="header__menu-sp-nav-list-item">実績</li>
-                </a>
-                <a class="header__menu-sp-nav-list-item-link" href="">
-                  <li class="header__menu-sp-nav-list-item">採用情報</li>
-                </a>
+                <li class="header__menu-sp-nav-list-item">
+                  <a href="" class="header__menu-sp-nav-list-item-link">会社情報</a>
+                </li>
+                <li class="header__menu-sp-nav-list-item">
+                  <a href="" class="header__menu-sp-nav-list-item-link">サービス</a>
+                </li>
+                <li class="header__menu-sp-nav-list-item">
+                  <a href="" class="header__menu-sp-nav-list-item-link">実績</a>
+                </li>
+                <li class="header__menu-sp-nav-list-item">
+                  <a href="" class="header__menu-sp-nav-list-item-link">採用情報</a>
+                </li>
               </ul>
             </nav>
             <div class="header__menu-sp-forContact">
-              <a class="header__menu-sp-forContact-link" href="">
+              <a class="header__menu-sp-forContact-link" href="#contact">
                 <span class="header__menu-sp-forContact-link-text">お問い合わせ</span>
               </a>
             </div>
@@ -82,12 +100,19 @@
 
         </div>
         <div class="concept__content fade-in">
-          <h3 class="concept__content-title">「つなぐ力が、未来を変える」</h3>
+          <h3 class="concept__content-title">
+              <span class="concept__content-title-clause">「つなぐ力が、</span>
+              <span class="concept__content-title-clause">未来を変える」</span>
+          </h3>
           <p class="concept__content-text">
-            地域密着型にイベント企画や<br>
-            地方創生プロジェクトを手がけるスタートアップ企業です。<br>
-            若手メンバーを中心に、<br>
-            柔軟でクリエイティブな発想を生かしたサービスを展開しています。
+            <span class="concept__content-text-clause">地域密着型に</span>
+            <span class="concept__content-text-clause">イベント企画や</span><br>
+            <span class="concept__content-text-clause">地方創生プロジェクトを手がける</span>
+            <span class="concept__content-text-clause">スタートアップ企業です。</span><br>
+            <span class="concept__content-text-clause">若手メンバーを中心に、</span><br>
+            <span class="concept__content-text-clause">柔軟でクリエイティブな</span>発想を
+            <span class="concept__content-text-clause">生かしたサービスを</span>
+            <span class="concept__content-text-clause">展開しています。</span>
           </p>
         </div>
       </div>
@@ -106,7 +131,7 @@
           </div> -->
           <img class="member__person-img" src="img/member1.png" alt="大和 夏樹"> <!-- クラス名 "member__person-img"-->
           <div class="member__person-introduce">
-            <p class="member__person-introduce-name">大和 夏樹 <span class="member__person-introduce-post">代表取締役</span> </p>
+            <p class="member__person-introduce-name">大和 夏樹<br class="member__person-introduce-name-sp-only-br"><span class="member__person-introduce-post">代表取締役</span> </p>
             <p class="member__person-introduce-phrase">「このまちの“面白さ”を、もっと広く、もっと深く届けたい。」</p>
           </div>
         </div>
@@ -116,7 +141,7 @@
           <!-- </div> -->
           <img class="member__person-img" src="img/member2.png" alt="小浦 愛海"> <!-- クラス名 "member__person-img"-->
           <div class="member__person-introduce">
-            <p class="member__person-introduce-name">小浦 愛海 <span class="member__person-introduce-post">広報担当</span></p>
+            <p class="member__person-introduce-name">小浦 愛海<br class="member__person-introduce-name-sp-only-br"><span class="member__person-introduce-post">広報担当</span></p>
             <p class="member__person-introduce-phrase">「“伝える”は“伝わる”から。地域の魅力、発信中です！」</p>
           </div>
         </div>
@@ -276,7 +301,7 @@
         
         <div class="contact__form-content">
           <label for="detail" class="contact__form-content-label">お問い合わせ内容<br class="contact__form-content-label-pc-only-br"><span class="contact__form-content-label-required">必須</span></label>
-          <textarea name="" id="detail" placeholder="お問い合わせ内容" required></textarea>
+          <textarea name="detail" id="detail" placeholder="お問い合わせ内容" required></textarea>
         </div>
 
         <div class="contact__form-content-submit-flex">
