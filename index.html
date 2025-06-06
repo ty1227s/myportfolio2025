@@ -5,23 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="common.css"> <!-- 共通部品 -->
 </head>
 <body>
-  <header>
+  <header class="header">
+    <div class="inner">
+      <div class="header__home">
+        <a class="header__home-link" href="index.html">
+          <img class="header__home-link-img" src="img/icon_home.png" alt="ホーム">
+          <img class="header__home-link-img-hover" src="img/icon_home2.png" alt="ホーム">
+        </a>
+      </div>
+      
+      <div class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item">
+            <a class="header__nav-list-item-link" href="about.html">About</a>
+          </li>
+          <li class="header__nav-list-item">
+            <a class="header__nav-list-item-link" href="guide.html">Works</a><!-- URL変更予定 -->
+          </li>
+        </ul>
+      </div>
 
+      <div class="header__menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="header__menu-sp">
+        <div class="header__menu-sp-home">
+          <a class="header__menu-sp-home-link" href="index.html">
+            <img class="header__menu-sp-home-link-img" src="img/icon_home.png" alt="ホーム">
+            <img class="header__menu-sp-home-link-img-hover" src="img/icon_home2.png" alt="">
+          </a>
+        </div>
+        <ul class="header__menu-sp-item-list">
+          <li class="header__menu-sp-item">
+            <a class="header__menu-sp-item-link" href="about.html">
+              <span>About</span>
+            </a>
+          </li>
+          <li class="header__menu-sp-item">
+            <a class="header__menu-sp-item-link" href="guide.html">
+              <span>Works</span>
+            </a>
+          </li>
+          <li class="header__menu-sp-item-empty">
+            <!-- ボタンとかさなる部分 -->
+          </li>
+        </ul>
+      </div>  
+    </div>
+    
   </header>
-  <p>test</p>
+  <!-- <section class="empty">
+
+  </section> -->
+  <section class="mv">
+    <div class="inner">
+      <h1>
+        Web Design<br>
+        Yuuki Teramoto<br>
+        Portfolio
+      </h1>
+    </div>
+    
+  </section>
+
+  <section class="menu">
+    <div class="inner">
+      <ul class="menu__item-list">
+        <li class="menu__item">
+          <a class="menu__item-link" href="about.html">
+            <span>About</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__item-link" href="guide.html">
+            <span>Works</span>
+          </a>
+        </li>
+      </ul>  
+    </div>
+    
+  </section>
+
+  <!-- <section>
+    <div>
+      <a href="about.html">
+        <span>about</span>
+      </a>
+    </div>
+    <div>
+      <a href="guide.html">
+        <span>works</span>
+      </a>
+    </div>
+  </section> -->
+  <!-- <p>test</p>
   <a href="guide.html">作品</a>
   <div class="career">
 
-  </div>
+  </div> -->
   <div class="hobby">
 
   </div>
   
   <footer>
-
+    <small style="text-align: center;">&copy; 2025 YT</small>
   </footer>
 
+  <script src="script.js"></script>
+  <script src="common.js"></script> <!-- 共通部品 -->
 </body>
 </html>

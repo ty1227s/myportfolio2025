@@ -418,6 +418,7 @@ header { /* header共通設定 */
 .concept__content-title /* コンセプトの大枠 */{
   color: var(--main-color);
   font-size: 36px;
+  font-weight: 700;
   margin-top: auto;
   margin-left: -18px;
 }
@@ -520,8 +521,10 @@ header { /* header共通設定 */
   height: 200px;
   left: -70px;
   object-fit: cover; /* 要チェック */
+  overflow: hidden;
   position: absolute;
   top: -70px;
+  transition: all .3s ease;
   width: 200px;
 }
 
@@ -538,6 +541,10 @@ header { /* header共通設定 */
     width: 150px;
     /* left: 200px; */
   }
+}
+
+.member__person:hover .member__person-img {
+  transform: scale(1.1); /* 画像の拡大 */
 }
 
 .member__person-introduce /* 各メンバーの紹介項目のかたまり */{
@@ -708,10 +715,9 @@ header { /* header共通設定 */
   border-radius: 20px;
   display: flex;
   flex-direction: row;
-  /* margin-top: 35px; */
-  /* margin-bottom: 35px; */
   margin: 35px;
-  padding: 20px 80px 20px;
+  overflow: hidden;
+  /* padding: 20px 80px 20px; */
   position: relative;
 }
 
@@ -719,6 +725,7 @@ header { /* header共通設定 */
   .process__content {
     flex-direction: column;
     margin: 20px;
+    overflow: visible;
     padding: 15px 40px 15px;
     position: relative;
     left: -50px;
@@ -873,6 +880,13 @@ header { /* header共通設定 */
   text-align: right;
 }
 
+.process__content-about-text-pickup {
+  background-color: var(--main-color);
+  color: #fff;
+  margin: 5px;
+  padding: 2px 3px;
+}
+
 /* 実績ブロック ------------------------------------------------------------------------------------ */
 .achievement /* 実績ブロック全体の設定 */{
   background-color: #e2f0e5;
@@ -892,6 +906,7 @@ header { /* header共通設定 */
 
 .achievement__content {
   background-color: #fff;
+  border: 2px solid var(--sub-color2);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -921,21 +936,23 @@ header { /* header共通設定 */
 
 .achievement__content-about {
   background-color: #fff;
-  border-top: 3px solid #000;
   height: 220px;
   z-index: 98;
 }
 
 .achievement__content-about-title {
-  color: var(--sub-color2);
-  margin-top: 25px;
-  margin-bottom: 30px;
+  background-color: var(--main-color);
+  color: #fff;
+  margin-top: 0px;
+  margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  padding: 20px 12px;
 }
 
 .achievement__content-about-text {
   color: var(--sub-color2);
+  line-height: 1.9;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
@@ -986,9 +1003,10 @@ header { /* header共通設定 */
 
 .contact__form-content-label-required { /* 入力必須を示すラベル */
   background-color: #f00;
+  border-radius: 5px;
   color: #fff;
   margin-left: 8px;
-  padding: 5px;
+  padding: 3px;
 }
 
 /* 「お問い合わせ内容」のみ表示位置を変更 */
@@ -1027,6 +1045,7 @@ header { /* header共通設定 */
   margin-right: 10px; */
   margin-bottom: 15px;
   padding: 2px 10px;
+  scroll-margin-top: 100px; /* 固定ヘッダー対策 */
   transition: all 0.3s ease;
   width: calc(100% - 330px);
 }
@@ -1107,7 +1126,7 @@ footer /* footerブロック全体 */{
 
 @media screen and (max-width: 1000px) {
   footer {
-    height: 450px;
+    height: 480px;
   }
 }
 
@@ -1127,7 +1146,7 @@ footer /* footerブロック全体 */{
 
 @media screen and (max-width: 1000px) {
   .footer__color {
-    height: 450px;
+    height: 480px;
   }
 }
 
@@ -1197,7 +1216,7 @@ footer /* footerブロック全体 */{
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
-  margin-left: 10px;
+  margin-left: auto;
   margin-right: auto;
   width: calc(50% - 10px);
 }
@@ -1215,7 +1234,7 @@ footer /* footerブロック全体 */{
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
   font-style: normal;
-  text-align: left;
+  text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1230,8 +1249,10 @@ footer /* footerブロック全体 */{
 
 .footer__detail-address /* footer会社所在地 */{
   font-size: 15px;
-  margin-left: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: -16px;
+  text-align: center;
   width: 100%;
 }
 
@@ -1240,7 +1261,6 @@ footer /* footerブロック全体 */{
     font-size: 14px;
     margin-bottom: 30px;
     margin-left: 0;
-    text-align: center;
     width: 100%;
   }
 }

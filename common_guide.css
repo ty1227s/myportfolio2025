@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+* {
+  /* 寸法など */
+  margin: 0;
+
+  /* フォント設定 */
+  font-family: "a-otf-ud-shin-go-pr6n", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.switching-button {
+  background-color: rgb(6, 113, 22);
+  /* background-image: linear-gradient(135deg, #bcf786, #5df7b9); */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  bottom: 50px;
+  height: 200px;
+  position: fixed;
+  right: 0;
+  transition: all .3s ease;
+  width: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .switching-button {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 10px;
+    height: 70px;
+    left: 12px;
+    top: 0;
+    width: 120px;
+  }
+}
+
+.switching-button a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.switching-button-icon {
+  height: 25px;
+  margin-left: 7px;
+  margin-top: 5px;
+  transition: all .3s ease;
+  width: 25px;
+}
+
+.switching-button:hover a .switching-button-icon {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 767px) {
+  .switching-button:hover a .switching-button-icon {
+    margin-left: 8px;
+    margin-right: 2px;
+    margin-top: 5px;
+  }
+}
+
+@media (hover: none) {
+  .switching-button:hover a .switching-button-icon {
+    transform: initial;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .switching-button-icon {
+    height: 42px;
+    margin-left: 10px;
+    padding-top: 6px;
+    width: 42px;
+  }
+}
+
+.switching-button-icon-pc {
+  height: 25px;
+  margin-left: 7px;
+  width: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .switching-button-icon-pc {
+    height: 42px;
+    width: 42px;
+  }
+}
+
+.switching-button-icon-sp {
+  height: 25px;
+  width: 25px;
+}
+
+.switching-button-text {
+  color: #fff;
+  font-size: 14px;
+  margin: 0 auto;
+  text-align: center;
+  writing-mode: vertical-rl;
+}
+
+@media screen and (max-width: 767px) {
+  .switching-button-text {
+    display: none;
+  }
+}
+
+/* 概要 -------------------------------------------------------- */
+.overflow__title {
+  display: flex;
+  flex-direction: row;
+  height: 78px;
+}
+
+@media screen and (max-width: 767px) {
+  .overflow__title {
+    flex-direction: column;
+  }
+}
+
+.overview__title-number {
+  color: #999;
+  font-family: "futura-pt", sans-serif;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  height: 100%;
+  padding-bottom: 10px;
+  margin-left: 0;
+  width: 90px;
+}
+
+.overview__title-text {
+  border-left: 2px solid #555;
+  font-weight: 500;
+  font-size: 40px;
+  height: 100%;
+  margin-left: 30px;
+  margin-right: auto;
+  padding-left: 60px;
+  padding-top: 10px;
+  width: 700px;
+}
+
+@media screen and (max-width: 767px) {
+  .overview__title-text {
+    border-left: none;
+    border-top: 2px solid #555;
+    font-size: 30px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+
+/* 説明 -------------------------------------------------------- */
+.explanation {
+  padding-bottom: 50px;
+}
+
+.explanation .inner {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 767px) {
+  .explanation .inner {
+    flex-direction: column;
+  }
+}
+
+
+
+
+.explanation__table {
+  border-top: 2px solid #555;
+  border-bottom: 2px solid #555;
+  width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .explanation__table {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+}
+
+.explanation__table-row {
+  border-top: 1px dotted #555;
+  border-bottom: 1px dotted #555;
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .explanation__table-row {
+
+  }
+}
+
+
+.explanation__table-item {
+  white-space: nowrap;
+  max-width: 140px;
+  min-width: 140px;
+}
+
+@media screen and (max-width: 767px) {
+  .explanation__table-item {
+
+  }
+}
+
+.explanation__table-content {
+  
+}
+
+@media screen and (max-width: 767px) {
+  .explanation__table-content {
+
+  }
+}
+
+.explanation__table-content p {
+  overflow-wrap: break-word;
+}
+
+.explanation__sentence-block {
+  padding-left: 30px;
+  width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .explanation__sentence-block {
+    padding: 1.955671447196871vw;
+    width: calc(100% - 3.911342894393742vw);
+  }
+}
+
+
+
+
+

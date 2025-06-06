@@ -3,10 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style_guide.css">
+  <title>コーポレートサイト - デモページ紹介</title>
+  <link rel="stylesheet" href="common.css"> <!-- 共通部品 -->
+  <link rel="stylesheet" href="common_guide.css"> <!-- guide共通部品 -->
 </head>
 <body>
-  <a href="ex1.html">該当ページ</a>
+  <header class="header">
+    <div class="inner">
+      <div class="header__home">
+        <a class="header__home-link" href="index.html">
+          <img class="header__home-link-img" src="img/icon_home.png" alt="ホーム">
+          <img class="header__home-link-img-hover" src="img/icon_home2.png" alt="ホーム">
+        </a>
+      </div>
+      
+      <div class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item">
+            <a class="header__nav-list-item-link" href="about.html">About</a>
+          </li>
+          <li class="header__nav-list-item">
+            <a class="header__nav-list-item-link" href="guide.html">Works</a><!-- URL変更予定 -->
+          </li>
+        </ul>
+      </div>
+
+      <div class="header__menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="header__menu-sp">
+        <div class="header__menu-sp-home">
+          <a class="header__menu-sp-home-link" href="index.html">
+            <img class="header__menu-sp-home-link-img" src="img/icon_home.png" alt="ホーム">
+            <img class="header__menu-sp-home-link-img-hover" src="img/icon_home2.png" alt="">
+          </a>
+        </div>
+        <ul class="header__menu-sp-item-list">
+          <li class="header__menu-sp-item">
+            <a class="header__menu-sp-item-link" href="about.html">
+              <span>About</span>
+            </a>
+          </li>
+          <li class="header__menu-sp-item">
+            <a class="header__menu-sp-item-link" href="guide.html">
+              <span>Works</span>
+            </a>
+          </li>
+          <li class="header__menu-sp-item-empty">
+            <!-- ボタンとかさなる部分 -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </header>
+
+  <main>
+    <section class="empty">
+      
+    </section>
+
+    <section>
+
+      <div class="switching-button" id="switching-pc-sp">
+        <a href="">
+          <img class="switching-button-icon" src="img/icon-arrow2.png" alt="">
+          <img class="switching-button-icon-pc" src="img/icon-pc.png" alt="">
+          <!-- <img class="switching-button-icon-sp" src="img/icon-mobile.png" alt=""> -->
+          <p class="switching-button-text">ＰＣ表示に切り替え</p>
+        </a>
+      </div>
+
+      <div class="inner">
+        <br>
+        <br>
+        <br>
+        <a href="ex1.html">該当ページ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small style="text-align: center;">&copy; 2025 YT</small>
+  </footer>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'iqo1umm',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+</script>
+  <script src="common.js"></script><!-- 共通部品 -->
+  <script src="common_guide.js"></script><!-- guide共通部品-->
 </body>
 </html>
