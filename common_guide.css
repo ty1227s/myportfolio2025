@@ -5,11 +5,18 @@
   margin: 0;
 
   /* フォント設定 */
-  font-family: "a-otf-ud-shin-go-pr6n", sans-serif;
+  font-family: "kozuka-gothic-pro", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+:root {
+  /* カラー */
+  --page-color1: #fff; /* 仮 要修正 */
+  --page-color2: #fff;
+}
+
+/* HPスクショ PC･SP切り替え */
 .switching-button {
   background-color: rgb(6, 113, 22);
   /* background-image: linear-gradient(135deg, #bcf786, #5df7b9); */
@@ -21,6 +28,7 @@
   right: 0;
   transition: all .3s ease;
   width: 40px;
+  z-index: 999;
 }
 
 @media screen and (max-width: 767px) {
@@ -44,6 +52,7 @@
   height: 25px;
   margin-left: 7px;
   margin-top: 5px;
+  margin-bottom: -5px;
   transition: all .3s ease;
   width: 25px;
 }
@@ -77,7 +86,9 @@
 
 .switching-button-icon-pc {
   height: 25px;
+  margin-bottom: -5px;
   margin-left: 7px;
+  margin-top: -10px;
   width: 25px;
 }
 
@@ -108,52 +119,112 @@
 }
 
 /* 概要 -------------------------------------------------------- */
-.overflow__title {
-  display: flex;
-  flex-direction: row;
-  height: 78px;
+/* .overview__title {
+
+} */
+
+/* @media screen and (max-width: 767px) {
+  .overview__title {
+    flex-direction: column;
+  }
+} */
+
+.overview__title-number {
+  font-family: "kozuka-gothic-pro", sans-serif;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 500;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  text-align: center;
+  width: 200px;
 }
 
 @media screen and (max-width: 767px) {
-  .overflow__title {
-    flex-direction: column;
+  .overview__title-number {
+    font-size: 60px;
+    padding-bottom: 3px;
   }
 }
 
-.overview__title-number {
-  color: #999;
-  font-family: "futura-pt", sans-serif;
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 400;
-  height: 100%;
-  padding-bottom: 10px;
-  margin-left: 0;
-  width: 90px;
-}
+
 
 .overview__title-text {
-  border-left: 2px solid #555;
+  border-top: 10px solid #06b9ff;
   font-weight: 500;
   font-size: 40px;
   height: 100%;
-  margin-left: 30px;
-  margin-right: auto;
-  padding-left: 60px;
-  padding-top: 10px;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding-top: 25px;
+  text-align: center;
   width: 700px;
 }
 
 @media screen and (max-width: 767px) {
   .overview__title-text {
     border-left: none;
-    border-top: 2px solid #555;
-    font-size: 30px;
-    margin-left: 0;
-    padding-left: 0;
+    border-top: 5px solid #06b9ff;
+    font-size: 26px;
+    padding-top: 15px;
+    padding-left: auto;
+    width: 100%;
   }
 }
 
+.overview__title-text-en {
+  font-family: "kozuka-gothic-pro", sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .overview__title-text-en {
+    font-size: 18px;
+  }
+}
+
+/* スクリーンショット ------------------------------------------- */
+.screenshot {
+  margin: 0 auto;
+}
+
+.screenshot__pc {
+  display: none;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 600px;
+}
+
+@media screen and (max-width: 767px) {
+  .screenshot__pc {
+    width: 100%;
+  }
+}
+
+
+.screenshot__sp {
+  display: none;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+
+@media screen and (max-width: 767px) {
+  .screenshot__sp {
+    width: 100%;
+  }
+}
+
+.show {
+  display: inline;
+}
 
 /* 説明 -------------------------------------------------------- */
 .explanation {
@@ -239,6 +310,274 @@
     width: calc(100% - 3.911342894393742vw);
   }
 }
+
+/* works (作品一覧）------------------------------------------------------------------- */
+/* 一覧ページ、各作品説明ページ共通 */
+
+.works__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+
+
+.works__unit {
+  background-color: #eee; 
+  border-radius: 15px;
+  display: inline;
+  /* height: 200px;  */
+  margin: 30px;
+  position: relative;
+  width: 300px;
+  z-index:100;
+}
+
+.works__unit-number /* 各Workに振る数字 */ {
+  font-family: "kozuka-gothic-pro", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  height: 60px;
+  margin-top: -10px;
+  margin-bottom: 6px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.works__unit a /* 各サイトの説明ぺージへのリンク */{
+  color: #000;
+  display: block;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+  top: -40px;
+  width: 100%;
+}
+
+.works__unit-img /* 各ページのサムネ */{
+  background-color: #000;
+  border-radius: 10px;
+  display: block;
+  height: 180px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.works__unit p /* 各ページのタイトル */ {
+  display: block;
+}
+
+/* ---------------------------------------- */
+.other /* 各作品紹介ページで他作品紹介に飛ぶ */ {
+  background-color: #000; /* 仮設定 */
+  color: #fff;
+  height: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.other__wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .other__wrapper {
+    flex-direction: column;
+  }
+}
+
+.other__previous {
+  border-radius: 20px;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  transition: all .3s ease;
+  width: 30%;
+}
+
+.other__previous:hover {
+  background-color: #444;
+}
+
+@media screen and (max-width: 767px) {
+  .other__previous {
+    width: calc(100% - 30px);
+  }
+}
+
+.other__previous-number {
+  border-bottom: 2px solid #fff;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .other__previous-number {
+    min-width: 60px;
+    border-bottom: initial;
+    border-right: 2px solid #fff;
+  }
+}
+
+.other__previous-number p{
+  font-size: 48px;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 767px) {
+  .other__previous-number p {
+    text-align: right;
+    margin-right: 0;
+  }
+}
+
+
+.other__previous a {
+  border-radius: 20px;
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+}
+
+.other__previous a div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  .other__previous a div {
+    flex-direction: row;
+  }
+}
+
+.other__previous-name p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 17px;
+}
+
+@media screen and (max-width: 767px) {
+  .other__previous-name p {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+}
+
+.other__next {
+  border-radius: 20px;
+  padding: 15px;
+  position: relative;
+  width: 30%;
+  text-align: right;
+  transition: all .3s ease;
+}
+
+.other__next:hover {
+  background-color: #444;
+}
+
+@media screen and (max-width: 767px) {
+  .other__next {
+    width: calc(100% - 30px);
+  }
+}
+
+.other__next-number {
+  border-bottom: 2px solid #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .other__next-number {
+    border-bottom: initial;
+    border-right: 2px solid #fff;
+    min-width: 60px;
+    width: 60px;
+  }
+}
+
+.other__next-number p {
+  font-size: 48px;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 767px) {
+  .other__next-number p {
+    text-align: right;
+  }
+}
+
+.other__next-name {
+
+}
+
+.other__next-name p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 17px;
+}
+
+@media screen and (max-width: 767px) {
+  .other__next-name p {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+}
+
+.other__next a {
+  border-radius: 20px;
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+}
+
+.other__next a div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  .other__next a div {
+    flex-direction: row;
+  }
+}
+
+.other__current {
+  margin: 0 10px;
+  text-align: center;
+  width: 40%;
+}
+
+
+@media screen and (max-width: 767px) {
+  .other__current {
+    display: none;
+  }
+}
+
+.other__current-number {
+  border-bottom: 2px solid #fff;
+  font-size: 48px;
+  margin-top: 15px;
+  line-height: 1.4;
+}
+
+.other__current-name {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 17px;
+}
+
+
+
 
 
 

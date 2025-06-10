@@ -1,0 +1,245 @@
+/* about特有のスタイル */
+.test /* テスト用・削除予定*/ {
+  /* background-color: #000; */
+  display: flex;
+  margin: 0 auto;
+  height: 200px;
+  overflow-x: auto;
+  width: 800px;
+}
+
+.test-a {
+  border: 2px solid #000;
+  min-height: 100px;
+  min-width: 100px;
+}
+
+/* ---------------------------------------------------------------- */
+.about__title {
+  font-size: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.about__title span {
+  color: green;
+  font-weight: 600;
+  font-size: 64px;
+}
+
+.about__button-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
+  min-width: 850px;
+  max-width: 1100px;
+  
+}
+
+.about__button {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 90px;
+  color: #fff;
+  font-size: 32px;
+  height: 140px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  transition: all .3s ease;
+  width: 140px;
+}
+
+.about__button:hover {
+  background-color: #fff;
+}
+
+
+
+.about__button p {
+  padding-top: 36px;
+}
+
+.about__button a {
+  border-radius: 90px;
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+}
+
+.about__button:hover p {
+  color: var(--main-color);
+}
+
+.profile__table {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 500px; /* 仮設定 */
+}
+
+@media screen and (max-width: 767px) {
+  .profile__table {
+    width: 100%;
+  }
+}
+
+.profile__table-row {
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile__table .profile__table-row:last-of-type {
+  border-bottom: 2px solid #000;
+}
+
+.profile__table-row dt /* 項目名 */ {
+  width: 120px; /* 仮 下記widthと対になる */
+}
+
+.profile__table-row dd /* 内容 */ {
+  width: calc(100% - 150px); /* 仮 上記widthと対になる*/
+  word-break: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.chronology {
+
+}
+
+
+
+
+.chronology__view {
+  /* PC表示時は横方向表示、スクロールバー表示 */
+  /* SP表示時は縦方向で表示されるできるように */
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view {
+    flex-direction: column;
+    height: initial;
+    overflow-x: visible;
+  }
+}
+ 
+
+.chronology__view-pair { /* 年表内年＋出来事の組合せ */
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.chronology__view-pair:first-of-type {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view-pair:first-of-type {
+    margin-left: 10px;
+  }
+}
+
+.chronology__view-pair:last-of-type {
+  margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view-pair {
+    flex-direction: row;
+    height: 57px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.chronology__view-year {
+  background-color: var(--main-color); /* 仮の色 */
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  height: 120px;
+  text-align: center;
+  width: 120px;
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view-year {
+    border-radius: initial;
+    height: 100%;
+    width: 80px;
+  }
+
+  .chronology__view-pair:first-of-type .chronology__view-year {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .chronology__view-pair:last-of-type .chronology__view-year {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.chronology__view-year-number {
+  font-size: 36px;
+  text-align: center;
+  padding-top: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view-year-number {
+    font-size: 20px;
+    padding-top: 6px;
+  }
+}
+
+
+.chronology__view-event {
+  color: #333; /* 仮の色 */
+  font-size: 20px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  text-orientation: mixed;
+  vertical-align: middle;
+  writing-mode: vertical-rl; /* 縦書き */
+  width: calc(100% - 70px);
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view-event {
+    font-size: 16px;
+    height: 50px;
+    margin-left: 8px;
+    margin-top: 4px;
+    padding-top: 3px;
+    width: calc(100% - 70px);
+    writing-mode: horizontal-tb; /* 横書き */
+  }
+}
+
+
+

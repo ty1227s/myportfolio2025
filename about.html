@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
   <link rel="stylesheet" href="common.css"> <!-- 共通部品 -->
+  <link rel="stylesheet" href="about.css">
 </head>
 <body>
   <header class="header">
@@ -64,61 +65,101 @@
     <section class="empty">
       
     </section>
+    <section class="profile">
+      <div class="inner">
+        <h1 class="about__title">What is <span>"me"</span>?</h1>
+        <div class="about__button-wrapper">
+          <div class="about__button">
+            <a href="#profile">
+              <p>profile</p>
+            </a>
+          </div>
+          <div class="about__button">
+            <a href="#career">
+              <p>career</p>
+            </a>
+          </div>
+          <div class="about__button">
+            <a href="">
+              <p>u</p>
+            </a>
+          </div>
+          <div class="about__button">
+            <a href="">
+              <p>3</p>
+            </a>
+          </div>
+          <div class="about__button">
+            <a href="">
+              <p>e</p>
+            </a>
+          </div>
+        </div>
+        <dl class="profile__table" id="profile">
+          <div class="profile__table-row">
+            <dt>名前</dt>
+            <dd>寺本 祐基</dd>
+          </div>
+          <div class="profile__table-row">
+            <dt>test3</dt>
+            <dd>test4</dd>
+          </div>
+          <div class="profile__table-row">
+            <dt>test5</dt>
+            <dd>test6</dd>
+          </div>
+          <div class="profile__table-row">
+            <dt></dt>
+            <dd></dd>
+          </div>
+        </dl>
+      </div>
+      
+
+    </section>
+    
+    
+    
+    <section class="chronology" id="career">
+      <div class="inner">
+        <div class="chronology__view">
+          <div class="chronology__view-pair">
+            <div class="chronology__view-year">
+              <p class="chronology__view-year-number">199X</p>
+            </div>
+            <div class="chronology__view-event">出生</div>
+          </div>
+          <div class="chronology__view-pair">
+            <div class="chronology__view-year">
+              <p class="chronology__view-year-number">2017</p>
+            </div>
+            <div class="chronology__view-event">専修大学 文学部環境地理学科 入学</div>
+          </div>
+          <div class="chronology__view-pair">
+            <div class="chronology__view-year">
+              <p class="chronology__view-year-number">2021</p>
+            </div>
+            <div class="chronology__view-event">大学 中途退学、就職関係ワークショップに参加 </div>
+          </div>
+          <div class="chronology__view-pair">
+            <div class="chronology__view-year">
+              <p class="chronology__view-year-number">2024</p>
+            </div>
+            <div class="chronology__view-event">正社員チャレンジ事業に参加し、体験先企業にITエンジニアとして就職</div>
+          </div>
+          <div class="chronology__view-pair">
+            <div class="chronology__view-year">
+              <p class="chronology__view-year-number">2025</p>
+            </div>
+            <div class="chronology__view-event">手術、キャリアの方向性再転換を決意</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <section>
       <div class="inner">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <br>
@@ -130,6 +171,17 @@
   <footer>
     <small style="text-align: center;">&copy; 2025 YT</small>
   </footer>
+
   <script src="common.js"></script><!-- 共通部品 -->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'iqo1umm',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </body>
 </html>

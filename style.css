@@ -6,6 +6,7 @@
   background-size: cover;
   color: #fff;
   font-size: 60px;
+  font-weight: 900;
   height: 700px;
   padding-top: 100px;
   text-align: center;
@@ -61,7 +62,7 @@
   top: -125px;
   transition: all .3s ease;
   width: 150px;
-  z-index: 500;
+  z-index: 100;
 }
 
 @media screen and (max-width: 767px) {
