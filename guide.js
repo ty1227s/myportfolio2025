@@ -5,5 +5,8 @@ const total = items.length;
 
 items.forEach((item, index) => {
   const number = total - index;
-  item.querySelector('.works__unit-number').textContent = number;
+  // ダブルクォートで囲む
+  const quoteValue = `"${number}"`;
+  // CSS変数を定義
+  item.style.setProperty('--works-number', quoteValue);
 });

@@ -28,19 +28,25 @@ const observer = new IntersectionObserver((entries) => {
 observer.observe(other);
 
 
-// 作品タイトルを、他作品遷移エリアにも反映する
-// 作品タイトルを取得
-const input = document.querySelector('.overview__title-text');
-const output = document.querySelector('.other__current-name');
-input.addEventListener('input', () => {
-  output.textContent = input.value;
-});
 
-
-// 前後の作品が登録されていない場合、文字色を変える
+// 後の作品が登録されていない場合、文字色を変える
 document.querySelectorAll('.other__next a').forEach(a => {
   const href = a.getAttribute('href');
   const link = document.querySelector('.other__next');
+
+  if (!href || href.trim() === '') {
+    a.style.opacity = '0.5';
+    a.style.cursor = 'initial';
+    a.style.pointerEvents = 'none';
+    link.style.backgroundColor = 'initial';
+  }
+});
+
+
+// 前の作品が登録されていない場合、文字色を変える
+document.querySelectorAll('.other__previous a').forEach(a => {
+  const href = a.getAttribute('href');
+  const link = document.querySelector('.other__previous');
 
   if (!href || href.trim() === '') {
     a.style.opacity = '0.5';

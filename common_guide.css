@@ -46,6 +46,7 @@
   display: block;
   height: 100%;
   text-decoration: none;
+  width: 100%;
 }
 
 .switching-button-icon {
@@ -152,7 +153,8 @@
 
 
 .overview__title-text {
-  border-top: 10px solid #06b9ff;
+  border-top-style: solid;
+  border-top-width: 10px;
   font-weight: 500;
   font-size: 40px;
   height: 100%;
@@ -165,8 +167,7 @@
 
 @media screen and (max-width: 767px) {
   .overview__title-text {
-    border-left: none;
-    border-top: 5px solid #06b9ff;
+    border-top-width: 5px;
     font-size: 26px;
     padding-top: 15px;
     padding-left: auto;
@@ -184,6 +185,68 @@
 @media screen and (max-width: 767px) {
   .overview__title-text-en {
     font-size: 18px;
+  }
+}
+
+.overview__button {
+  background-color: #fff;
+  border: 2px solid #223a70;
+  border-radius: 20px;
+  font-size: 16px;
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  transition: all .3s ease;
+  width: 180px;
+}
+
+@media screen and (max-width: 767px) {
+  .overview__button {
+    height: 45px;
+    width: 155px;
+  }
+}
+
+.overview__button:hover {
+  background-color: #223a70;
+}
+
+@media (hover: none) {
+  .overview__button:hover {
+    background-color: initial;
+  }
+}
+
+.overview__button a /* 該当ページへのリンク */{
+  color: #223a70;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  transition: all .3s ease;
+  width: 100%;
+}
+
+.overview__button:hover a {
+  color: #fff;
+}
+
+@media (hover: none) {
+  .overview__button:hover a{
+    color: initial;
+  }
+}
+
+
+.overview__button a p {
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .overview__button a p {
+    padding-top: 6.5px;
   }
 }
 
@@ -334,6 +397,33 @@
   z-index:100;
 }
 
+@media screen and (max-width: 767px) {
+  .works__unit {
+    margin: 3.14707908616188vw;
+    /* height: 29.158355091383815vw; */
+    width: 40.86161879895561vw;
+  }
+}
+
+.works__unit::before {
+  background-color: #223a70;
+  border-radius: 50%;
+  content: var(--works-number, "0");
+  color: #fff;
+  font-size: 40px;
+  height: 80px; /* 仮 */
+  left: -15px; /* 仮 */
+  position: absolute;
+  top: -15px; /* 仮 */
+  width: 80px; /* 仮 */
+}
+
+@media screen and (max-width: 767px) {
+  .works__unit::before {
+
+  }
+}
+
 .works__unit-number /* 各Workに振る数字 */ {
   font-family: "kozuka-gothic-pro", sans-serif;
   font-size: 40px;
@@ -346,6 +436,16 @@
   padding-bottom: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .works__unit-number {
+    font-size: 5.221932114882506vw;
+    height: 7.83289817232376vw;
+    margin-top: -1.3054830287206265vw;
+    margin-bottom: 0.7832898172323759vw;
+  }
+}
+
+
 .works__unit a /* 各サイトの説明ぺージへのリンク */{
   color: #000;
   display: block;
@@ -355,6 +455,12 @@
   text-decoration: none;
   top: -40px;
   width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .works__unit a {
+    top: -5.221932114882506vw;
+  }
 }
 
 .works__unit-img /* 各ページのサムネ */{
@@ -367,15 +473,32 @@
   width: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .works__unit-img {
+    height: 23.49869451697128vw;
+  }
+}
+
 .works__unit p /* 各ページのタイトル */ {
   display: block;
 }
+
+.works__unit-title {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .works__unit-title {
+    font-size: 2.088772845953003vw;
+  }
+} 
 
 /* ---------------------------------------- */
 .other /* 各作品紹介ページで他作品紹介に飛ぶ */ {
   background-color: #000; /* 仮設定 */
   color: #fff;
-  height: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -392,7 +515,7 @@
   }
 }
 
-.other__previous {
+.other__previous /* 前作品を表す */{
   border-radius: 20px;
   padding: 15px;
   position: relative;
@@ -401,17 +524,25 @@
   width: 30%;
 }
 
-.other__previous:hover {
-  background-color: #444;
-}
-
 @media screen and (max-width: 767px) {
   .other__previous {
     width: calc(100% - 30px);
   }
 }
 
-.other__previous-number {
+.other__previous:hover {
+  background-color: #444;
+}
+
+@media (hover: none) {
+  .other__previous:hover {
+    background-color: initial;
+  }
+}
+
+
+
+.other__previous-number /* 番号を表示 */  {
   border-bottom: 2px solid #fff;
   margin-right: 0;
 }
@@ -424,7 +555,7 @@
   }
 }
 
-.other__previous-number p{
+.other__previous-number p /* 番号 */ {
   font-size: 48px;
   line-height: 1.4;
 }
@@ -437,7 +568,7 @@
 }
 
 
-.other__previous a {
+.other__previous a /* 前作品へのリンク */ {
   border-radius: 20px;
   color: #fff;
   display: block;
@@ -470,7 +601,32 @@
   }
 }
 
-.other__next {
+.other__previous-number-arrow /* 番号の横に置く矢印 */{
+  height: 35px;
+  margin-left: 15px;
+  opacity: 0.7;
+  transform: rotate(90deg);
+  transition: all .3s ease;
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .other__previous-number-arrow {
+    display: none;
+  }
+}
+
+.other__previous:hover a div div p .other__previous-number-arrow {
+  margin-left: 5px;
+}
+
+@media (hover: none) {
+  .other__previous:hover a div div p .other__previous-number-arrow {
+    margin-left: initial;
+  }
+}
+
+.other__next /* 次作品を表す */ {
   border-radius: 20px;
   padding: 15px;
   position: relative;
@@ -479,17 +635,23 @@
   transition: all .3s ease;
 }
 
-.other__next:hover {
-  background-color: #444;
-}
-
 @media screen and (max-width: 767px) {
   .other__next {
     width: calc(100% - 30px);
   }
 }
 
-.other__next-number {
+.other__next:hover {
+  background-color: #444;
+}
+
+@media (hover: none) {
+  .other__next:hover {
+    background-color: initial;
+  }
+}
+
+.other__next-number /* 番号を入力 */{
   border-bottom: 2px solid #fff;
 }
 
@@ -513,11 +675,30 @@
   }
 }
 
-.other__next-name {
+.other__next-number-arrow /* 番号の横に置く矢印 */{
+  height: 35px;
+  margin-right: 15px;
+  opacity: 0.7;
+  transform: rotate(270deg);
+  transition: all .3s ease;
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .other__next-number-arrow {
+    display: none;
+  }
+}
+
+.other__next:hover a div div p .other__next-number-arrow {
+  margin-right: 5px;
+}
+
+.other__next-name /* 作品名 */{
 
 }
 
-.other__next-name p {
+.other__next-name p /* 作品名テキスト */{
   font-size: 18px;
   line-height: 1.6;
   margin-top: 17px;
@@ -530,7 +711,7 @@
   }
 }
 
-.other__next a {
+.other__next a /* 次作品へのリンク */{
   border-radius: 20px;
   color: #fff;
   display: block;
@@ -550,7 +731,7 @@
   }
 }
 
-.other__current {
+.other__current /* 今情報を見ている作品 */{
   margin: 0 10px;
   text-align: center;
   width: 40%;
@@ -563,14 +744,14 @@
   }
 }
 
-.other__current-number {
+.other__current-number /* 作品番号 */{
   border-bottom: 2px solid #fff;
   font-size: 48px;
   margin-top: 15px;
   line-height: 1.4;
 }
 
-.other__current-name {
+.other__current-name /* 作品名 */{
   font-size: 18px;
   line-height: 1.7;
   margin-top: 17px;
