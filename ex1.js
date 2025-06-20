@@ -7,7 +7,6 @@
 //   menu.classList.toggle('active');
 //   document.body.classList('no-scroll');
 // })
-/* ハンバーガーメニューボタン用 wx1.jsに移植する？*/
 document.addEventListener('DOMContentLoaded', function () {
   const menuBtn = document.querySelectorAll('.header__menuButton'); /*? */
       
@@ -51,11 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//process各要素に番号を付与
+// process各要素に番号を付与（レスポンシブ用の表示）
 // index = 番号
-document.querySelectorAll('.process__content').forEach((el, index) => {
-  el.setAttribute('data-index', index + 1);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.process__content-wrapper').forEach((wrapper, index) => {
+    const numberE1 = wrapper.querySelector('.process__content-number');
+    if (numberE1) {
+      numberE1.textContent =  index + 1;
+
+    }
+  });  
 });
+
 
 
 // スクロールで到達したら表示させる

@@ -15,17 +15,16 @@
 }
 
 /* ---------------------------------------------------------------- */
-.about__title {
-  font-size: 60px;
+/* .about__title {
+  font-size: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-}
+} */
 
 .about__title span {
   color: green;
   font-weight: 600;
-  font-size: 64px;
 }
 
 .about__button-wrapper {
@@ -35,10 +34,11 @@
   margin: 0 auto;
   margin-bottom: 40px;
   text-align: center;
-  min-width: 850px;
+  /* min-width: 850px; */
   max-width: 1100px;
-  
 }
+
+
 
 .about__button {
   background-color: var(--main-color);
@@ -86,6 +86,13 @@
 @media screen and (max-width: 767px) {
   .profile__table {
     width: 100%;
+    margin-bottom: 3.911342894393742vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .profile__table {
+    margin-bottom: 7.142857142857142vw;
   }
 }
 
@@ -95,20 +102,47 @@
   flex-direction: row;
 }
 
+
 .profile__table .profile__table-row:last-of-type {
   border-bottom: 2px solid #000;
 }
 
 .profile__table-row dt /* 項目名 */ {
+  font-size: 18px;
   width: 120px; /* 仮 下記widthと対になる */
 }
 
+@media screen and (max-width: 767px) {
+  .profile__table-row dt {
+    font-size: 2.0860495436766624vw; /* 16px */
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .profile__table-row dt {
+    font-size: 3.8095238095238098vw; /* 16px */
+  }
+}
+
 .profile__table-row dd /* 内容 */ {
+  font-size: 18px;
   width: calc(100% - 150px); /* 仮 上記widthと対になる*/
   word-break: break-word;
 }
 
+@media screen and (max-width: 767px) {
+  .profile__table-row dd {
+    font-size: 2.0860495436766624vw; /* 16px */
+  }
+}
 
+@media screen and (max-width: 420px) {
+  .profile__table-row dd {
+    font-size: 3.8095238095238098vw; /* 16px */
+  }
+}
+
+/* ---------------------------------------------------------- */
 
 
 
@@ -130,116 +164,241 @@
   /* PC表示時は横方向表示、スクロールバー表示 */
   /* SP表示時は縦方向で表示されるできるように */
   display: flex;
-  flex-direction: row;
-  height: 500px;
+  flex-direction: column;
+  width: 100%; /* これでいい? */
   margin: 0 auto;
 }
 
-@media screen and (max-width: 767px) {
   .chronology__view {
-    flex-direction: column;
     height: initial;
     overflow-x: visible;
   }
-}
- 
 
-.chronology__view-pair { /* 年表内年＋出来事の組合せ */
+
+.chronology__view-content { /* 年表内年＋出来事の組合せ */
   align-items: center;
   display: flex;
-  margin: 10px;
-  flex-direction: column;
-}
-
-.chronology__view-pair:first-of-type {
-  margin-left: auto;
+  height: 140px;
+  margin: 7px 10px;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 767px) {
-  .chronology__view-pair:first-of-type {
-    margin-left: 10px;
+  .chronology__view-content {
+    flex-direction: column;
+    height: initial;
+    margin-top: 1.955671447196871vw; /* 15px */
+    margin-bottom: 1.955671447196871vw; /* 15px */
+  }
+
+  .chronology__view-content:first-of-type {
+    margin-top: 0;
+  }
+
+  .chronology__view-content:last-of-type {
+    margin-bottom: 0;
   }
 }
 
-.chronology__view-pair:last-of-type {
-  margin-right: auto;
-}
-
-@media screen and (max-width: 767px) {
-  .chronology__view-pair {
-    flex-direction: row;
-    height: 57px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+@media screen and (max-width: 420px) {
+  .chronology__view-content {
+    margin-top: 3.571428571428571vw; /* 15px */
+    margin-bottom: 3.571428571428571vw; /* 15px */
   }
 }
 
 .chronology__view-year {
-  background-color: var(--main-color); /* 仮の色 */
+  background-color: var(--main-color);
   border-radius: 10px;
   color: #fff;
-  font-weight: 600;
-  height: 120px;
-  text-align: center;
-  width: 120px;
+  height: 100%;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 80px;
 }
 
 @media screen and (max-width: 767px) {
   .chronology__view-year {
-    border-radius: initial;
-    height: 100%;
-    width: 80px;
+    height: 6.51890482398957vw;
+    width: calc(100% - 20px);
   }
+}
 
-  .chronology__view-pair:first-of-type .chronology__view-year {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .chronology__view-pair:last-of-type .chronology__view-year {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+@media screen and (max-width: 420px) {
+  .chronology__view-year {
+    height: 11.904761904761903vw;
   }
 }
 
 .chronology__view-year-number {
-  font-size: 36px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 48px;
   text-align: center;
-  padding-top: 24px;
 }
 
 @media screen and (max-width: 767px) {
   .chronology__view-year-number {
-    font-size: 20px;
-    padding-top: 6px;
+    font-size: 2.346805736636245vw; /* 18px */
+    padding-top: 0.8215123859191656vw; /* 4 */
+    padding-bottom: 0.3911342894393742vw; /* 3 */
+    text-align: left;
   }
 }
 
+@media screen and (max-width: 420px) {
+  .chronology__view-year-number {
+    font-size: 4.285714285714286vw;
+    padding-top: 1.2523809523809524vw;
+    padding-bottom: 0.7142857142857143vw;
+  }
+}
 
 .chronology__view-event {
-  color: #333; /* 仮の色 */
-  font-size: 20px;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 600;
+  /* height: 50px; */
+  margin-left: 8px;
+  margin-right: 8px;
+  
+  padding-top: 3px;
   text-orientation: mixed;
   vertical-align: middle;
-  writing-mode: vertical-rl; /* 縦書き */
-  width: calc(100% - 70px);
+  width: 230px;
 }
 
 @media screen and (max-width: 767px) {
   .chronology__view-event {
-    font-size: 16px;
-    height: 50px;
-    margin-left: 8px;
-    margin-top: 4px;
-    padding-top: 3px;
-    width: calc(100% - 70px);
-    writing-mode: horizontal-tb; /* 横書き */
+    font-size: 2.0860495436766624vw; /* 16px */
+    margin-top: 0.5215123859191656vw; /* 4 */
+    width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .chronology__view-event {
+    font-size: 3.8095238095238098vw;
+    margin-top: 0.9523809523809524vw; /* 4 */
+  }
+}
+
+.chronology__view-detail {
+  font-size: 18px;
+  margin-right: auto;
+  width: 300px;
+}
+
+@media screen and (max-width: 767px) {
+  .chronology__view-detail {
+    font-size: 2.0860495436766624vw; /* 16px */
+    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .chronology__view-detail {
+    font-size: 3.8095238095238098vw;
+  }
+}
+
+.enthusiasm {
+  
+}
+
+.enthusiasm p {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .enthusiasm p {
+    font-size: 2.0860495436766624vw; /* 16 */
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .enthusiasm p {
+    font-size: 3.8095238095238098vw; /* 16 */
+  }
+}
+
+.photo {
+
+}
+
+.photo__content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.photo__content:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 767px) {
+  .photo__content {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .photo__content:nth-of-type(2n) {
+  flex-direction: column;
+  }
+
+  .photo__content:last-of-type {
+    margin-bottom: 0;
   }
 }
 
 
+
+.photo__content-img {
+  background-color: #000;
+  height: 300px;
+  width: 400px;
+}
+
+@media screen and (max-width: 767px) {
+  .photo__content-img {
+    height: 31.290743155149936vw; /* 240 */
+    margin: 0 auto;
+    width: 41.720990873533246vw; /* 320 */
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .photo__content-img {
+    height: 57.14285714285714vw;
+    width: 76.19047619047619vw;
+  }
+}
+
+.photo__content-caption {
+  font-size: 16px;
+  margin: 25px;
+  width: calc(100% - 490px);
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 767px) {
+  .photo__content-caption {
+    font-size: 1.8252933507170794vw; /* 14 */
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .photo__content-caption {
+    font-size: 3.3333333333333335vw; /* 14 */
+  }
+}
 

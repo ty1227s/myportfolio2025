@@ -10,6 +10,9 @@
   
   /* 寸法に関する設定 */
   --header-height: 60px; /* headerの高さ */
+
+  /* 挙動に関する設定 */
+  scroll-behavior: smooth; /*内部リンククリック時の移動を滑らかに */
 }
 
 
@@ -389,7 +392,7 @@ header { /* header共通設定 */
   margin-right: 50px;
   min-height: 270px;
   max-height: 270px;
-  width: 200px;
+  width: 360px;
   min-width: 360px;
   max-width: 360px;
 }
@@ -397,6 +400,8 @@ header { /* header共通設定 */
 @media screen and (max-width: 767px) {
   .concept__img {
     margin: 0 auto;
+    height: ;/* 229.5 */
+    width: ;/* 306 */
   }
 }
 
@@ -470,25 +475,23 @@ header { /* header共通設定 */
   flex-direction: row;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .member__person-flex {
     flex-direction: column;
   }
 }
 
 .member__person /* メンバーセット */{
-  border: 2px solid var(--main-color);
   border-radius: 1rem;
-  display: flex;
-  margin-top: 120px;
-  margin-left: 100px;
+  display: inline;
+  margin: 0 auto;
   overflow: visible;
   padding: 1.5rem;
   position: relative;
   width: 100%;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .member__person {
     margin: 50px 10px;
     text-align: center;
@@ -500,7 +503,7 @@ header { /* header共通設定 */
   margin-right: 20px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .member__person:first-of-type {
   /* レスポンシブ時は縦並びになるため不要 */
     margin-top: 120px;
@@ -516,52 +519,47 @@ header { /* header共通設定 */
 
 
 .member__person-img /* メンバー画像 */{
+  display: block;
+  margin: 0 auto;
   background-size: cover;
   border-radius: 200px;
   height: 200px;
-  left: -70px;
   object-fit: cover; /* 要チェック */
   overflow: hidden;
-  position: absolute;
-  top: -70px;
+  text-align: center;
   transition: all .3s ease;
   width: 200px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .member__person-img {
-    height: 150px;
-    left: 50%;
-    /* margin-left: auto;
-    margin-right: auto; */
+    /* display: inline-block; */
+    height: 200px;
+    margin: 0 auto;
     object-fit: cover;
-    text-align: center;
-    transform: translateX(-50%);
-    top: -70px;
-    width: 150px;
-    /* left: 200px; */
+    /* transform: translateX(-50%); */
+    /* transform-origin: center center; */
+    width: 200px;
   }
 }
 
-.member__person:hover .member__person-img {
-  transform: scale(1.1); /* 画像の拡大 */
-}
 
 .member__person-introduce /* 各メンバーの紹介項目のかたまり */{
   /* 仮 要修正 */
   /* border: 2px solid var(--sub-color2);  */
   /* margin-top: 100px;
   margin-left: 100px; */
-  margin-left: 130px;
-  left: -65px;
+  /* margin-left: 130px; */
+  /* left: -65px; */
   /* width: 270px; */
+  text-align: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .member__person-introduce {
     margin: 0 auto;
     padding-left: 0;
-    padding-top: 75px;
+    padding-top: 30px;
     left: auto;
     right: auto;
     bottom: -110px;
@@ -570,10 +568,11 @@ header { /* header共通設定 */
 }
 
 .member__person-introduce-name /* メンバー紹介 名前・役職 */ {
+  color: var(--main-color);
   font-size: 30px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .member__person-introduce-name {
     line-height: 30px;
     margin-bottom: 12px;
@@ -582,15 +581,14 @@ header { /* header共通設定 */
 
 
 /* 名前と役職・担当の間 レスポンシブ時のみ改行 */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 767px) {
   .member__person-introduce-name-sp-only-br {
     display: none;
   }
 }
 
-.member__person-introduce-post {
-  background-color: var(--sub-color);
-  color: #fff;
+.member__person-introduce-role {
+  color: var(--main-color);
   font-size: 15px;
   margin: 0 10px 4px;
   padding: 3px 5px;
@@ -598,22 +596,34 @@ header { /* header共通設定 */
 }
 
 
-.member__person-introduce-phrase {
+.member__person-introduce-message {
   font-size: 24px;
+}
+
+.member__person-introduce-message span {
+  white-space: nowrap; /* 改行禁止 */
 }
 
 
 /* ビジネスブロック -------------------------------------------------------------------------------- */
 .business__target-flex /* 顧客例配置用 */{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
   justify-content: center;
 }
 
 @media screen and (max-width: 767px) {
   .business__target-flex {
     margin: 0 auto;
-    width: 300px;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .business__target-flex {
+    margin: 0 auto;
+    width: 400px;
   }
 }
 
@@ -628,10 +638,10 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .business__target {
-    border-radius: 20px;
-    height: 70px;
+    border-radius: 2.607561929595828vw;
+    height: 15.126466753585397vw;
     object-position: center;
-    width: 110px;
+    width: 34vw;
   }
 }
 
@@ -643,7 +653,7 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .business__target-content {
-    font-size: 14px; /* 対応済み */
+    font-size: 3.129074315514994vw;
   }
 }
 
@@ -665,9 +675,15 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .business__works-flex {
-    width: 400px;
+    width: 52.15123859191656vw;
   }
-} 
+}
+
+@media screen and (max-width: 420px) {
+  .business__works-flex {
+    width: 100%;
+  }
+}
 
 
 .business__works /* 業務内容の具体例 */{
@@ -680,9 +696,9 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .business__works {
-    height: 130px;
-    margin: 5px;
-    width: 140px;
+    height: 16.94915254237288vw;
+    margin: 0.651890482398957vw;
+    width: 18.252933507170795vw;
   }
 }
 
@@ -699,7 +715,7 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .business__works-content {
-    font-size: 16px;
+    font-size: 2.0860495436766624vw;
   }
 }
 
@@ -708,6 +724,15 @@ header { /* header共通設定 */
 /* 企画プロセスブロック ----------------------------------------------------------------------------- */
 .process {
   overflow-x: hidden;
+}
+
+.process__content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.process__content-wrapper:nth-of-type(2n) {
+  flex-direction: row-reverse;
 }
 
 .process__content /* プロセス単位の設定 */{
@@ -721,106 +746,131 @@ header { /* header共通設定 */
   position: relative;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .process__content {
     flex-direction: column;
     margin: 20px;
-    overflow: visible;
-    padding: 15px 40px 15px;
+    /* overflow: visible; */
+    padding: 0px 28px 15px 28px;
     position: relative;
-    left: -50px;
+    width: 400px;
   }
 }
 
-.process__content::after { /* プロセスごとに順番を示す数字を表示する */
+.process__content::before { /* プロセスごとに順番を示す数字を表示する */
   bottom: -40px;
-  content: attr(data-index); /* jsで生成 */
+  content: attr(data-index);
   color: var(--sub-color);
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 300px;
+  font-size: 240px;
   opacity: 0.3;
+  overflow: visible;
   position: absolute;
-  transition: all 0.3s ease;
   right: 5px;
 }
 
-.process__content:nth-of-type(2n)::after /* １つおきに番号を逆配置 */ {
+@media screen and (max-width: 767px) {
+  .process__content::before {
+    display: none;
+  }
+}
+
+.process__content-wrapper:nth-of-type(2n) .process__content::before /* １つおきに番号を逆配置 */ {
   right: initial;
   left: 25px;
 }
 
 @media screen and (max-width: 767px) {
-  .process__content::after {
+  .process__content-wrapper .process__content::before {
     bottom: -20px;
-    font-size: 190px;
+    font-size: 255px;
     right: -95px;
     opacity: 1;
   }
 
-  .process__content:nth-of-type(2n)::after {
+  .process__content-wrapper:nth-of-type(2n) .process__content::before {
     right: initial;
     left: -95px;
   }
 }
 
-.process__content:nth-of-type(2n) /* ひとつおきに表示順を入れ替える */{
+.process__content-wrapper:nth-of-type(2n) .process__content /* ひとつおきに表示順を入れ替える */{
   flex-direction: row-reverse;
 }
 
-@media screen and (max-width: 900px) { /* レスポンシブ時は設定無効 */
-  .process__content:nth-of-type(2n) {
+@media screen and (max-width: 767px) { /* レスポンシブ時は設定無効 */
+  .process__content-wrapper:nth-of-type(2n) .process__content {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     flex-direction: column;
-    margin: 20px;
-    padding: 15px 40px 15px;
-    left: 50px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .process__content-wrapper:nth-of-type(2n-1) .process__content {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+    padding-left: 0;
   }
 }
 
 
-.process__content:last-of-type /* 最終プロセスの下のみmargin設定変更 */ {
+.process__content-wrapper:last-of-type .process__content /* 最終プロセスの下のみmargin設定変更 */ {
   margin-bottom: 70px;
 }
 
-
-.process__content-about-title-sp /* プロセス名（レスポンシブ先頭表示用）*/{
-  display: none;
-  font-size: 20px;
-  margin-bottom: 10px;
-  text-align: left;
+.process__content-number {
+  color: var(--main-color);
+  font-family: "futura-pt", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 350px;
+  height: 300px;
+  margin-left: 40px;
+  text-align: center;
+  width: 200px;
 }
 
-.process__content:nth-of-type(2) .process__content-about-title-sp {
-  /* 一つおきに左右に配置 */
-  text-align: right;
+.process__content-wrapper:nth-of-type(2n) .process__content-number {
+  margin-left: initial;
+  margin-right: 40px;
 }
 
-@media screen and (max-width: 900px) {
-  .process__content-about-title-sp {
-    display: inline;
+@media screen and (min-width: 768px) {
+  .process__content-number {
+    display: none;
   }
 }
+
 
 
 .process__content-img /* 各プロセス用画像 */{
   background-color: var(--sub-color); /* 仮設定 */
   background-size: cover;
-  height: 400px;
-  width: 600px;
+  height: 28.57142857142857vw; /* 1400px基準 400px */
+  width: 42.857142857142854vw; /* 1400px基準 600px */
 }
 
-@media screen and (max-width: 900px) {
-  .process__content-img {
-    height: 160px;
+@media screen and (max-width: 767px) {
+  .process__content-img { /* 幅３：高さ２ */
+    display: block;
+    height: 290px;
     margin: 0 auto;
     margin-left: 0;
     object-position: left;
-    width: 240px;
+    width: 418px;
   }
 
-  .process__content:nth-of-type(2) .process__content-img {
+  .process__content-wrapper:nth-of-type(2) .process__content .process__content-img {
     /* 配置場所の変更に伴うmargin設定の調整 */
+    background-position: center center;
+    background-size: cover;
+    object-position: auto;
     margin-left: auto;
     margin-right: 0;
   }
@@ -832,50 +882,57 @@ header { /* header共通設定 */
   margin-right: 60px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .process__content-about {
-    margin-left: 0;
-    margin-right: 0;
+    /* margin-left: 0;
+    margin-right: 0; */
     margin-top: 10px;
+  }
+
+  .process__content-wrapper:nth-of-type(2n-1) .process__content-about /* 奇数番目 */{
+    margin-left: 30px; /* vwに書換予定 */
+    margin-right: 0;
+  }
+
+  .process__content-wrapper:nth-of-type(2n) .process__content-about /* 偶数番目 */{
+    margin-left: 0;
+    margin-right: 30px; /* vwに書換予定 */
   }
 }
 
 
 .process__content-about-title /* 各プロセス項目名（PC表示のみ） */{
   font-size: 32px;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .process__content-about-title {
     display: none;
   }
-}
+} */
 
 
-.process__content:nth-of-type(2n) .process__content-about-title {
+.process__content-wrapper:nth-of-type(2n) .process__content .process__content-about-title {
   /* プロセス ひとつおきに表示方法変更 項目名右寄せ */
   text-align: right;
 }
 
-@media screen and (max-width: 900px) {
-  .process__content:nth-of-type(2n) .process__content-about-title {
-  /* レスポンシブ対応時は無効 */
-  text-align: left;
-  }
-}
+
 
 .process__content-about-text {
   /* プロセス説明文 */
-  font-size: 18px;
+  font-size: 24px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
   .process__content-about-text {
     font-size: 16px;
   }
 }
 
-.process__content:nth-of-type(2n) .process__content-about-text {
+.process__content-wrapper:nth-of-type(2n) .process__content .process__content-about-text {
   /* プロセス ひとつおきに表示方法変更 説明文右寄せ */
   text-align: right;
 }
@@ -906,7 +963,7 @@ header { /* header共通設定 */
 
 .achievement__content {
   background-color: #fff;
-  border: 2px solid var(--sub-color2);
+  /* border: 2px solid var(--sub-color2); */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -941,8 +998,10 @@ header { /* header共通設定 */
 }
 
 .achievement__content-about-title {
-  background-color: var(--main-color);
-  color: #fff;
+  background-color: #fff;
+  border-bottom: 2px solid var(--main-color);
+  color: var(--main-color);
+  font-size: 22px;
   margin-top: 0px;
   margin-bottom: 10px;
   padding-left: 10px;

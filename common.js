@@ -38,3 +38,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+
+// スクロールで到達したら表示させる
+// 'fade-in'の含まれるクラスを取得
+const fadeTargets = document.querySelectorAll('.fade-in');
+
+// 対象クラスすべてに’.active'を付与
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+fadeTargets.forEach(target => observer.observe(target));
+// ※詳細はex1関連
