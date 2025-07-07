@@ -8,20 +8,13 @@
   <link rel="icon" type="image/png" href="img/favicon1.png">
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="inner">
       <div class="header__wrapper">
-        <div class="header__companyName">
-          <p class="header__companyName-ja">株式会社ヒトツナ</p>
-          <p class="header__companyName-en">HITOTSUNA inc.</p>
+        <div class="header__company-name">
+          <p class="header__company-name-ja">株式会社ヒトツナ</p>
+          <p class="header__company-name-en">HITOTSUNA inc.</p>
         </div>
-
-        <!-- <nav class="header__nav">
-          <a class="header__nav-link" href=""></a>
-          <a class="header__nav-link" href=""></a>
-          <a class="header__nav-link" href=""></a>
-          <a class="header__nav-link" href=""></a>
-        </nav> -->
 
         <div class="header__nav">
           <ul>
@@ -57,22 +50,41 @@
             <nav class="header__menu-sp-nav">
               <ul class="header__menu-sp-nav-list">
                 <li class="header__menu-sp-nav-list-item">
-                  <a href="" class="header__menu-sp-nav-list-item-link">会社情報</a>
+                  <a href="" class="header__menu-sp-nav-list-item-link">
+                    <p class="header__menu-sp-nav-list-item-link-ja">会社情報</p>
+                    <p class="header__menu-sp-nav-list-item-link-en">About</p>
+                  </a>
                 </li>
                 <li class="header__menu-sp-nav-list-item">
-                  <a href="" class="header__menu-sp-nav-list-item-link">サービス</a>
+                  <a href="" class="header__menu-sp-nav-list-item-link">
+                    <p class="header__menu-sp-nav-list-item-link-ja">サービス</p>
+                    <p class="header__menu-sp-nav-list-item-link-en">Service</p>
+                  </a>
                 </li>
                 <li class="header__menu-sp-nav-list-item">
-                  <a href="" class="header__menu-sp-nav-list-item-link">実績</a>
+                  <a href="" class="header__menu-sp-nav-list-item-link">
+                    <p class="header__menu-sp-nav-list-item-link-ja">実績</p>
+                    <p class="header__menu-sp-nav-list-item-link-en">Achievement</p>
+                  </a>
                 </li>
                 <li class="header__menu-sp-nav-list-item">
-                  <a href="" class="header__menu-sp-nav-list-item-link">採用情報</a>
+                  <a href="" class="header__menu-sp-nav-list-item-link">
+                    <p class="header__menu-sp-nav-list-item-link-ja">採用情報</p>
+                    <p class="header__menu-sp-nav-list-item-link-en">Recruit</p>
+                  </a>
                 </li>
               </ul>
             </nav>
             <div class="header__menu-sp-forContact">
               <a class="header__menu-sp-forContact-link" href="#contact">
-                <span class="header__menu-sp-forContact-link-text">お問い合わせ</span>
+                <span class="header__menu-sp-forContact-link-text">
+                  <p class="header__menu-sp-forContact-link-text-ja">
+                    お問い合わせ
+                  </p>
+                  <p class="header__menu-sp-forContact-link-text-en">
+                    Contact
+                  </p>
+                </span>
               </a>
             </div>
           </div>
@@ -87,7 +99,7 @@
 
   <div class="mv fade-in">
     <div class="inner">
-      <span class="mv__heading">人と人、<strong class="mv__heading-strong">人</strong>と<strong class="mv__heading-strong">地域</strong>をつなぐ。</span>
+      <span class="mv__heading">人と人、人と地域をつなぐ。</span>
     </div>
   </div>
 
@@ -165,7 +177,7 @@
     <div class="inner">
       <h2 class="title-ja">事業内容</h2> <!-- 仮見出し -->
       <p class="title-en">BUSINESS</p>
-      <div class="business__target-flex fade-in">
+      <div class="business__target-flex fade-in"><!-- 横方向になぜかはみ出てる-->
         <div class="business__target">
           <p class="business__target-content">
             地域で何か<br>
@@ -200,12 +212,12 @@
       <h2 class="title-ja fade-in">企画プロセス</h2> <!-- 仮見出し -->
       <p class="title-en fade-in">PROCESS</p>
       <div class="process__content-wrapper fade-in">
-        <div class="process__content">
+        <div class="process__content" data-index="">
           <div class="process__content-img" style="background-image: url(img/process1.png)"></div> <!--img-->
           <!-- ↑画像の比率をうまく固定したい -->
           <div class="process__content-about">
             <h3 class="process__content-about-title">ヒアリング</h3>
-            <p class="process__content-about-text">イベントの<span class="process__content-about-text-pickup">目的</span>や<span class="process__content-about-text-pickup">ターゲット</span>を明確にします。</p>
+            <p class="process__content-about-text">地域の特性や課題、イベントの目的、想定来場者などを丁寧にお伺いし、ターゲットとゴールを明確化します。必要に応じて、過去の事例や現地視察なども行います。</p>
           </div>
         </div>
         <div class="process__content-number">
@@ -213,11 +225,13 @@
         </div>
       </div>
       <div class="process__content-wrapper fade-in">
-        <div class="process__content">
+        <div class="process__content" data-index="">
           <div class="process__content-img" style="background-image: url(img/process2.png)"></div> <!--img-->
           <div class="process__content-about">
-            <h3 class="process__content-about-title">企画立案</h3>
-            <p class="process__content-about-text"><span class="process__content-about-text-pickup">コンセプト</span>や<span class="process__content-about-text-pickup">タイムスケジュール</span>を提案します。</p>
+            <h3 class="process__content-about-title">企画の立案</h3>
+            <p class="process__content-about-text">コンセプト設計、タイムスケジュール、予算に応じた施策のご提案を行います。SNS戦略やチラシ・ポスターのデザイン方針など、広報面も含めた総合的な企画をご提示します。
+
+</p>
           </div>
         </div>
         <div class="process__content-number">
@@ -226,11 +240,11 @@
       </div>
       
       <div class="process__content-wrapper fade-in">
-        <div class="process__content">
+        <div class="process__content" data-index="">
           <div class="process__content-img" style="background-image: url(img/process3.png)"></div> <!--img-->
           <div class="process__content-about">
             <h3 class="process__content-about-title"><!--制作・-->運営サポート</h3>
-            <p class="process__content-about-text">チラシ制作、SNS発信、会場設営まで一貫して<span class="process__content-about-text-pickup">支援</span>します。</p>
+            <p class="process__content-about-text">制作物の納品、Web・SNSを通じた発信、当日の会場運営・スタッフ配置まで一括してサポート。終了後のアンケート集計や振り返りミーティングにも対応可能です。</p>
           </div>
         </div>
         <div class="process__content-number"></div>
@@ -338,32 +352,30 @@
   </div>
 
   <footer>
-    <div class="footer__color"></div>
-    <div class="inner">
-      <div class="footer__content">
-        <dlv class="footer__detail">
-          <!-- <div class="footer__detail-company">
-            <p class="footer__detail-company-ja">株式会社ヒトツナ</p>
-          </div> -->
+    <dlv class="footer__detail">
+          
 
-          <div class="footer__detail-company-container">
-            <span class="footer__detail-company-en">HITOTSUNA inc.</span>
-            <span class="footer__detail-address">〒150-0001 東京都渋谷区神宮前3-XX-XX ○○ビル4階</span>
-          </div>
-        </dlv>
+        <div class="footer__detail-company-container">
+          <span class="footer__detail-company-ja">株式会社ヒトツナ</span>
+          <span class="footer__detail-company-en">HITOTSUNA inc.</span>
+          <span class="footer__detail-address">〒150-0001 東京都渋谷区神宮前3-XX-XX ○○ビル4階</span>
+        </div>
+      </dlv>
+    <div class="footer__content">
+      
 
-        <nav class="footer__nav">
-          <a class="footer__nav-link" href="">会社情報</a>
-          <a class="footer__nav-link" href="">サービス</a>
-          <a class="footer__nav-link" href="">実績</a>
-          <a class="footer__nav-link" href="">お問い合わせ</a>
-          <a class="footer__nav-link" href="">採用情報</a>
-        </nav>
-        <small>&copy; 2025 HITOTSUNA inc.</small>
-      </div>
-
+      <nav class="footer__nav">
+        <a class="footer__nav-link" href=""><span>会社情報</span></a>
+        <a class="footer__nav-link" href=""><span>サービス</span></a>
+        <a class="footer__nav-link" href=""><span>実績</span></a>
+        <a class="footer__nav-link" href="#contact"><span>お問い合わせ</span></a>
+        <a class="footer__nav-link" href=""><span>採用情報</span></a>
+      </nav>
+      <small>&copy; 2025 HITOTSUNA inc.</small>
     </div>
-  </footer>
+
+  
+</footer>
   
   <script src="ex1.js"></script>
   <script>

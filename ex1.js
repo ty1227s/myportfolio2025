@@ -8,19 +8,26 @@
 //   document.body.classList('no-scroll');
 // })
 document.addEventListener('DOMContentLoaded', function () {
-  const menuBtn = document.querySelectorAll('.header__menuButton'); /*? */
+  const menuBtn = document.querySelectorAll('.header__menuButton'); /* メニューボタン */
+  const header = document.querySelector('.header'); /* headerエリア */
       
       
   menuBtn.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      this.classList.toggle('active');
+      this.classList.toggle('active'); /* クラス名末尾にactiveを付与 */
 
-      const menuSp = document.querySelector('.header__menu-sp');
+      const menuSp = document.querySelector('.header__menu-sp'); /* メニューエリアを取得 */
       
       if (menuSp) {
-        menuSp.classList.toggle('active');
+        menuSp.classList.toggle('active'); /* メニューエリアクラス名末尾にactiveを付与 */
+        
+        // activeクラスの有無で背景色を変更
+        if (menuSp.classList.contains('active')) {
+          header.style.backgroundColor = "#fff";  
+        } else {
+          header.style.backgroundColor = "transparent"; // 元に戻す
+        }
       }
-
     });
   });
 });
@@ -35,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
   // レスポンシブメニューのクラスを取得
   const menuSp = document.querySelector('.header__menu-sp');
+
+  /* headerエリア */
+  const header = document.querySelector('.header');
       
   // 画面サイズの変更を検知
   window.addEventListener('resize', () => {
@@ -45,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // ｸﾗｽ名から「.active」を除去→ﾒﾆｭｰﾎﾞﾀﾝ･ﾚｽﾎﾟﾝｼﾌﾞﾒﾆｭｰ非表示化
       menuBtn.classList.remove('active');
       menuSp.classList.remove('active');
+      header.style.backgroundColor = "#fff";
+    } else {
+      header.style.backgroundColor = "transparent";
     }
   });
 });
@@ -52,12 +65,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // process各要素に番号を付与（レスポンシブ用の表示）
 // index = 番号
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.process__content-wrapper').forEach((wrapper, index) => {
-    const numberE1 = wrapper.querySelector('.process__content-number');
-    if (numberE1) {
-      numberE1.textContent =  index + 1;
+const wrappers = document.querySelectorAll('.process__content-wrapper');
 
+document.addEventListener('DOMContentLoaded', () => {
+  wrappers.forEach((wrapper, index) => {
+    const numberE1 = wrapper.querySelector('.process__content-number');
+    const child = wrapper.querySelector('.process__content');
+    if (numberE1) {
+      const value = index + 1;
+      numberE1.textContent = value;
+      child.dataset.index = value;
     }
   });  
 });
@@ -82,30 +99,18 @@ fadeTargets.forEach(target => observer.observe(target));
 
 
 
-// レスポンシブメニューを開いているとき、
-// どこかしらリンクをクリックしたら、自動的にメニューが閉じる
 
-// const navLinks = navMenu.querySelectorAll("a");
-
-
-// menuToggle.addEventListener("click", () => {
-//   navMenu.classList.toggle("hidden"); 
-// });
-
-// 各リンクをクリックした時にメニューを閉じる
-// navLinks.forEach(link => {
-//   link.addEventListener("click", () => {
-//     navMenu.classList.add("hidden");
-//   });
-// });
 
 //お問い合わせボタンをクリックした時にメニューを閉じる
 document.querySelector('.header__menu-sp-forContact').addEventListener("click", () => {
   const menuToggle = document.querySelector('.header__menuButton.active');
   const navMenu = document.querySelector('.header__menu-sp.active');
+  const header = document.querySelector('.header');
+  
 
   if (menuToggle && navMenu) {
     menuToggle.classList.remove('active');
-    navMenu.classList.remove('active');  
+    navMenu.classList.remove('active');
+    // header.style.backgroundColor = "transparent";
   }
 });

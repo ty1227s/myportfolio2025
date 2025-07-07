@@ -49,6 +49,35 @@ window.addEventListener('load', () => {
 });
 
 
+// 標語の登場
+window.addEventListener('DOMContentLoaded', () => {
+  const targets = document.querySelectorAll('.slogan__content');
+
+  setTimeout(() => {
+
+    const observer = new IntersectionObserver((entries, observer) => {
+    
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) { 
+        
+          entry.target.classList.add('wipe-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{
+
+    // 完全に表示されたときに発火
+    threshold: 0.5
+    });
+
+    targets.forEach(target => observer.observe(target));
+  }, 3000);
+});
+
+
+    
+      
 
 
 
