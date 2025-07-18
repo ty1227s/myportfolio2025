@@ -1,22 +1,6 @@
-// ボタンが押されると、PCスクショとSPスクショが切り替わる
-// また矢印のアイコン画像が回転することで、切り替わることを表現
-const btn = document.querySelector('.switching-button'); //ボタン
-const btnText = document.querySelector('.switching-button-text'); //ボタン内テキスト
-const pc = document.querySelector('.screenshot__pc'); //PCスクショ
-const sp = document.querySelector('.screenshot__sp'); //SPスクショ
-
-btn.addEventListener("click", function() {
-  const isAshown = pc.classList.contains("show");
-
-  pc.classList.toggle("show", !isAShown);
-  sp.classList.toggle("show", isAShown);
-
-  btnText.textContent = isAShown ? "ＰＣ表示に切り替え" : "ＳＰ表示に切り替え";
-});
-
 // 他作品遷移エリアが表示されている時は、PC･SP切り替えボタンを非表示にする
 const other = document.querySelector('.other'); // 他作品遷移エリア
-const observer = new IntersectionObserver((entries) => {
+const observer2 = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       btn.style.display = 'none';
@@ -25,11 +9,11 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 });
-observer.observe(other);
+observer2.observe(other);
 
 
 
-// 後の作品が登録されていない場合、文字色を変える
+// 後の作品が登録されていない場合、リンク無効・透明度の変更
 document.querySelectorAll('.other__next a').forEach(a => {
   const href = a.getAttribute('href');
   const link = document.querySelector('.other__next');
@@ -43,7 +27,7 @@ document.querySelectorAll('.other__next a').forEach(a => {
 });
 
 
-// 前の作品が登録されていない場合、文字色を変える
+// 前の作品が登録されていない場合、リンク無効・透明度の変更
 document.querySelectorAll('.other__previous a').forEach(a => {
   const href = a.getAttribute('href');
   const link = document.querySelector('.other__previous');

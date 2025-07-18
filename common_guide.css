@@ -16,108 +16,6 @@
   --page-color2: #fff;
 }
 
-/* HPスクショ PC･SP切り替え */
-.switching-button {
-  background-color: rgb(6, 113, 22);
-  /* background-image: linear-gradient(135deg, #bcf786, #5df7b9); */
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  bottom: 50px;
-  height: 200px;
-  position: fixed;
-  right: 0;
-  transition: all .3s ease;
-  width: 40px;
-  z-index: 999;
-}
-
-@media screen and (max-width: 767px) {
-  .switching-button {
-    height: 120px;
-    right: 0px;
-    width: 60px;
-  }
-}
-
-.switching-button a {
-  display: block;
-  height: 100%;
-  text-decoration: none;
-  width: 100%;
-}
-
-.switching-button-icon {
-  height: 25px;
-  margin-left: 7px;
-  margin-top: 5px;
-  margin-bottom: -5px;
-  transition: all .3s ease;
-  width: 25px;
-}
-
-.switching-button:hover a .switching-button-icon {
-  transform: rotate(-45deg);
-}
-
-@media screen and (max-width: 767px) {
-  .switching-button:hover a .switching-button-icon {
-    margin-left: 5px;
-    margin-right: 2px;
-    margin-top: 6px;
-    margin-bottom: 9px;
-  }
-}
-
-@media (hover: none) {
-  .switching-button:hover a .switching-button-icon {
-    transform: initial;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .switching-button-icon {
-    height: 42px;
-    margin-left: 8px;
-    margin-bottom: 10px;
-    padding-top: 6px;
-    width: 42px;
-  }
-}
-
-.switching-button-icon-pc {
-  height: 25px;
-  margin-bottom: -5px;
-  margin-left: 7px;
-  margin-top: -10px;
-  width: 25px;
-}
-
-@media screen and (max-width: 767px) {
-  .switching-button-icon-pc {
-    height: 42px;
-    width: 42px;
-  }
-}
-
-.switching-button-icon-sp {
-  height: 25px;
-  width: 25px;
-}
-
-.switching-button-text {
-  color: #fff;
-  font-size: 14px;
-  margin: 0 auto;
-  text-align: center;
-  writing-mode: vertical-rl;
-}
-
-@media screen and (max-width: 767px) {
-  .switching-button-text {
-    display: none;
-  }
-}
-
 /* 概要 -------------------------------------------------------- */
 /* .overview__title {
 
@@ -137,7 +35,8 @@
   height: 100%;
   line-height: 1.5;
   margin: 0 auto;
-  padding-bottom: 10px;
+  margin-bottom: -10px;
+  padding-bottom: 2px;
   position: relative;
   text-align: center;
   width: 200px;
@@ -318,33 +217,100 @@
   margin: 0 auto;
 }
 
-.screenshot__pc {
-  display: none;
+.screenshot__pc, .screenshot__sp /* プルラウンメニュー */ {
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 600px;
+  margin: 10px auto;
+  transition: .3s all ease;
+  width: calc(100% - 40px); /* 仮 */
 }
 
-@media screen and (max-width: 767px) {
-  .screenshot__pc {
-    width: 100%;
+@media screen and (max-width: 768px) {
+  .screenshot__pc, .screenshot__sp {
+    margin: 1.3020833333333335vw;
+    width: calc(100% - 20px);
   }
 }
 
+@media screen and (max-width: 420px) {
+  .screenshot__pc, .screenshot__sp {
+    
+  }
+}
 
-.screenshot__sp {
-  display: none;
+.screenshot__pc summary, .screenshot__sp summary /* プルダウンメニュー */{
+  background-color: #223a70;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 16px;
+  height: 50px;
+  padding-top: 16px;
+  padding-left: 30px;
+  transition: .3s all ease;
+}
+
+@media screen and (max-width: 768px) {
+  .screenshot__pc summary, .screenshot__sp summary {
+    font-size: 1.953125vw /* 15px */ ;
+    height: 6.510416666666667vw;
+    padding-top: 2.473958333333333vw; /* 19 */
+    padding-left: 3.90625vw; /* 30 */
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .screenshot__pc summary, .screenshot__sp summary {
+    font-size: 3.8095238095238098vw; /* 16 */
+    padding-top: 1.3809523809524vw;
+  }
+}
+
+.screenshot__pc summary::marker, .screenshot__sp summary::marker {
+  transition: all .3s ease;
+}
+
+.screenshot__icon {
+  margin-top: 0px;
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;  
+}
+
+.screenshot__pc summary span, .screenshot__sp summary span {
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .screenshot__pc summary span, .screenshot__sp summary span {
+    margin-left: 1.953125vw; /* 15 */
+  }
+}
+
+.screenshot__pc-img {
+  border: 1px solid #444;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  transition: all .3s ease;
+  width: 90%;
+}
+
+.screenshot__sp-img {
+  border: 1px solid #444;
+  display: block;
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  margin-top: 10px;
+  text-align: center;
+  transition: all .3s ease;
+  width: 50%;
 }
 
-@media screen and (max-width: 767px) {
-  .screenshot__sp {
-    width: 100%;
+@media screen and (max-width: 768px) {
+  .screenshot__pc-img, .screenshot__sp-img {
+    width: 90%;
   }
 }
 
@@ -410,7 +376,10 @@
 @media screen and (max-width: 767px) {
   .explanation__table-row {
     /* padding: 1.303780964797914vw 0; */
+    border-top: none;
+    border-bottom: none;
     flex-direction: column;
+    width: calc(100% - 10px);
   }
 }
 
@@ -421,9 +390,8 @@
   font-size: 16px;
   min-width: 140px;
   overflow-wrap: break-word;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding: 10px;
+  padding-top: 6px;
   white-space: normal;
   word-break: break-word;
   width: 40%;
@@ -431,7 +399,9 @@
 
 @media screen and (max-width: 767px) {
   .explanation__table-item {
-    font-size: 2.0860495436766624vw; /* 767基準 16px */
+    /* ↓ 仮 */
+    /* height: 2.3vw;  */
+    height: 20px;
     min-width: initial;
     width: calc(100% - 10px);
   }
@@ -444,17 +414,30 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .explanation__table-item p {
+    line-height: 16px;
+    padding-top: 0.65vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .explanation__table-item p {
+    font-size: 2.0860495436766624vw; /* 767基準 16px */
+    padding-top: 5px;
+  }
+}
+
 .explanation__table-content {
   font-size: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
+  padding: 10px;
   width: 60%;
 }
 
 @media screen and (max-width: 767px) {
   .explanation__table-content {
-    font-size: 2.0860495436766624vw; /* 767基準 16px */
+    font-size: 16px;
+    padding-left: 0px;
     width: 100%;
   }
 }

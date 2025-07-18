@@ -73,14 +73,7 @@
     </section>
 
     <section class="overview">
-      <div class="switching-button" id="switching-pc-sp">
-        <a href="">
-          <img class="switching-button-icon" src="img/icon-arrow2.png" alt="">
-          <img class="switching-button-icon-pc" src="img/icon-pc.png" alt="">
-          <!-- <img class="switching-button-icon-sp" src="img/icon-mobile.png" alt=""> -->
-          <p class="switching-button-text">ＰＣ表示に切り替え</p>
-        </a>
-      </div>
+      
 
       <div class="inner">
         <div class="overview__title-number">2</div>
@@ -99,8 +92,20 @@
     </section>
 
     <section class="screenshot">
-      <img class="screenshot__pc show" src="img/pc2.jpg" alt="スクリーンショット（PCサイズ）">
-      <img class="screenshot__sp" src="img/sp2.jpg" alt="スクリーンショット（SPサイズ）">
+      <details class="screenshot__pc">
+        <summary>
+          <span>PC表示</span>
+        </summary>
+        <img class="screenshot__pc-img" src="img/pc2.jpg" alt="PC表示スクリーンショット">
+      </details>
+
+      <details class="screenshot__sp">
+        <summary>
+          <span>スマホ表示</span>
+        </summary>
+        <img class="screenshot__sp-img" src="img/sp2.jpg" alt="スマホ表示スクリーンショット">
+      </details>
+
     </section>
 
     <section class="explanation">
@@ -129,7 +134,7 @@
               デザイン面の工夫
             </dt>
             <dd class="explanation__table-content">
-              
+              ブルー系中心の配色、セクションの斜め線の区切りなど、疾走感を意識したデザイン
             </dd>
           </div>
           <div class="explanation__table-row">

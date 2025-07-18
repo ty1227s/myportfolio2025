@@ -11,28 +11,23 @@
 
 
 
-//表示位置によりheaderの表示方法を変更
-//(クラス名に「」を付与する)
-if (window.innerWidth > 768) {
-  window.addEventListener('scroll', () => {
-    // headerを取得
-    const header = document.querySelector('.header');
-    // headerのロゴを取得
-    const logo = document.querySelector('.header__logo-content');
-    // sloganの高さを取得
-    const slogan = document.querySelector('.slogan');
-    const sloganHeight = slogan.offsetHeight;
+//MV表示中はheaderを非表示にする
+const header = document.querySelector('.header'); // header
+const mv = document.querySelector('.mv1'); // MV
 
-    // スクロール位置がsloganの高さを超えたらクラスを追加
-    if (window.scrollY > sloganHeight) {
-      header.classList.add('top');
-      logo.classList.add('top');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      header.style.display = 'none'; // 非表示にする
     } else {
-      header.classList.remove('top');
-      logo.classList.remove('top');
+      header.style.display = 'block';
     }
   });
-}
+}, {
+  threshold: 0.1 // 10%以上見えたら反応
+});
+observer.observe(mv);
+
 
 // ページを読み込んでから3秒後にシンボルマークを表示
 window.addEventListener('load', () => {

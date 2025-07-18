@@ -498,10 +498,11 @@ header { /* header共通設定 */
   margin-right: auto;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 900px) {
   .concept__content {
     text-align: center;
     margin: 0 auto;
+    margin-top: 10px;
   }
 }
 
@@ -1019,10 +1020,12 @@ header { /* header共通設定 */
 
 
 .process__content-img /* 各プロセス用画像 */{
+  /* aspect-ratio: 8 / 5; */
   background-color: var(--sub-color); /* 仮設定 */
   background-size: cover;
   min-height: 28.57142857142857vw; /* 1400px基準 400px */
   min-width: 42.857142857142854vw; /* 1400px基準 600px */
+  max-width: 550px; /* 1400px基準 600px */
 }
 
 @media screen and (max-width: 767px) {
@@ -1164,6 +1167,7 @@ header { /* header共通設定 */
 
 
 .achievement__content {
+  aspect-ratio: 13/17;
   background-color: #fff;
   /* border: 2px solid var(--sub-color2); */
   border-radius: 20px;
@@ -1175,46 +1179,67 @@ header { /* header共通設定 */
   width: 400px;
 }
 
+@media screen and (max-width: 900px) {
+  .achievement__content {
+    max-width: 500px;
+    /* width: calc(100% - 20px); */
+  }
+}
+
 @media screen and (max-width: 767px) {
   .achievement__content {
-    width: 400px; /* 400px */
+    /* 20 */
+    /* margin: 2.607561929595828vw;  */
   }
 }
 
 @media screen and (max-width: 420px) {
   .achievement__content {
+    margin: 4.761904761904762vw; /* 20 */
     width: 95.23809523809523vw; /* 400px */
   }
 }
 
 
 .achievement__content-image {
+  aspect-ratio: 8/5;
   background-color: var(--sub-color2); /* 仮設定 */
   background-size: cover;
   height: 250px;
   margin: 0;
   max-height: 250px;
+  object-fit: cover;
   overflow: hidden;
   transition: all .3s ease;
   width: 100%;
   z-index: 97;
 }
 
-.achievement__content:nth-of-type(3) .achievement__content-image {
+.achievement__content:last-of-type .achievement__content-image {
   background-position: 40% 40%;
   background-repeat: no-repeat;
   background-size: 105%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 900px) {
   .achievement__content-image {
-
+    /* ↓ 250 */
+    /* height: 32.59452411994785vw; */
+    /* ↓ 250 */
+    /* max-height: 32.59452411994785vw;  */
+    height: 100%;
+    /* max-height: 250px; */
+    object-fit: cover;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 420px) {
   .achievement__content-image {
-
+    /* ↓ 250 */
+    height: 59.523809523809526vw;
+    /* ↓ 250 */
+    max-height: 59.523809523809526vw;
   }
 }
 
@@ -1232,13 +1257,15 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .achievement__content-about {
-
+    /* ↓ 220 */
+    /* height: 28.683181225554105vw;  */
+    height: auto;
   }
 }
 
 @media screen and (max-width: 420px) {
   .achievement__content-about {
-
+    height: auto;
   }
 }
 
@@ -1257,19 +1284,33 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .achievement__content-about-title {
-
+    
+    font-size: 22px; 
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .achievement__content-about-title {
-
+    font-size: 5.238095238095238vw; /* 22 */
+    margin-top: 0;
+    margin-bottom: 2.380952380952381vw; /* 10 */
+    padding-left: 2.380952380952381vw; /* 10 */
+    padding-right: 2.380952380952381vw; /* 10 */
+    padding-top: 4.761904761904762vw; /* 20 */
+    padding-bottom: 4.761904761904762vw; /* 20 */
   }
 }
 
 
 .achievement__content-about-text {
   color: var(--sub-color2);
+  font-size: 16px;
   line-height: 1.9;
   padding-left: 10px;
   padding-right: 10px;
@@ -1278,13 +1319,13 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .achievement__content-about-text {
-
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .achievement__content-about-text {
-
+    font-size: 3.3333333333333335vw; /* 14 */
   }
 }
 
@@ -1774,18 +1815,18 @@ footer /* footerブロック全体 */{
 
 
 @media screen and (max-width: 767px) {
-  .footer__nav-link:nth-of-type(1) {
+  .footer__nav-link:first-of-type {
     margin-left: 2.607561929595828vw; /* 20 */
   }
 }
 
 @media screen and (max-width: 420px) {
-  .footer__nav-link:nth-of-type(1) {
+  .footer__nav-link:first-of-type {
     margin-left: 4.761904761904762vw; /* 20 */
   }
 }
 
-.footer__nav-link:nth-of-type(5) { /* 最後の項目 */
+.footer__nav-link:last-of-type {
   margin-right: 0px;
 }
 
@@ -1800,12 +1841,12 @@ footer /* footerブロック全体 */{
     font-size: 2.8683181225554106vw; /* 23 */
     height: 5.215123859191656vw; /* 40 */
     margin: 0 2.607561929595828vw; /* 20 */
-    padding-top: 1.0430247718383312vw; /* 8 /
+    padding-top: 1.0430247718383312vw; /* 8 */
     padding-left: 1.303780964797914vw; /* 10 */
     padding-right: 0.651890482398957vw; /* 5 */
   }
 
-  .footer__nav-link:nth-of-type(5) { /* 最後の項目 */
+  .footer__nav-link:last-of-type {
     margin-right: 2.607561929595828vw; /* 20 */
   }
 }
@@ -1820,7 +1861,7 @@ footer /* footerブロック全体 */{
     padding-right: 1.1904761904761905vw; /* 5 */
   }
 
-  .footer__nav-link:nth-of-type(5) { /* 最後の項目 */
+  .footer__nav-link:last-of-type {
     margin-right: 4.761904761904762vw; /* 20 */
   }
 }

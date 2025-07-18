@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="ex2style.css">
 </head>
 <body>
-  <header class="header">
+  <!-- <header class="header">
     <div class="header__logo">
       <p class="header__logo-content">FitEdge</p>
     </div>
@@ -18,10 +18,10 @@
         <p class="header__download-text">ダウンロード</p>
       </a>
     </div>
-  </header>
+  </header> -->
 
   <main>
-    <section class="mv">
+    <!-- <section class="mv">
       <div class="mv__symbol-sp">
         <img class="mv__symbol-sp-img" src="img/fitedge.png" alt="FitEdgeシンボルマーク">
       </div>
@@ -31,9 +31,44 @@
       </div>
       <div class="mv__img2"></div>
       
+    </section> -->
+
+
+    <section class="mv"> <!-- メインビジュアル全体 -->
+      <div class="mv__image"> <!-- 走っている人の写真 -->
+        <!-- <img src="..."> をここに -->
+      </div>
+      <div class="mv__content"> <!-- テキストやロゴ、ボタンをまとめるエリア -->
+
+        <div class="mv__branding"> <!-- ロゴとアプリ名 -->
+          <img class="mv__logo" src="img/runningPerson.png" alt="アプリロゴ"> <!-- ロゴ -->
+          <p class="mv__app-name">FitEdge</p> <!-- アプリ名 -->
+        </div>
+
+        <div class="mv__catchcopy"> <!-- キャッチコピー -->
+          <p class="mv__catchcopy-text">
+            理想の自分に、<br>
+            最短で近づけ。
+          </p>
+          <p class="mv__catchcopy-text-sub">
+            時間がないあなたへ。<br>
+            毎日15分からはじめる変化。
+          </p>
+        </div>
+
+        <div class="mv__download"> <!-- ダウンロードボタン -->
+          <a href="#" class="mv__download-link">
+            <div class="mv__download-btn">
+              <img src="img/icon_download.png" alt="DL">
+              <p>アプリをダウンロード</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
     </section>
 
-    <section class="slogan">
+    <!-- <section class="slogan">
       <div class="inner">
         <p class="slogan__content">
           <span class="slogan__content-clause">「理想の自分に、</span>
@@ -44,29 +79,44 @@
             <span class="slogan__content-clause">はじめる変化。</span>
         </p>
       </div>
-    </section>
+    </section> -->
 
     <section class="introduction">
       <div class="inner">
-        <h2 class="section__title"><img src="img/icon_application.png" alt="アイコン">アプリ紹介</h2>
+        <h2 class="section__title">
+          <div class="section__title-img" style="background-image: url(img/icon_application.png);" alt="アプリ紹介"></div>
+          <div class="section__title-text">アプリ紹介</div>
+        </h2>
+        <!--        introduction__wrapper -->
         <div class="introduction__wrapper">
-          <img class="introduction__img" src="img/introduction.png" alt="スクリーンショット">
           <div class="introduction__content">
             <div class="introduction__content-item">
-              <img src="img/icon-watch.png" alt="">
-              <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+              <div class="introduction__content-item-icon">
+                <img src="img/icon-person.png" alt="">
+              </div>
+              <p class="introduction__content-item-summary">パーソナルトレーナー監修メニュー</p>
+              <p class="introduction__content-item-detail">プロがあなた専用に組んだトレーニングプランを毎日サポート。</p>
             </div>
             <div class="introduction__content-item">
-              <img src="img/icon-watch.png" alt="">
-              <p></p>
+              <div class="introduction__content-item-icon">
+                <img src="img/icon-pencil.png" alt="">
+              </div>
+              <p class="introduction__content-item-summary">日々の記録と目標管理機能</p>
+              <p class="introduction__content-item-detail">ワンタップで運動ログを残し、達成度や進捗をひと目で把握。</p>
             </div>
             <div class="introduction__content-item">
-              <img src="img/icon-watch.png" alt="">
-              <p></p>
+              <div class="introduction__content-item-icon">
+                <img src="img/icon-dish.png" alt="">
+              </div>
+              <p class="introduction__content-item-summary">食事アドバイス機能（写真投稿 or スキャン）</p>
+              <p class="introduction__content-item-detail">食事の写真やバーコードをスキャンするだけで栄養バランスを自動解析。</p>
             </div>
             <div class="introduction__content-item">
-              <img src="img/icon-watch.png" alt="">
-              <p></p>
+              <div class="introduction__content-item-icon">
+                <img src="img/icon-ai.png" alt="">
+              </div>
+              <p class="introduction__content-item-summary">AIによる運動提案（習慣化アルゴリズム）</p>
+              <p class="introduction__content-item-detail">あなたの生活リズムに合わせ、AIが最適な運動メニューを自動提案。</p>
             </div>
           </div> 
         </div>
@@ -76,24 +126,34 @@
 
     <section class="plan">
       <div class="inner">
-        <h2 class="section__title"><img src="img/icon-yen.png" alt="アイコン">料金プラン</h2>
+        <h2 class="section__title">
+          <div class="section__title-img" style="background-image: url(img/icon-yen.png);" alt="料金プラン"></div>
+          <div class="section__title-text">料金プラン</div>
+        </h2>
 
         <div class="plan__about">
           <div class="plan__about-table">
             <div class="plan__about-table-column">
               <div class="plan__about-table-column-head"></div>
-              <div class="plan__about-table-column-data">トレーニングメニュー</div>
-              <div class="plan__about-table-column-data">カレンダー記録</div>
-              <div class="plan__about-table-column-data">スマホ連携・同期</div>
-              <div class="plan__about-table-column-data">広告除去機能</div>
+              <div class="plan__about-table-column-data">
+                <p>トレーニングメニュー</p>
+              </div>
+              <div class="plan__about-table-column-data">
+                <p>カレンダー記録</p>
+              </div>
+              <div class="plan__about-table-column-data">
+                <p>スマホ連携・同期</p>
+              </div>
+              <div class="plan__about-table-column-data">
+                <p>広告除去機能</p>
+              </div>
             </div>
 
             <div class="plan__about-table-column">
               <div class="plan__about-table-column-head-paid">
-                <span>
-                  <img src="img/runningPerson2.png" alt="">
+                <p>
                   有料プラン
-                </span>
+                </p>
               </div>
               <div class="plan__about-table-column-data-paid">
                 <img class="plan__about-table-column-data-img" src="img/maru2.png" alt="〇">
@@ -111,9 +171,9 @@
 
             <div class="plan__about-table-column">
               <div class="plan__about-table-column-head-free">
-                <span>
+                <p>
                   無料プラン
-                </span>
+                </p>
               </div>
               <div class="plan__about-table-column-data-free">
                 <img class="plan__about-table-column-data-img" src="img/maru1.png" alt="×">
@@ -137,7 +197,11 @@
 
     <section class="usage">
       <div class="inner">
-        <h3 class="usage__title">利用シーン</h3>
+        <h2 class="section__title">
+          <div class="section__title-img" style="background-image: url(img/icon_fitness.png);"></div>
+          <div class="section__title-text">利用シーン</div>
+        </h2>
+
         <div class="usage__unit">
           <div class="usage__unit-img">
 
@@ -162,12 +226,13 @@
       </div>
     </section>
 
-    <img class="bg" src="img/bg-head1.png" alt="">
+    <!-- <img class="bg" src="img/bg-head1.png" alt=""> -->
 
     <section class="review">
       <div class="inner">
-        <h2 class="review__title">
-          <img class="review__icon" src="img/icon_review.png" alt="">お客様の声
+        <h2 class="section__title">
+          <div class="section__title-img" style="background-image: url(img/icon-review.png)"></div>
+          <div class="section__title-text">お客様の声</div>
         </h2>
 
         <div class="review__container">
@@ -224,9 +289,11 @@
 
     <section class="qanda">
       <div class="inner">
-        <h2 class="qanda__title">
-          <img class="qanda__icon" src="img/qanda.png" alt="Q&A">Q&A
+        <h2 class="section__title">
+          <div class="section__title-img" style="background-image: url(img/qanda.png);"></div>
+          <div class="section__title-text">よくある質問</div>
         </h2>
+
         <div class="qanda__unit">
           <div class="qanda__unit-question">
             
@@ -293,7 +360,23 @@
       <div class="inner">
         <h2>今すぐはじめる！ 登録はこちら</h2>
         <form class="pre-registration__form" action="">
-          <input class="pre-registration__mail" type="email" name="" id=""  placeholder="メールアドレスをこちらに入力">
+          <div class="pre-registration__form-row">
+            <label for="name">
+              <div class="pre-registration__form-row-icon">
+                <img class="pre-registration__form-row-icon-img" src="img/icon-person2.png" alt="">
+              </div>  
+            </label>
+            <input class="pre-registration__form-row-input" id="name" type="text" placeholder="お名前をこちらに入力">  
+          </div>
+
+          <div class="pre-registration__form-row">
+            <label for="mail">
+              <div class="pre-registration__form-row-icon">
+                <img class="pre-registration__form-row-icon-img" src="img/icon-mail.png" alt="">
+              </div>  
+            </label>
+            <input class="pre-registration__form-row-input pre-registration__mail" id="mail" type="email" placeholder="メールアドレスをこちらに入力">  
+          </div>
           <button class="pre-registration__submit" type="submit"><!--事前-->登録する</button>
         </form>
       </div>
@@ -308,7 +391,7 @@
     <div class="inner">
       <!-- <span class="footer__appli-name">FitEdge</span> -->
       <div class="footer__container">
-        <img class="footer__symbol-img"src="img/fitedge.png" alt="FitEdgeシンボルマーク">
+        <img class="footer__symbol-img" src="img/fitedge.png" alt="FitEdgeシンボルマーク">
         <div class="footer__wrapper">
           
           <div class="footer__company-about">
