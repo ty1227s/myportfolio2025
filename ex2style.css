@@ -213,6 +213,18 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 100%;
 }
 
+@media screen and (max-width: 1335px) {
+  .mv {
+    height: 44.9438202247191vw; /* 600 */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mv {
+    flex-direction: column; /* 横配置から縦配置に変更 */
+  } 
+}
+
 .mv__image {
   background-image: url(img/mv2-min.jpg);
   background-position: 26% 50%; 
@@ -220,22 +232,25 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 50%;
 }
 
-.mv__content {
+.mv__content { 
   background-color: var(--main-color);
   color: #fff;
   display: inline-block;
   max-width: 100vw;
   overflow: visible; /* はみ出した部分も表示する */
-  padding: 30px;
+  padding: 40px;
   position: relative;
   transform: transformY(-20%);
   white-space: nowrap;
-  width: max-content;
+  /* width: max-content; */
+  width: 50%;
 }
 
-@media screen and (max-width: 1090px) {
-  .mv1__content {
-    /* width: 300px; */
+
+
+@media screen and (max-width: 1335px) {
+  .mv__content {
+    padding: 2.9962546816479403vw;
   }
 }
 
@@ -250,6 +265,13 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 65px;
 }
 
+@media screen and (max-width: 1335px) {
+  .mv__logo {
+    height: 4.868913857677903vw;
+    width: 4.868913857677903vw;
+  }
+}
+
 .mv__app-name {
   font-family: Arial; 
   font-size: 50px;
@@ -261,14 +283,23 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   text-align: left;
 }
 
+@media screen and (max-width: 1335px) {
+  .mv__app-name {
+    font-size: 3.7453183520599254vw;
+    margin-left: 1.4981273408239701vw;
+  }
+}
+
 .mv__catchcopy {
   color: #fff;
   left: 0;
+  margin-left: 0;
   overflow: visible; /* はみ出した部分も表示する */
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
+  padding-left: 0;
   position: relative;
-  
 }
+
 
 .mv__catchcopy-text {
   display: inline-block;
@@ -284,9 +315,9 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   margin-bottom: 2rem;
   max-width: 100%; 
   overflow: visible; 
-  position: absolute;
+  /* position: absolute; */
   right: 0;
-  text-align: right;
+  text-align: left;
   top: 0;
   /* transform: translateX(-10%); */
   white-space: nowrap;
@@ -294,14 +325,27 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   z-index: 1;
 }
 
+@media screen and (max-width: 1335px) {
+  .mv__catchcopy-text {
+    letter-spacing: 0.149812734082397vw;
+    margin-top: -1.8726591760299627vw;
+  }
+}
+
 .mv__catchcopy-text-sub {
   font-size: 30px;
   font-weight: 500;
-  margin-top: 6rem;
+  margin-top: 0.5rem;
   overflow: visible;
   position: relative;
-  text-align: right;
+  text-align: left;
   z-index: 2;
+}
+
+@media screen and (max-width: 1335px) {
+  .mv__catchcopy-text-sub {
+    font-size: 2.247191011235955vw;
+  }
 }
 
 .mv__download {
@@ -324,6 +368,13 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 350px;
 }
 
+@media screen and (max-width: 1335px) {
+  .mv__download-btn {
+    height: 5.2434456928838955vw;
+    width: 26.217228464419474vw;
+  }
+}
+
 .mv__download-btn:hover {
   background-color: #777;
 }
@@ -336,10 +387,29 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 33px;
 }
 
+@media screen and (max-width: 1335px) {
+  .mv__download-btn img {
+    height: 2.4719101123595504vw;
+    padding-left: 4.119850187265917vw;
+    padding-right: 1.8726591760299627vw;
+    padding-top: 1.4232209737827715vw;
+    width: 2.4719101123595504vw;
+  }
+}
+
 .mv__download-btn p {
   font-size: 19px;
   margin-top: 21px;
 }
+
+@media screen and (max-width: 1335px) {
+  .mv__download-btn p {
+    font-size: 1.4232209737827715vw;
+    margin-top: 1.5730337078651686vw;
+  }
+}
+
+
 
 
 
@@ -650,6 +720,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 }
 
 @media screen and (max-width: 767px) {
+  .plan__about-table-column-head,
   .plan__about-table-column-data {
     width: 200px;
   }

@@ -197,6 +197,7 @@
 
 
 .overview__button a p {
+  font-size: 16px;
   padding-top: 16px;
 }
 
@@ -250,9 +251,10 @@
 
 @media screen and (max-width: 768px) {
   .screenshot__pc summary, .screenshot__sp summary {
-    font-size: 1.953125vw /* 15px */ ;
+    font-size: 16px;
     height: 6.510416666666667vw;
-    padding-top: 2.473958333333333vw; /* 19 */
+    padding-top: 7px;
+    padding-bottom: 8px;
     padding-left: 3.90625vw; /* 30 */
   }
 }
@@ -320,6 +322,7 @@
 
 /* 説明 -------------------------------------------------------- */
 .explanation {
+  margin-top: 35px;
   padding-bottom: 50px;
 }
 
@@ -510,9 +513,11 @@
 
 
 .works__unit {
-  background-color: #eee; 
+  background-color: #eee;
+  border: 1.5px solid #223a70;
   border-radius: 15px;
   display: inline;
+  height: auto;
   /* height: 200px;  */
   margin-top: 30px;
   margin-bottom: 30px;
@@ -520,22 +525,31 @@
   margin-right: auto;
   /* margin: 30px; */
   position: relative;
-  width: 300px;
+  transition: all .3s ease;
+  width: 330px;
   z-index:100;
 }
 
 @media screen and (max-width: 767px) {
   .works__unit {
-    margin: 3.14707908616188vw;
-    /* height: 29.158355091383815vw; */
-    width: 40.86161879895561vw;
+    margin-top: 3.911342894393742vw;
+    margin-bottom: 3.911342894393742vw;
+    /* height: 39.158355091383815vw; */
+    height: auto;
+    width: 43.02477183833116vw;
   }
 }
 
 @media screen and (max-width: 479px) {
   .works__unit {
+    /* height: 75vw; */
+    height: auto;
     width: 100vw;
   }
+}
+
+.works__unit:hover {
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 .works__unit::before {
@@ -569,6 +583,15 @@
   }
 }
 
+@media screen and (max-width: 479px) {
+  .works__unit::before {
+    font-size: 8.163048016701461vw;
+    height: 16.701461377870565vw;
+    left: -1.1315240083507305vw;
+    width: 16.701461377870565vw;
+  }
+}
+
 .works__unit-number /* 各Workに振る数字 */ {
   font-family: "kozuka-gothic-pro", sans-serif;
   font-size: 40px;
@@ -590,6 +613,12 @@
   }
 }
 
+@media screen and (max-width: 479px) {
+  .works__unit-number {
+    font-size: 8.350730688935283vw;
+  }
+}
+
 
 .works__unit a /* 各サイトの説明ぺージへのリンク */{
   color: #000;
@@ -597,22 +626,26 @@
   height: 100%;
   margin-top: 0;
   margin-bottom: 0;
+  padding: 15px;
   text-decoration: none;
   top: -40px;
-  width: 100%;
+  width: calc(100% - 30px);
 }
 
 @media screen and (max-width: 767px) {
   .works__unit a {
+    padding: 1.955671447196871vw;
     top: -5.221932114882506vw;
   }
 }
 
 .works__unit-img /* 各ページのサムネ */{
   background-color: #000;
+  background-position: top center;
+  background-size: cover;
   border-radius: 10px;
   display: block;
-  height: 300px;
+  height: 180px;
   margin-left: 0;
   margin-right: 0;
   width: 300px;
@@ -620,12 +653,17 @@
 
 @media screen and (max-width: 767px) {
   .works__unit-img {
-    /* height: 23.49869451697128vw;
-    width: 23.49869451697128vw; */
-    height: 100%;
-    width: 100%;
+    height: 23.46805736636245vw;
+    width: 39.113428943937414vw;
   }
 }
+
+@media screen and (max-width: 479px) {
+  .works__unit-img {
+    height: 55.11482254697286vw; /* 264 */
+    width: 92.69311064718163vw; /* 440 */
+  }
+} 
 
 .works__unit-img-content {
   background-color: rgba(255, 255, 255, 0.8);
@@ -651,11 +689,38 @@
 
 .works__unit-title {
   font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 767px) {
   .works__unit-title {
     font-size: 2.088772845953003vw;
+    margin-top: 2.607561929595828vw;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .works__unit-title {
+    font-size: 3.3402922755741122vw;
+    margin-top: 4.175365344467641vw;
+  }
+}
+
+.works__unit-date {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .works__unit-date {
+    font-size: 1.8252933507170794vw;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .works__unit-date {
+    font-size: 2.9227557411273484vw;
   }
 }
 

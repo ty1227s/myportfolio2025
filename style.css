@@ -20,6 +20,17 @@
     height: 300px;
   }
 }
+
+.mv .inner h1 { /* タイトル */
+  font-size: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .mv .inner h1 {
+    font-size: 36px;
+  }
+}
+
 /* ---------------------------------------------------------- */
 .menu {
   background-color: #000;
