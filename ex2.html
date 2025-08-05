@@ -7,36 +7,22 @@
   <link rel="stylesheet" href="ex2style.css">
 </head>
 <body>
-  <!-- <header class="header">
-    <div class="header__logo">
-      <p class="header__logo-content">FitEdge</p>
-    </div>
-    <div class="header__empty"></div>
-    <div class="header__download">
-      <a class="header__download-link" href="#">
-        <div class="header__download-icon"></div>
-        <p class="header__download-text">ダウンロード</p>
-      </a>
-    </div>
-  </header> -->
-
   <main>
-    <!-- <section class="mv">
-      <div class="mv__symbol-sp">
-        <img class="mv__symbol-sp-img" src="img/fitedge.png" alt="FitEdgeシンボルマーク">
-      </div>
-      <div class="mv__img1"></div>
-      <div class="mv__name">
-        <img class="mv__symbol-img" src="img/fitedge.png" alt="FitEdgeシンボルマーク">
-      </div>
-      <div class="mv__img2"></div>
-      
-    </section> -->
-
-
     <section class="mv"> <!-- メインビジュアル全体 -->
       <div class="mv__image"> <!-- 走っている人の写真 -->
         <!-- <img src="..."> をここに -->
+        <div class="mv__image-content-sp">
+          <div class="mv__image-content-sp-icon">
+            <img class="mv__image-content-sp-icon-img" src="img/runningPerson.png" alt="symbol">
+            <p class="mv__image-content-sp-icon-name">FitEdge</p>
+          </div>
+          <br>
+          <p>理想の自分に<br>自分で近づけ。</p>
+          <p>
+            時間がないあなたへ。<br>
+            毎日15分からはじめる変化。
+          </p>
+        </div>
       </div>
       <div class="mv__content"> <!-- テキストやロゴ、ボタンをまとめるエリア -->
 
@@ -57,7 +43,7 @@
         </div>
 
         <div class="mv__download"> <!-- ダウンロードボタン -->
-          <a href="#" class="mv__download-link">
+          <a href="#pre-registraion" class="mv__download-link">
             <div class="mv__download-btn">
               <img src="img/icon_download.png" alt="DL">
               <p>アプリをダウンロード</p>
@@ -68,18 +54,14 @@
       </div>
     </section>
 
-    <!-- <section class="slogan">
-      <div class="inner">
-        <p class="slogan__content">
-          <span class="slogan__content-clause">「理想の自分に、</span>
-          <span class="slogan__content-clause">最短で近づけ。」</span><br>
-            <span class="slogan__content-clause">時間がない</span>
-            <span class="slogan__content-clause">あなたへ。</span>
-            <span class="slogan__content-clause">毎日15分から</span>
-            <span class="slogan__content-clause">はじめる変化。</span>
-        </p>
+    <section class="download">
+      <div class="download__sp-btn">
+        <a href="#pre-registration" class="download__sp-btn-link">
+          <img class="download__sp-btn-link-icon" src="img/icon_download.png" alt="DL">
+          <p>アプリをダウンロード</p>
+        </a>
       </div>
-    </section> -->
+    </section>
 
     <section class="introduction">
       <div class="inner">
@@ -208,7 +190,7 @@
           </div>
           <div class="usage__unit-content">
             <p class="usage__unit-content-text">
-              自宅で好きなタイミングで
+              自宅で好きな<br>タイミングで
             </p>
           </div>
         </div>
@@ -219,7 +201,7 @@
           </div>
           <div class="usage__unit-content">
             <p class="usage__unit-content-text">
-              簡単にスマホで入力・確認できる！
+              簡単にスマホで<br>入力・確認できる！
             </p>
           </div>
         </div>  
@@ -356,9 +338,9 @@
 
     <img class="bg" src="img/bg-head1.png" alt="">
 
-    <section class="pre-registration">
+    <section class="pre-registration" id="pre-registration">
       <div class="inner">
-        <h2>今すぐはじめる！ 登録はこちら</h2>
+        <h2>今すぐはじめる！<br class="pre-registration__br-sp">登録はこちら</h2>
         <form class="pre-registration__form" action="">
           <div class="pre-registration__form-row">
             <label for="name">
@@ -366,7 +348,7 @@
                 <img class="pre-registration__form-row-icon-img" src="img/icon-person2.png" alt="">
               </div>  
             </label>
-            <input class="pre-registration__form-row-input" id="name" type="text" placeholder="お名前をこちらに入力">  
+            <input class="pre-registration__form-row-input" id="name" type="text" placeholder="お名前を入力">  
           </div>
 
           <div class="pre-registration__form-row">
@@ -375,7 +357,7 @@
                 <img class="pre-registration__form-row-icon-img" src="img/icon-mail.png" alt="">
               </div>  
             </label>
-            <input class="pre-registration__form-row-input pre-registration__mail" id="mail" type="email" placeholder="メールアドレスをこちらに入力">  
+            <input class="pre-registration__form-row-input pre-registration__mail" id="mail" type="email" placeholder="メールアドレスを入力">  
           </div>
           <button class="pre-registration__submit" type="submit"><!--事前-->登録する</button>
         </form>

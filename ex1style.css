@@ -769,7 +769,17 @@ header { /* header共通設定 */
   color: var(--main-color);
 }
 
-/* 追加スペース */
+.business__target-p {
+  font-size: 21px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .business__target-p {
+    font-size: 16px;
+  }
+}
 
 
 .business__works-flex /* 業務内容一覧 */ {
