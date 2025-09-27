@@ -1,4 +1,8 @@
 
+* {
+
+}
+
 /* ---------------------------------------------------------- */
 .mv {
   background-image: url(img/mv_top1.jpg);
@@ -7,14 +11,14 @@
   color: #fff;
   font-size: 60px;
   font-weight: 900;
-  height: 700px;
+  height: 500px;
   padding-top: 100px;
-  text-align: center;
+  text-align: left;
   text-shadow: 3px 3px 3px #000;
   width: 100%;
 }
 
-@media screen and (max-width: 1024px) { /* 要修正？ */
+@media screen and (max-width: 767px) { /* 要修正？ */
   .mv {
     font-size: 30px;
     height: 300px;
@@ -22,20 +26,37 @@
 }
 
 .mv .inner h1 { /* タイトル */
-  font-size: 48px;
+  font-size: 80px;
+  height: 100%;
+  margin-top: 30px;
+  margin-bottom: -100px;
+  vertical-align: bottom;
 }
 
 @media screen and (max-width: 767px) {
   .mv .inner h1 {
     font-size: 36px;
+    margin-top: 140px;
   }
+}
+
+.mv .inner h1 span { /* タイトルを行ごとに分割 */
+  display: block;
+  line-height: 0.05;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 1s ease;
+}
+
+.mv .inner h1 span.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* ---------------------------------------------------------- */
 .menu {
   background-color: #000;
   color: #fff;
-  height: 120px;
 }
 
 @media screen and (max-width: 767px) {
@@ -47,6 +68,7 @@
 .menu__item-list {
   align-items: center;
   display: flex;
+  height: 250px;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
@@ -62,78 +84,143 @@
 
 .menu__item {
   background-color: #000;
-  border: 2px solid #fff;
-  border-radius: 20px;
   color: #fff;
-  height: 150px;
+  display: flex;
+  flex-direction: row;
+  height: 250px;
   list-style: none;
-  margin: 50px auto;
-  position: relative;
+  margin: 0 auto;
   text-align: center;
-  top: -125px;
+  /* top: -125px; */
   transition: all .3s ease;
-  width: 150px;
+  width: 100%;
   z-index: 100;
+}
+
+.menu__item:hover {
+  background-color: #222;
 }
 
 @media screen and (max-width: 767px) {
   .menu__item {
-    height: 100px;
-    margin: 35px auto;
+    border: none;
+    border-radius: 0;
+    height: 120px;
+    margin: 0;
+    position: relative;
     top: 0;
+    width: 100%;
   }
 
   .menu__item:nth-of-type(1) {
+    border-bottom: 1px solid #fff;
     margin-bottom: 0;
   }
 }
 
-.menu__item:hover {
-  background-color: #fff;
+.menu__item-content {
+  height: 100%;
+  /* margin-top: 65px; */
+  width: 80%; /* 仮 */
+}
+
+@media screen and (max-width: 767px) {
+  .menu__item-content {
+    width: calc(100% - 60px);
+  }
 }
 
 
 
 .menu__item-link {
   color: #fff;
-  display: block;
+  /* display: block; */
+  display: flex;
   font-size: 20px;
   height: 100%;
-  line-height:7.4;
-  /* margin-top: 30px;
-  margin-bottom: 30px; */
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
-  transition: all .3s ease;
+  transition: background-color .3s ease;
   width: 100%;
 }
 
+/* .menu__item-link:hover {
+  background-color: #fff;
+} */
+
 @media screen and (max-width: 767px) {
   .menu__item-link {
-    font-size: 16px;
-    line-height: 6.3;
+    border: none;
+    border-radius: 0%;
+    /* display: block; */
+    font-size: 20px;
+    line-height: 1;
+    height: 100%;
+    margin: 0;
+    text-align: left;
+    transition: opacity .5s ease;
+    width: 100%;
   }
 }
 
-.menu__item-link:hover {
-  color: var(--main-color);
+.menu__item-link-arrow {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin-top: 95px;
+  height: 40px;
+  opacity: 0;
+  transition: all .5s ease;
+  width: 40px;
 }
 
-.menu__item-link span {
-  padding-top: 30px;
+@media screen and (max-width: 767px) {
+  .menu__item-link-arrow {
+    margin-top: 35px;
+  }
 }
 
+.menu__item-link:hover .menu__item-link-arrow {
+  background-color: #fff;
+  opacity: 1;
+  transform: translateX(3px);
+}
 
+.menu__item-content-text {
 
+}
 
-/* ---------------------------------------------------------- */
-/* footer {
-  background-color: var(--main-color);
+.menu__item-content-text-en {
   color: #fff;
-  height: 100px;
-  padding-top: 55px;
-  text-align: center;
+  font-size: 36px;
+  margin-top: 65px;
 }
 
-footer small {
+@media screen and (max-width: 767px) {
+  .menu__item-content-text-en {
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+}
+
+.menu__item-content-ja {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .menu__item-content-ja {
+    margin-left: 15px;
+  }
+}
+
+/* @media screen and (max-width: 767px) {
+  .menu__item-content-text-en {
+    display: none;
+  }  
+}
+
+@media screen and (max-width: 767px) {
+  .menu__item-content-ja {
+    display: none;
+  }  
 } */

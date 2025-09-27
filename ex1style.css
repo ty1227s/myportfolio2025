@@ -191,7 +191,8 @@ header { /* header共通設定 */
 }
 
 .header__nav-item-link:hover {
-  opacity: 0.5;
+  color: var(--main-color);
+  font-weight: 500;
 }
 
 
@@ -218,28 +219,45 @@ header { /* header共通設定 */
   color: #fff;
 }
 
-
-.header__menuButton /* レスポンシブメニュー用ボタン */ {
-  width: 40px;
-  height: 40px;
-  position:fixed;
-  top: 8px;
-  right: 10px;
+.header__menu-button {
+  background-color: var(--main-color);
+  border-bottom-left-radius: 10px;
   cursor: pointer;
+  height: 70px;
+  position:fixed;
+  top: 0;
+  right: 0;
+  width: 70px;
   z-index: 1001;
 }
 
 @media screen and (min-width: 1001px) {
-  .header__menuButton {
+  .header__menu-button {
     display: none;
   }
 }
+
+.header__menuButton /* レスポンシブメニュー用ボタン */ {
+  width: 40px;
+  height: 40px;
+  margin: 20px auto 0;
+  /* position:fixed;
+  top: 8px;
+  right: 10px;
+  z-index: 1001; */
+}
+
+/* @media screen and (min-width: 1001px) {
+  .header__menuButton {
+    display: none;
+  }
+} */
 
 
 .header__menuButton span /* ボタン内線の描画 */ {
   display: block;
   height: 3px;
-  background: var(--main-color);
+  background: #fff;
   margin: 9px 0;
   transition: all 0.3s ease;
 }

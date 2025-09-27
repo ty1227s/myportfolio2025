@@ -514,9 +514,11 @@
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  /* margin: 30px; */
+  opacity: 0;
   position: relative;
-  transition: all .3s ease;
+  transition: all .5s ease;
+  transition-delay: calc(var(--i, 0) * 250ms);
+  transform: translateY(20px);
   width: 330px;
   z-index:100;
 }
@@ -531,12 +533,20 @@
   }
 }
 
+
+
 @media screen and (max-width: 479px) {
   .works__unit {
+    --i: 0 !important;
     /* height: 75vw; */
     height: auto;
     width: 100vw;
   }
+}
+
+.works__unit.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .works__unit:hover {

@@ -1,33 +1,23 @@
-// MVを表示しているとき？or一番上にある時、固定表示のヘッダーを表示しない
-// function hiddenHeader() {
-
-// }
-
-// 一番上にいない時、backtotopボタンを作動させる
-// →hiddenheaderと合体させてもいいか？
-// function displayBackToTop() {
-
-// }
+// header関連処理
+window.addEventListener('DOMContentLoaded', () => {
+  const icon = document.querySelector('.header__logo-img'); // アイコン
+  icon.style.left = "0%";
+  const name = document.querySelector('.header__logo-name'); // アプリ名
+  name.style.opacity= "1";
+})
 
 
-
-//MV表示中はheaderを非表示にする
-const header = document.querySelector('.header'); // header
-const mv = document.querySelector('.mv1'); // MV
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      header.style.display = 'none'; // 非表示にする
-    } else {
-      header.style.display = 'block';
-    }
-  });
-}, {
-  threshold: 0.1 // 10%以上見えたら反応
+// MV関連処理
+window.addEventListener('DOMContentLoaded', () => {
+  const mv = document.querySelector('.mv');
+  mv.style.opacity = "1"; // MV領域全体をフェードイン
+  const symbol = document.querySelector('.mv__branding'); // シンボルマーク
+  const catchCopy = document.querySelector('.mv__catchcopy');
+  const downloadBtn = document.querySelector('.mv__download');
+  symbol.style.opacity = "1";
+  catchCopy.style.opacity = "1";
+  downloadBtn.style.opacity = "1";
 });
-observer.observe(mv);
-
 
 // ページを読み込んでから3秒後にシンボルマークを表示
 window.addEventListener('load', () => {
@@ -44,35 +34,38 @@ window.addEventListener('load', () => {
 });
 
 
-// 標語の登場
-window.addEventListener('DOMContentLoaded', () => {
-  const targets = document.querySelectorAll('.slogan__content');
+// 機能紹介表示領域に到達したらフェードイン
+window.addEventListener('load', () => {
+  const items = document.querySelectorAll('.introduction__content-item');
 
-  setTimeout(() => {
-
-    const observer = new IntersectionObserver((entries, observer) => {
-    
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) { 
-        
-          entry.target.classList.add('wipe-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    },{
-
-    // 完全に表示されたときに発火
-    threshold: 0.5
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      io.unobserve(entry.target);
     });
+  }, {
+    threshold: 0.8,
+    rootMargin: '0px 0px -10% 0px'
+  });
 
-    targets.forEach(target => observer.observe(target));
-  }, 3000);
+  items.forEach(el => io.observe(el));
 });
 
+// Q&A 各ペア単位に到達したらフェードイン
+document.addEventListener('scroll', () => {
+  const items = document.querySelectorAll('.qanda__unit');
 
-    
-      
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      io.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.8,
+    rootMargin: '0px 0px -10% 0px'
+  });
 
-
-
+  items.forEach(el => io.observe(el));
+});

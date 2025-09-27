@@ -14,6 +14,7 @@
 }
 
 * {
+  /* font-family: "a-otf-ud-shin-go-pr6n", sans-serif; */
   margin: 0;
   /* text-align: center; */
 }
@@ -98,126 +99,126 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   background-color: var(--main-color);
 }
 
-/* ヘッダー --------------------------------------------------------------------- */
-.header {
+/* フェードインで表示用 */
+/* .show {
+  opacity: 1;
+} */
+
+/* スプラッシュ */
+/* .splash {
   background-color: var(--main-color);
-  border-radius: 30px;
-  box-shadow:2px 5px 10px 1px var(--sub-color2);
-  color: var(--sub-color3);
-  display: flex;
-  height: 60px;
-  margin: 10px 25px 25px;
+  height: 100%;
+  opacity: 1;
   position: fixed;
-  transition: all 0.3s ease;
-  width: calc(100% - 50px);
-  z-index: 100;
+  transition: opacity 1s ease;
+  width: 100%;
+  z-index: 9999;
 }
 
-@media screen and (max-width: 767px) {
-  .header {
-    border-radius: 0;
-    height: 50px;
-    margin: 0;
-    width: 100%;
-  }
+.splash.fadeOut {
+  opacity: 0;
 }
 
-.header.top {/*(一番上にいる時のみ）*/
-  border-radius: 0px;
-  margin: 0px;
+.splash__logo {
+  margin: 0 auto;
+  height: 140px;
+  width: auto;
+} */
+
+/* ダウンロードフォームへのリンク */
+.button-download {
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  bottom: 20px;
+  color: #fff;
+  right: 30px;
+  height: 100px;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  width: 100px;
+  z-index: 99999;
+}
+
+.button-download a {
+  border-radius: 50%;
+  color: #fff;
+  height: 100px;
+  text-decoration: none;
+  width: 100px;
+}
+
+.button-download-img {
+  height: 60px;
+  margin: 15px auto 0;
+  transition: height .5s ease, width .5s ease;
+  width: 60px;
+}
+
+.button-download:hover a .button-download-img {
+  height: 35px;
+  width: 35px;
+}
+
+.button-download a p {
+  font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", "Nimbus Sans L", "Noto Sans", sans-serif;
+  font-style: oblique;
+  margin-top: 38px;
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.button-download:hover a p {
+  display: inline;
+  opacity: 1;
+  /* transition: all .5s ease; */
+}
+
+/* ヘッダー --------------------------------------------------------------------- */
+header {
+  background-color: #fff;
+  height: 50px;
   width: 100%;
 }
 
-.header__logo-content {
-  cursor: default;
-  font-family: Arial, Helvetica, sans-serif;
+@media screen and (max-width: 767px) {
+  header {
+  
+  }
+}
+
+.header__logo {
+  display: flex; 
+}
+
+.header__logo-img {
+  height: 35px;
+  left: 67%;
+  margin-top: 7px;
+  margin-left: auto;
+  margin-right: 10px;
+  position: relative;
+  transition: left 2s ease;
+  width: 35px;
+}
+
+.header__logo-name {
+  color: var(--main-color);
+  font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", "Nimbus Sans", sans-serif;
   font-size: 30px;
   font-style: italic;
-  font-weight: 700;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 35px;
+  font-weight: 600;
   opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.header__logo-content.top {
-  cursor: auto;
-  opacity: 1;
-}
-
-@media screen and (max-width: 767px) {
-  .header__logo-content {
-    margin: 8px;
-    margin-left: 13px;
-    opacity: 1;
-  }
-}
-
-.header__empty {
-  width: calc(100% - 185px);
+  transition: opacity 1.5s ease-out;
+  transition-delay: 2s;
+  margin-top: 8px;
+  margin-right: auto;
 }
 
 
-.header__download {
-  background-color: var(--sub-color2);
-  border-radius:  30px;
-  cursor: pointer;
-  line-height: 40px;
-  margin: 10px;
-  text-align: center;
-  transition: all 0.3s ease;
-  width: 180px;
-}
 
-@media screen and (max-width: 767px) {
-  .header__download {
-    border-radius: 0;
-    margin: 0;
-    width: 55px;
-  }
-}
 
-.header__download:hover {
-  background-color: #999;
-}
-
-.header.top .header__download {
-  border-radius:  0px;
-  border-bottom-right-radius:  0px;
-  line-height: 55px;
-  margin: 0;
-}
-
-.header__download-link {
-  color: var(--sub-color3);
-  display: flex;
-  text-decoration: none;
-}
-
-.header__download-icon {
-  background-image: url(img/icon_download.png);
-  background-size: cover;
-  height: 22px;
-  margin-top: 12px;
-  margin-left: 17px;
-  width: 22px;
-}
-
-.header.top .header__download .header__download-icon {
-  margin-top: 18px;
-}
-
-.header__download-text {
-  margin-left: 10px;
-  width: 110px;
-}
-
-@media screen and (max-width: 767px) {
-  .header__download-text {
-    display: none;
-  }
-}
 
 
 /* 新MVエリア（仮で.mv1 エリアとする）-------------------------------------------- */
@@ -228,7 +229,9 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   height: 600px;
   margin-left: 0;
   margin-right: 0;
+  opacity: 0;
   text-align: initial;
+  transition: opacity 3s ease;
   width: 100%;
 }
 
@@ -274,7 +277,9 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 }
 
 .mv__image-content-sp-icon {
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background-image: linear-gradient(135deg, var(--main-color), var(--sub-color2));
+  border: 0.35714285714285715vw solid var(--main-color);
   border-radius: 13vw;
   display: flex;
   height: 10vw;
@@ -290,6 +295,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 }
 
 .mv__image-content-sp-icon-name {
+  font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", "Nimbus Sans L", "Noto Sans", sans-serif;
   font-size: 4.9vw; 
   margin-left: 6vw;
   margin-top: 2.1vw;
@@ -305,7 +311,8 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 
 
 .mv__content { 
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background-image: linear-gradient(135deg, var(--main-color), var(--sub-color2));
   color: #fff;
   display: inline-block;
   max-width: 100vw;
@@ -330,6 +337,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 .mv__branding {
   display: flex;
   flex-direction: row;
+  opacity: 0;
 }
 
 .mv__logo {
@@ -346,7 +354,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 }
 
 .mv__app-name {
-  font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", "Nimbus Sans", sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", "Nimbus Sans L", "Noto Sans", sans-serif;
   font-size: 50px;
   font-style: oblique;
   font-weight: 700;
@@ -367,10 +375,13 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   color: #fff;
   left: 0;
   margin-left: 0;
+  opacity: 0;
   overflow: visible; /* はみ出した部分も表示する */
   padding: 2rem 1rem;
   padding-left: 0;
   position: relative;
+  transition: all 2s ease;
+  transition-delay: 2s;
 }
 
 
@@ -422,7 +433,9 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 }
 
 .mv__download {
-
+  opacity: 0;
+  transition: all 2s ease;
+  transition-delay: 4s;
 }
 
 .mv__download-link {
@@ -506,6 +519,12 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 250px;
 }
 
+@media screen and (max-width: 290px) {
+  .download__sp-btn {
+    width: calc(100% - 40px);
+  }
+}
+
 
 .download__sp-btn-link {
   border-radius: 2vw;
@@ -529,11 +548,27 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 30px;
 }
 
+@media screen and (max-width: 290px) {
+  .download__sp-btn-link-icon {
+    height: 10.344827586206897vw;
+    margin-top: 3.4482758620689653vw;
+    width: 10.344827586206897vw;
+  }
+}
+
 .download__sp-btn-link p {
   margin-top: 13px;
   margin-left: 1vw;
   margin-right: auto;
 }
+
+@media screen and (max-width: 290px) {
+  .download__sp-btn-link p {
+    
+  }
+}
+
+
 
 /* アプリ紹介 ------------------------------------------------------------------- */
 .introduction {
@@ -571,9 +606,15 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   margin: 10px;
   /* min-height: 300px;
   max-height: 300px; */
+  opacity: 0;
   padding: 25px 15px;
+  transition: opacity 1s ease;
   text-align: left;
   width: 250px;
+}
+
+.introduction__content-item.show {
+  opacity: 1;
 }
 
 @media screen and (max-width: 1400px) {
@@ -585,6 +626,8 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 
 @media screen and (max-width: 430px) {
   .introduction__content-item {
+    margin-left: 15px;
+    margin-right: 15px;
     width: 100%;
   }
 }
@@ -601,7 +644,9 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   margin-top: 27px;
   margin-left: 26px;
   height: 85px;
-  transition: all .3s ease;
+  /* transform: scale(0%);
+  transition: all .8s ease;
+  transition-delay: 2s; */
   width: 85px;
 }
 
@@ -641,9 +686,18 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: auto;
 }
 
+@media screen and (max-width: 450px) {
+  .plan__about-table {
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow-x: scroll;
+  }
+}
+
 .plan__about-table-column {
   display: inline-block;
   flex-direction: column;
+  
 }
 
 .plan__about-table-column:first-of-type /* 項目列 */{
@@ -663,6 +717,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   font-size: 20px;
   font-weight: 500;
   line-height: 80px;
+  width: 290px;
 }
 
 @media screen and (max-width: 767px) {
@@ -713,7 +768,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 .plan__about-table-column-head ,
 .plan__about-table-column-head-paid ,
 .plan__about-table-column-head-free /* head */{
-  height: 100px;
+  height: 145px;
   padding-top: 30px;
   width: 220px;
 }
@@ -728,14 +783,14 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   .plan__about-table-column-head-paid,
   .plan__about-table-column-head-free /* head */{
     line-height: 20px;
-    height: 170px;
+    height: 150px;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     padding-top: 0px;
     text-align: center;
-    width: 50px;
-    writing-mode: vertical-rl;
+    width: 90px;
+    /* writing-mode: vertical-rl; */
   }
 }
 
@@ -744,7 +799,9 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   .plan__about-table-column-head-free p {
     font-size: 24px;
     justify-content: center;
-    height: 100%;
+    line-height: 1.4;
+    margin-left: 13px;
+    margin-bottom: 10px;
     position: relative;
     top: 0%;
     right: 14px;
@@ -755,6 +812,47 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 
 .plan__about-table-column-head {
   background-color: #999;
+  width: 290px;
+}
+
+.plan__about-table-column-head-br-sp {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head-br-sp {
+    display: inline;
+  }
+}
+
+.plan__about-table-column-head-price { /* プラン別価格部分 */
+  font-size: 36px;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head-price {
+    font-size: 26px;
+  }
+}
+
+.plan__about-table-column-head-price-yen { /* プラン別価格の円記号部分 */
+  font-size: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head-price-yen {
+    font-size: 20px;
+  }
+}
+
+.plan__about-table-column-head-price-per {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .plan__about-table-column-head-price-per {
+    font-size: 18px;
+  }
 }
 
 .plan__about-table-column-head-paid {
@@ -828,6 +926,7 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
 @media screen and (max-width: 767px) {
   .plan__about-table-column-data-img {
     height: 18px;
+    margin-left: 36px;
     width: 18px;
   }
 }
@@ -1181,7 +1280,15 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 1s ease;
   width: 800px;
+}
+
+.qanda__unit.show {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 @media screen and (max-width: 880px) {
@@ -1353,6 +1460,28 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   width: 30px;
 }
 
+.pre-registration__form-agree-label input[type="checkbox"] {
+  accent-color: var(--main-color);
+  border: white;
+  /* appearance: none;
+  height: 40px;
+  width: 40px; */
+}
+
+.pre-registration__form-agree-label input[type="checkbox"]::before {
+  /* content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border-left: 2px solid #eee;
+  border-right: 2px solid #eee;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: 0.2s; */
+}
+
 
 
 .pre-registration__form-row-input { /* 事前登録フォーム入力欄 */
@@ -1416,11 +1545,29 @@ h1, h2, h3, h4, h5 { /* 仮設定 */
   color: var(--sub-color1);
 }
 
+.pre-registration__form-agree {
+  text-align: center;
+}
+
+.pre-registration__form-agree-check {
+
+}
+
+.pre-registration__form-agree-check::before /* プライバシーポリシー同意チェックボックス */{
+  height: 100px;
+  width: 100px;
+}
+
+.pre-registration__form-agree-link {
+  color: var(--sub-color3);
+}
+
 /* フッター --------------------------------------------------------------------- */
 footer {
-  margin-top: -3px;
   background-color: var(--sub-color2);
   color: var(--sub-color3);
+  margin-top: -3px;
+  padding-bottom: 35px;
   text-align: center;
 }
 
@@ -1558,6 +1705,7 @@ footer {
 .footer__menu-list {
   display: flex;
   justify-content: center;
+  margin-bottom: 45px;
   padding: 0;
 }
 
@@ -1600,6 +1748,9 @@ footer {
   border-right: none;
 }
 
+.footer__copyright {
+  /* margin-top: 30px; */
+}
 
 
 

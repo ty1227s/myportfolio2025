@@ -5,9 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>デモサイト２（フィットネスアプリ）</title>
   <link rel="stylesheet" href="ex2style.css">
+  <link rel="icon" type="image/png" href="img/favicon2.png">
 </head>
 <body>
+  
+  <!-- <div class="splash" id="splash">
+    <img class="splash__logo" src="./img/fitedge.png" alt="">
+  </div> -->
+
+  <div class="button-download">
+    <a href="#pre-registration">
+      <img class="button-download-img" src="./img/icon_download.png" alt="">
+      <p>Download</p>
+    </a>
+  </div>
   <main>
+
+    <header>
+      <div class="header__logo">
+        <img class="header__logo-img" src="./img/runningPerson3.png" alt="シンボルマーク">
+        <p class="header__logo-name">FitEdge</p>
+      </div>
+    </header>
+  
     <section class="mv"> <!-- メインビジュアル全体 -->
       <div class="mv__image"> <!-- 走っている人の写真 -->
         <!-- <img src="..."> をここに -->
@@ -43,7 +63,7 @@
         </div>
 
         <div class="mv__download"> <!-- ダウンロードボタン -->
-          <a href="#pre-registraion" class="mv__download-link">
+          <a href="#pre-registration" class="mv__download-link">
             <div class="mv__download-btn">
               <img src="img/icon_download.png" alt="DL">
               <p>アプリをダウンロード</p>
@@ -54,7 +74,7 @@
       </div>
     </section>
 
-    <section class="download">
+    <section class="download" id="download">
       <div class="download__sp-btn">
         <a href="#pre-registration" class="download__sp-btn-link">
           <img class="download__sp-btn-link-icon" src="img/icon_download.png" alt="DL">
@@ -134,8 +154,10 @@
             <div class="plan__about-table-column">
               <div class="plan__about-table-column-head-paid">
                 <p>
-                  有料プラン
+                  有料<br class="plan__about-table-column-head-br-sp">プラン
                 </p>
+                <span class="plan__about-table-column-head-price"><span class="plan__about-table-column-head-price-yen">￥</span>500<br class="plan__about-table-column-head-br-sp">
+                <span class="plan__about-table-column-head-price-per">/月</span></span>
               </div>
               <div class="plan__about-table-column-data-paid">
                 <img class="plan__about-table-column-data-img" src="img/maru2.png" alt="〇">
@@ -154,8 +176,9 @@
             <div class="plan__about-table-column">
               <div class="plan__about-table-column-head-free">
                 <p>
-                  無料プラン
+                  無料<br class="plan__about-table-column-head-br-sp">プラン
                 </p>
+                <span class="plan__about-table-column-head-price"><span class="plan__about-table-column-head-price-yen">￥</span>0</span>
               </div>
               <div class="plan__about-table-column-data-free">
                 <img class="plan__about-table-column-data-img" src="img/maru1.png" alt="×">
@@ -274,9 +297,82 @@
         <h2 class="section__title">
           <div class="section__title-img" style="background-image: url(img/qanda.png);"></div>
           <div class="section__title-text">よくある質問</div>
+          <!--「安全・料金・解約・継続」など不安度の高い順に並べ替え。-->
         </h2>
 
-        <div class="qanda__unit">
+        <div class="qanda__unit"><!-- 安全？ -->
+          <div class="qanda__unit-question">
+            <div class="qanda__unit-question-content">
+              <p>
+                食事制限はありますか？
+              </p>
+            </div>
+          </div>
+          <div class="qanda__unit-answer">
+            <div class="qanda__unit-answer-content">
+              
+              <p>
+                厳しい食事制限は必要ありません。ライフスタイルや目標に合わせた食事のアドバイス機能もありますが、無理のない範囲で続けていただくことを大切にしています。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qanda__unit"><!-- 安全 -->
+          <div class="qanda__unit-question">
+            <div class="qanda__unit-question-content">
+              <p>
+                トレーニング中にけがをした場合はどうすればいいですか？
+              </p>
+            </div>
+          </div>
+          <div class="qanda__unit-answer">
+            <div class="qanda__unit-answer-content">
+              
+              <p>
+                無理のない範囲でご利用いただくことを推奨しています。アプリ内には安全のための注意点や正しいフォーム解説も掲載しています。万が一体調に異常を感じた場合は、すぐに中止し医師にご相談ください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+         <div class="qanda__unit"><!-- 料金 -->
+          <div class="qanda__unit-question">
+            <div class="qanda__unit-question-content">
+              <p>
+                有料プランの料金はいつ引き落とされますか？
+              </p>
+            </div>
+          </div>
+          <div class="qanda__unit-answer">
+            <div class="qanda__unit-answer-content">
+              
+              <p>
+                ご登録日を起点に、毎月自動的に更新・引き落としが行われます。事前にアプリ内でご確認いただけます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qanda__unit"><!-- 解約 -->
+          <div class="qanda__unit-question">
+            <div class="qanda__unit-question-content">
+              <p>
+                解約は簡単にできますか？
+              </p>
+            </div>
+          </div>
+          <div class="qanda__unit-answer">
+            <div class="qanda__unit-answer-content">
+              
+              <p>
+                はい、アプリ内の「アカウント設定」からいつでも手続き可能です。解約後は次回更新日まで有料機能を引き続きご利用いただけます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qanda__unit"><!-- 継続-->
           <div class="qanda__unit-question">
             
 
@@ -296,11 +392,13 @@
           </div>
         </div>
 
-        <div class="qanda__unit">
+        <div class="qanda__unit"><!-- 継続-->
           <div class="qanda__unit-question">
+            
+
             <div class="qanda__unit-question-content">
               <p>
-                食事制限はありますか？
+                継続できるか不安です、途中で挫折しない工夫はありますか？
               </p>
             </div>
           </div>
@@ -308,11 +406,13 @@
             <div class="qanda__unit-answer-content">
               
               <p>
-                厳しい食事制限は必要ありません。ライフスタイルや目標に合わせた食事のアドバイス機能もありますが、無理のない範囲で続けていただくことを大切にしています。
-              </p>
+                毎日の運動記録や達成バッジ機能、AIによる運動提案が継続をサポートします。小さな目標を積み重ねることで無理なく続けられる設計になっています。
+              </p>  
             </div>
           </div>
         </div>
+
+        
 
         <div class="qanda__unit">
           <div class="qanda__unit-question">
@@ -348,7 +448,7 @@
                 <img class="pre-registration__form-row-icon-img" src="img/icon-person2.png" alt="">
               </div>  
             </label>
-            <input class="pre-registration__form-row-input" id="name" type="text" placeholder="お名前を入力">  
+            <input class="pre-registration__form-row-input" id="name" type="text" inputmode="text" placeholder="お名前を入力" required>  
           </div>
 
           <div class="pre-registration__form-row">
@@ -357,7 +457,15 @@
                 <img class="pre-registration__form-row-icon-img" src="img/icon-mail.png" alt="">
               </div>  
             </label>
-            <input class="pre-registration__form-row-input pre-registration__mail" id="mail" type="email" placeholder="メールアドレスを入力">  
+            <input class="pre-registration__form-row-input pre-registration__mail" id="mail" type="email" inputmode="email" autocomplete="email" placeholder="メールアドレスを入力" required>
+            
+          </div>
+
+          <div class="pre-registration__form-agree">
+            <label class="pre-registration__form-agree-label" for="agree">
+              <input id="agree" class="pre-registration__form-agree-check" type="checkbox" required>
+              プライバシーポリシーに同意する
+            </label> <a href="#" class="pre-registration__form-agree-link">プライバシーポリシー</a>
           </div>
           <button class="pre-registration__submit" type="submit"><!--事前-->登録する</button>
         </form>

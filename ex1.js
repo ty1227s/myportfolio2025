@@ -8,7 +8,9 @@
 //   document.body.classList('no-scroll');
 // })
 document.addEventListener('DOMContentLoaded', function () {
+  /* 修正予定 */
   const menuBtn = document.querySelectorAll('.header__menuButton'); /* メニューボタン */
+  const menubtn = document.querySelectorAll('.header__menu-button'); /* メニューボタン */
   const header = document.querySelector('.header'); /* headerエリア */
       
       
@@ -114,3 +116,7 @@ document.querySelector('.header__menu-sp-forContact').addEventListener("click", 
     // header.style.backgroundColor = "transparent";
   }
 });
+
+
+// フォームのバリデーション
+

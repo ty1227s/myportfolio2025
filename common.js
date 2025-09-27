@@ -57,3 +57,25 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeTargets.forEach(target => observer.observe(target));
 // ※詳細はex1関連
+
+// 下スクロールを検知したらheaderを隠す
+let lastScroll = 0;
+window.addEventListener("scroll", function() {
+  const currentScroll = window.scrollY;
+  const header = document.querySelector("header");
+  // メニューボタン
+  const menuBtn = document.querySelector('.header__menu-button');
+  if (window.innerWidth >= 768) {
+    if (currentScroll > lastScroll) {
+      // console.log("下スクロール検知！");
+      header.style.top = "-80px";
+    } else {
+      // console.log("上スクロール検知！");
+      
+      header.style.top = "0";
+    }
+
+    lastScroll = currentScroll; // 前回位置を更新  
+  }
+  
+});
