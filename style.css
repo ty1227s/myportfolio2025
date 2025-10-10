@@ -1,13 +1,14 @@
 
 * {
-
+      font-family: "Noto Sans JP", sans-serif, "游ゴシック", "Hiragino Sans", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", erdana, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
 }
 
 /* ---------------------------------------------------------- */
 .mv {
   background-image: url(img/mv_top1.jpg);
+  background-position: center 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   color: #fff;
   font-size: 60px;
   font-weight: 900;
@@ -26,6 +27,7 @@
 }
 
 .mv .inner h1 { /* タイトル */
+  font-family: "Kozuka Gothic Pro", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;;
   font-size: 80px;
   font-weight: 700;
   height: 100%;
@@ -36,6 +38,7 @@
 
 @media screen and (max-width: 767px) {
   .mv .inner h1 {
+    background-position: right;
     font-size: 36px;
     margin-top: 140px;
   }
