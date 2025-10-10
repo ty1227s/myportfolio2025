@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 画面サイズの変更を検知
   window.addEventListener('resize', () => {
   
-    // もし767pxよち広い幅であれば…
+    // もし767pxより広い幅であれば…
     if (window.innerWidth > 767) {
 
       // クラス名から「.active」を除去→ﾒﾆｭｰﾎﾞﾀﾝ･ﾚｽﾎﾟﾝｼﾌﾞﾒﾆｭｰ非表示化
@@ -37,6 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
       menuSp.classList.remove('active');
     }
   });
+});
+
+// ページ見出しの表示
+document.addEventListener('DOMContentLoaded', function() {
+
+  // 見出し部の取得
+  const headline = document.querySelector('.headline');
+
+  // activeを付与
+  headline.classList.add('active');
 });
 
 
