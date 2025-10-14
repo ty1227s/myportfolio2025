@@ -244,12 +244,12 @@ header .inner {
   border-top: none;
   border-bottom-left-radius: 15px;
   cursor: pointer;
-  height: 110px;
+  height: 90px;
   padding: 10px;
   position: fixed;
   right: 0px;
   top: 0px; 
-  width: 110px;
+  width: 90px;
   z-index: 10001;
 }
 
@@ -276,12 +276,12 @@ header .inner {
 @media screen and (max-width: 767px) {
   .header__menu-button span {
     height: 3px;
-    margin: 9px 0;
+    margin: 14px 0;
   }
 }
 
 .header__menu-button.active span:nth-of-type(1) {
-  transform: translateY(10px) rotate(-45deg);
+  transform: translateY(16px) rotate(-45deg);
 }
 
 /* @media screen and (max-width: 767px) {
@@ -295,7 +295,7 @@ header .inner {
 }
 
 .header__menu-button.active span:nth-of-type(3) {
-  transform: translateY(-13.8px) rotate(45deg);
+  transform: translateY(-17.5px) rotate(45deg);
 }
 
 /* @media screen and (max-width: 767px) {
