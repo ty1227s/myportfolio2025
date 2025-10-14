@@ -244,12 +244,12 @@ header .inner {
   border-top: none;
   border-bottom-left-radius: 15px;
   cursor: pointer;
-  height: 60px;
+  height: 110px;
   padding: 10px;
   position: fixed;
   right: 0px;
   top: 0px; 
-  width: 60px;
+  width: 110px;
   z-index: 10001;
 }
 
