@@ -14,7 +14,9 @@
 }
 
 * {
-  /* font-family: "a-otf-ud-shin-go-pr6n", sans-serif; */
+  font-family: "M PLUS 1p", "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+             "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+
   margin: 0;
   /* text-align: center; */
 }
@@ -237,7 +239,8 @@ header {
 
 @media screen and (max-width: 1335px) {
   .mv {
-    height: 44.9438202247191vw; /* 600 */
+    /* height: 44.9438202247191vw; */
+    height: 65vh;
   }
 }
 
@@ -253,6 +256,7 @@ header {
 @media screen and (max-width: 1335px) {
   .mv__image {
     background-position: 100% 40%;
+    background-repeat: no-repeat;
     background-size: 110%;
     width: 100%;
     min-width: unset;
