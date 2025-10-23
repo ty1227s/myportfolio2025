@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   menuBtn.forEach(function(btn) {
     btn.addEventListener('click', function() {
+
+      // クラス名末尾にactiveを追加
       this.classList.toggle('active');
 
       const menuSp = document.querySelector('.header__menu-sp'); // Spﾒﾆｭｰ範囲

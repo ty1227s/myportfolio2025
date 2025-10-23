@@ -255,9 +255,9 @@ header {
 
 @media screen and (max-width: 1335px) {
   .mv__image {
-    background-position: 100% 40%;
+    background-position: 70% 40%;
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-size: 1200px auto;
     width: 100%;
     min-width: unset;
   }

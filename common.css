@@ -340,8 +340,7 @@ header .inner {
 }
 
 .header__menu-sp-item {
-  border-bottom: 3px solid #fff;
-  /* border-radius: 23px; */
+  /* border-bottom: 3px solid #fff; */
   height: 80px;
   list-style: none;
   margin: 15px;
@@ -399,7 +398,7 @@ header .inner {
 
 
 .header__menu-sp-item-link span {
-  
+  font-size: 23px;
 }
 
 .header__menu-sp-item-empty::marker {

@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
     });
   } , {
     threslold: 0.5,
-    rootMargin: '0px 0px -10% 0px'
+    rootMargin: '50px 50px -10% 50px'
   });
 
   items.forEach(el => io.observe(el));

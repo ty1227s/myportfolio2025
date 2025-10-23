@@ -3,13 +3,13 @@
 /* 共通設定 */
 :root {
   /* 色に関する設定 */
-  --main-color: #18943b; /* 緑色 */
+  --main-color: #2e8c58; /* 緑色 */
   --sub-color: #67a4db; 
   --sub-color2: #606060; /* グレー */
   --sub-color3: #939019; /* 黄土色 */
   
   /* 寸法に関する設定 */
-  --header-height: 60px; /* headerの高さ */
+  --header-height: 75px; /* headerの高さ */
 
   /* 挙動に関する設定 */
   scroll-behavior: smooth; /*内部リンククリック時の移動を滑らかに */
@@ -22,7 +22,7 @@
   font-weight: 400;
   font-style: normal;
   margin: 0;
-  
+  /* 英語フォントは Montserrat に変更予定 */
 }
 
 
@@ -57,7 +57,7 @@
   color: var(--main-color);
   font-size: 16px; /* 対応済み */
   text-align: center;
-  font-family: "futura-pt", sans-serif;
+  font-family: "montserrat", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin-bottom: 30px;
@@ -81,17 +81,6 @@
   opacity: 1;
 }
 
-
-/* header .inner {
-  margin: 0 auto;
-} */
-
-/* 左右marginは35pxで統一？ */
-
-/* レスポンシブ ブレークポイント 767px */
-
-
-
 /* ヘッダー ------------------------------------------------------------------------------------------ */
 header { /* header共通設定 */
   align-items: center;
@@ -103,13 +92,6 @@ header { /* header共通設定 */
   z-index: 10000;
 }
 
-@media screen and (max-width: 767px) {
-  header {
-    background: transparent;
-  }
-}
-
-
 .header__wrapper {
   display: flex;
   margin: 0 auto;
@@ -118,44 +100,26 @@ header { /* header共通設定 */
 
 
 .header__company-name { /* header内会社名 */
-  background-color: var(--main-color);
   color: #fff;
   vertical-align: top;
-  max-height: var(--header-height);
+  margin-top: 7px;
+  min-height: 60px;
+  max-height: 60px;
   max-width: 300px;
   min-width: 300px;
 }
 
-@media screen and (max-width: 767px) {
-  .header__company-name {
-    /* background-color: transparent; */
-    border: 2px solid #fff;
-    border-radius: 10px;
-    font-weight: 500;
-    margin-top: 5px;
-    margin-left: 5px;
-    max-width: 200px;
-    min-width: 200px;
-  }
+
+
+.header__company-name-img {
+  height: 40px;
+  margin-top: 9px;
+  transition: all .3s ease;
+  width: auto;
 }
 
-.header__company-name-ja /* header内会社名（日本語）*/ {
-  font-size: 28px;
-  text-align: center;
-}
-
-@media screen and (max-width: 767px) {
-  .header__company-name-ja {
-    font-size: 20px;
-  }
-}
-
-.header__company-name-en /* header内会社名（英語）*/ {
-  font-family: "futura-pt", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  text-align: center;
+.header__company-name-img:hover {
+  opacity: 0.5;
 }
 
 
@@ -186,6 +150,7 @@ header { /* header共通設定 */
   display: block;
   height: 60px;
   padding: 19px 20px;
+  text-align: center;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -193,6 +158,18 @@ header { /* header共通設定 */
 .header__nav-item-link:hover {
   color: var(--main-color);
   font-weight: 500;
+}
+
+.header__nav-item-link-hover {
+  display: none;
+  transition: all .5s ease;
+  opacity: 1;
+}
+
+.header__nav-item-link:hover .header__nav-item-link-hover {
+  display: block;
+  font-size: 5px;
+  opacity: 0.5;
 }
 
 
@@ -221,9 +198,8 @@ header { /* header共通設定 */
 
 .header__menu-button {
   background-color: var(--main-color);
-  border-bottom-left-radius: 10px;
   cursor: pointer;
-  height: 70px;
+  height: 75px;
   position:fixed;
   top: 0;
   right: 0;
@@ -240,19 +216,8 @@ header { /* header共通設定 */
 .header__menuButton /* レスポンシブメニュー用ボタン */ {
   width: 40px;
   height: 40px;
-  margin: 20px auto 0;
-  /* position:fixed;
-  top: 8px;
-  right: 10px;
-  z-index: 1001; */
+  margin: 22.5px auto 0;
 }
-
-/* @media screen and (min-width: 1001px) {
-  .header__menuButton {
-    display: none;
-  }
-} */
-
 
 .header__menuButton span /* ボタン内線の描画 */ {
   display: block;
@@ -303,7 +268,7 @@ header { /* header共通設定 */
 }
 
 .header__menu-sp-nav-list-item /* レスポンシブメニュー内項目 */ {
-  border-top: 1px dotted #000;
+  /* border-top: 1px dotted #000; */
   left: 0; 
   list-style: none;
 }
@@ -319,13 +284,13 @@ header { /* header共通設定 */
   display: block;
   left: 0;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all .5s ease;
   padding: 20px;
   position: relative;
 }
 
-.header__menu-sp-nav-list-item:hover {
-  opacity: 0.5;
+.header__menu-sp-nav-list-item-link:hover {
+  opacity: 0.3;
 }
 
 .header__menu-sp-nav-list-item-link-ja {
@@ -346,7 +311,7 @@ header { /* header共通設定 */
   margin-right: auto;
   /* height: 60px; */
   position: relative;
-  transition: all 0.3s ease;
+  transition: all .5s ease;
   width: 400px;
 }
 
@@ -396,15 +361,9 @@ header { /* header共通設定 */
   }
 }
 
-/* @media screen and (max-width: 1000px) {
-  .empty {
-    display: none;
-  }
-} */
-
 /* メインビジュアル -------------------------------------------------------------------------------- */
 .mv {
-  background: url(img/mv1.jpg);
+  background: url(img/mv1.png);
   background-position: 50% 70%;
   background-size: cover;
   height: 85vh;
@@ -477,7 +436,7 @@ header { /* header共通設定 */
 
 
 .concept__img /* コンセプトのイメージ画像 */{
-  background-image: url(img/concept.jpg);
+  background-image: url(img/concept.png);
   background-size: cover;
   border-radius: 20px;
   height: 270px;
@@ -495,19 +454,6 @@ header { /* header共通設定 */
     margin: 0 auto;
   }
 }
-
-/* @media screen and (max-width: 767px) {
-  .concept__img {
-    
-    height: 29.921773142112123vw;
-    min-height: initial;
-    max-height: initial;
-    width: 39.895697522816164vw;
-    min-width: initial;
-    max-width: initial;
-  }
-} */
-
 
 .concept__content /* コンセプトの内容 */ {
   /* display: table; */
@@ -616,12 +562,6 @@ header { /* header共通設定 */
     margin-right: 0;
   }
 }
-
-/* @media screen and (max-width: 767px) {
-  .member__person {
-    display: inline;
-  }
-} */
 
 
 .member__person-img /* メンバー画像 */{
@@ -1180,10 +1120,197 @@ header { /* header共通設定 */
 /* vw対応準備 */
 .achievement /* 実績ブロック全体の設定 */{
   background-color: #e2f0e5;
+  height: 800px;
 }
 
 .achievement .inner .title-en /*  */{
   color: var(--sub-color2);
+}
+
+.slider {
+  position: relative;
+}
+
+.slick-prev, .slick-next { /* スライド移動用ボタン */
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  display: block;
+  margin-top: -22.5px;
+  font-size: 0;
+  z-index: 1;
+  padding: 0;
+  border: 2px solid var(--sub-color2);
+  height: 70px;
+  width: 70px;
+  outline: none;
+}
+
+.slick-prev { /* 前スライドへ */
+  left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .slick-prev {
+    left: 32px;
+  }
+}
+
+.slick-next { /* 次スライドへ */
+  right: 16px;
+}
+
+@media screen and (max-width: 900px) {
+  .slick-next {
+    right: 32px;
+  }
+}
+
+
+
+
+.achievement__slick-list {
+  position: relative;
+  display: block;
+  margin: 0;
+}
+
+.achievement__slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.slick-slide {
+  background-color: #fff;
+  border: 3px solid gray;
+  border-radius: 20px;
+  /* float: left;
+  height: 100%;
+  min-height: 1px; */
+}
+
+@media screen and (max-width: 900px) {
+  .slick-slide {
+    width: 100%;
+  }
+}
+
+.achievement__slick-slide +.achievement__slick-slide {
+  margin-left: 20px;
+}
+
+.achievement__slick-slide-current {
+  border: 3px solid var(--main-color);
+}
+
+.achievement__slick-slide-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement__slick-slide-flex {
+    flex-direction: column;
+  }
+}
+
+.achievement__slick-slide-img {
+  margin: 30px;
+  width: 500px;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement__slick-slide-img {
+    margin: 15px;
+    width: calc(100% - 10px);
+  }
+}
+
+.achievement__slick-slide-img img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement__slick-slide-img img{
+    width: calc(100% - 20px);
+    margin-top: 15px;
+  }
+}
+
+.achievement__slick-slide-content {
+  margin: 30px;
+  text-align: left;
+  width: 630px;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement__slick-slide-content {
+    margin: 15px;
+    margin-bottom: 25px;
+    width: calc(100% - 20px);
+  }
+}
+
+.achievement__slick-slide-content-title {
+  color: var(--sub-color2);
+  font-weight: 500;
+  font-size: 33px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement__slick-slide-content-title {
+    font-size: 25px;
+  }
+}
+
+.achievement__slick-slide-content-text {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement__slick-slide-content-text {
+    font-size: 18px;
+  }
+}
+
+
+
+.achievement__slick-slide-current:hover .achievement__slick-slide-title {
+  color: var(--main-color);
+}
+
+.achievement__slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.achievement__slick-dots li {
+  list-style: none;
+}
+
+.achievement__slick-dots li + li {
+  margin-right: 20px;
+}
+
+.achievement__slick-dots li button {
+  width: 15px;
+  height: 15px;
+  background: var(--sub-color2);
+}
+
+.achievement__slick-dots-active {
+  background-color: var(--main-color);
 }
 
 .achievement__content-wrapper {

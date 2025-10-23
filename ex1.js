@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (menuSp) {
         menuSp.classList.toggle('active'); /* メニューエリアクラス名末尾にactiveを付与 */
         
-        // activeクラスの有無で背景色を変更
-        if (menuSp.classList.contains('active')) {
-          header.style.backgroundColor = "#fff";  
-        } else {
-          header.style.backgroundColor = "transparent"; // 元に戻す
-        }
+        // // activeクラスの有無で背景色を変更
+        // if (menuSp.classList.contains('active')) {
+        //   header.style.backgroundColor = "#fff";  
+        // } else {
+        //   header.style.backgroundColor = "transparent"; // 元に戻す
+        // }
       }
     });
   });
@@ -52,15 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', () => {
         
     // もし1000pxより広い幅であれば…
-    if (window.innerWidth > 1000) {
+    // if (window.innerWidth > 1000) {
           
-      // ｸﾗｽ名から「.active」を除去→ﾒﾆｭｰﾎﾞﾀﾝ･ﾚｽﾎﾟﾝｼﾌﾞﾒﾆｭｰ非表示化
-      menuBtn.classList.remove('active');
-      menuSp.classList.remove('active');
-      header.style.backgroundColor = "#fff";
-    } else {
-      header.style.backgroundColor = "transparent";
-    }
+    //   // ｸﾗｽ名から「.active」を除去→ﾒﾆｭｰﾎﾞﾀﾝ･ﾚｽﾎﾟﾝｼﾌﾞﾒﾆｭｰ非表示化
+    //   menuBtn.classList.remove('active');
+    //   menuSp.classList.remove('active');
+    //   header.style.backgroundColor = "#fff";
+    // } else {
+    //   header.style.backgroundColor = "transparent";
+    // }
   });
 });
 
