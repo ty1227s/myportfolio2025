@@ -1,26 +1,25 @@
-// // ハンバーガーメニューを開いているときの動作
-// const openBtn = document.querySelector();
-// const menu = document.querySelector();
+// ページ読み込み時の挙動
+window.addEventListener('load', function() {
+  const wrapper = document.querySelector('.header__wrapper');
+  wrapper.classList.toggle('active');
+});
 
-// openBtn.addEventListener('click', () => {
-//   openBtn.classList.toggle('active');
-//   menu.classList.toggle('active');
-//   document.body.classList('no-scroll');
-// })
+
+// レスポンシブメニューの開閉
 document.addEventListener('DOMContentLoaded', function () {
   /* 修正予定 */
-  const menuBtn = document.querySelectorAll('.header__menuButton'); /* メニューボタン */
   const menubtn = document.querySelectorAll('.header__menu-button'); /* メニューボタン */
   const header = document.querySelector('.header'); /* headerエリア */
+  const menuSp = document.querySelector('.header__menu-sp'); /* メニューエリアを取得 */
       
       
-  menuBtn.forEach(function (btn) {
+  menubtn.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      this.classList.toggle('active'); /* クラス名末尾にactiveを付与 */
-
-      const menuSp = document.querySelector('.header__menu-sp'); /* メニューエリアを取得 */
+      /* クラス名末尾にactiveを付与 */
+      this.classList.toggle('active'); 
       
-      if (menuSp) {
+      
+      // if (menuSp) {
         menuSp.classList.toggle('active'); /* メニューエリアクラス名末尾にactiveを付与 */
         
         // // activeクラスの有無で背景色を変更
@@ -29,40 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
         // } else {
         //   header.style.backgroundColor = "transparent"; // 元に戻す
         // }
-      }
+      // }
     });
   });
 });
 
 
-// 画面サイズ変更時にメニューを自動で閉じる
-// ※「DOM」はすべて大文字にすること。
-document.addEventListener('DOMContentLoaded', function() {
-  
+// 画面サイズの変更を検知
+window.addEventListener('resize', () => {
   // メニューボタンのクラスを取得
-  const menuBtn = document.querySelector('.header__menuButton');
+  const menuBtn = document.querySelector('.header__menu-button');
       
   // レスポンシブメニューのクラスを取得
-  const menuSp = document.querySelector('.header__menu-sp');
-
-  /* headerエリア */
-  const header = document.querySelector('.header');
-      
-  // 画面サイズの変更を検知
-  window.addEventListener('resize', () => {
+  const menuSp = document.querySelector('.header__menu-sp');  
         
-    // もし1000pxより広い幅であれば…
-    // if (window.innerWidth > 1000) {
-          
-    //   // ｸﾗｽ名から「.active」を除去→ﾒﾆｭｰﾎﾞﾀﾝ･ﾚｽﾎﾟﾝｼﾌﾞﾒﾆｭｰ非表示化
-    //   menuBtn.classList.remove('active');
-    //   menuSp.classList.remove('active');
-    //   header.style.backgroundColor = "#fff";
-    // } else {
-    //   header.style.backgroundColor = "transparent";
-    // }
-  });
+  // もし1000pxより広い幅であれば…
+  if (window.innerWidth > 1000) {
+  
+    // ｸﾗｽ名から「.active」を除去→ﾒﾆｭｰﾎﾞﾀﾝ･ﾚｽﾎﾟﾝｼﾌﾞﾒﾆｭｰ非表示化
+    menuBtn.classList.remove('active');
+    menuSp.classList.remove('active');
+  }
 });
+
+
 
 
 // process各要素に番号を付与（レスポンシブ用の表示）

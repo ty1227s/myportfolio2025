@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>株式会社ヒトツナ - HITOTSUNA inc.</title>
+  <!-- Slick本体CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <link rel="stylesheet" href="ex1style.css">
   <link rel="icon" type="image/png" href="img/favicon1.png">
 </head>
@@ -30,25 +33,21 @@
             <li class="header__nav-item">
               <a class="header__nav-item-link" href="">
                 会社情報
-                <span class="header__nav-item-link-hover"><br>ABOUT</span>
               </a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-item-link" href="">
                 サービス
-                <span class="header__nav-item-link-hover"><br>SERVICE</span>
               </a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-item-link" href="#achievement">
                 実績
-                <span class="header__nav-item-link-hover"><br>ACHIEVEMENT</span>
               </a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-item-link" href="">
                 採用情報
-                <span class="header__nav-item-link-hover"><br>RECRUIT</span>
               </a>
             </li>
           </ul>
@@ -59,11 +58,14 @@
             お問い合わせ
           </div>
         </a>
-        <div class="header__menu-button">
-          <div class="header__menuButton"> <!--後でクラス名削除 -->
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="header__menu-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- <div class="header__menu-button"> -->
+          <!-- <div class="header__menuButton"> 後でクラス名削除 -->
+            
           </div>  
         </div>
         
@@ -420,9 +422,7 @@
   <!-- jQuery本体（必ずSlickより先に）-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Slick本体 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <!-- Slick本体js-->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
     // DOMの読み込みが終わったあとに実行

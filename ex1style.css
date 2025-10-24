@@ -95,7 +95,13 @@ header { /* header共通設定 */
 .header__wrapper {
   display: flex;
   margin: 0 auto;
+  opacity: 0;
+  transition: all 1.5s ease-in;
   width: 100%;
+}
+
+.header__wrapper.active {
+  opacity: 1;
 }
 
 
@@ -135,7 +141,7 @@ header { /* header共通設定 */
 
 .header__nav ul /*  */ {
   display: flex;
-  height: 60px;
+  height: 75px;
 }
 
 
@@ -146,13 +152,19 @@ header { /* header共通設定 */
 }
 
 .header__nav-item-link /* header内ナビゲーション リンク*/ {
+  border-right: 2px solid var(--sub-color2);
   color: var(--sub-color2);
   display: block;
-  height: 60px;
-  padding: 19px 20px;
+  font-weight: 500;
+  height: 75px;
+  padding: 27px 20px;
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+.header__nav-item-link:last-of-type {
+  border-right: none;
 }
 
 .header__nav-item-link:hover {
@@ -179,7 +191,7 @@ header { /* header共通設定 */
   border-radius: 60px;
   color: var(--main-color);
   height: 40px;
-  margin: 10px;
+  margin: 19px;
   text-align: center;
   transition: all 0.3s ease;
   width: 165px;
@@ -198,6 +210,7 @@ header { /* header共通設定 */
 
 .header__menu-button {
   background-color: var(--main-color);
+  border: none;
   cursor: pointer;
   height: 75px;
   position:fixed;
@@ -213,13 +226,7 @@ header { /* header共通設定 */
   }
 }
 
-.header__menuButton /* レスポンシブメニュー用ボタン */ {
-  width: 40px;
-  height: 40px;
-  margin: 22.5px auto 0;
-}
-
-.header__menuButton span /* ボタン内線の描画 */ {
+.header__menu-button span /* ボタン内線の描画 */ {
   display: block;
   height: 3px;
   background: #fff;
@@ -227,15 +234,15 @@ header { /* header共通設定 */
   transition: all 0.3s ease;
 }
 
-.header__menuButton.active span:nth-of-type(1) {
+.header__menu-button.active span:nth-of-type(1) {
   transform: translateY(14px) rotate(-45deg);
 }
 
-.header__menuButton.active span:nth-of-type(2) {
+.header__menu-button.active span:nth-of-type(2) {
   opacity: 0;
 }
 
-.header__menuButton.active span:nth-of-type(3) {
+.header__menu-button.active span:nth-of-type(3) {
   transform: translateY(-9.3px) rotate(45deg);
 }
 
@@ -244,7 +251,7 @@ header { /* header共通設定 */
   background-color: #fff;
   color: var(--main-color);
   height: calc(100vh - 60px);
-  margin-left: -10px;
+  /* margin-left: -10px; */
   opacity: 0;
   pointer-events: none;
   position: fixed;
@@ -271,6 +278,7 @@ header { /* header共通設定 */
   /* border-top: 1px dotted #000; */
   left: 0; 
   list-style: none;
+  margin-left: -5px;
 }
 
 .header__menu-sp-nav-list-item:first-of-type {
@@ -355,19 +363,50 @@ header { /* header共通設定 */
   height: var(--header-height); /* 共通設定:rootに記述 */
 }
 
-@media screen and (max-width: 1000px) {
-  .empty {
-    display: none;
-  }
-}
-
 /* メインビジュアル -------------------------------------------------------------------------------- */
 .mv {
-  background: url(img/mv1.png);
+  background: url(img/mv1b.png);
   background-position: 50% 70%;
   background-size: cover;
+  display: inline-block;
   height: 85vh;
+  /* overflow: hidden; */
+  opacity: 0;
+  position: relative;
+  width: 100%;
 }
+
+.mv::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  z-index: 1;
+  animation: wipe 2s forwards;
+  /* animation-delay: 1s; */
+}
+
+.mv::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  padding: 0 8px;
+}
+
+@keyframes wipe {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  } 
+}
+
+
 
 .mv .inner {
   display: flex;
@@ -966,7 +1005,7 @@ header { /* header共通設定 */
 }
 
 .process__content-number {
-  color: var(--main-color);
+  color: var(--sub-color);
   font-family: "futura-pt", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -1120,7 +1159,13 @@ header { /* header共通設定 */
 /* vw対応準備 */
 .achievement /* 実績ブロック全体の設定 */{
   background-color: #e2f0e5;
-  height: 800px;
+  height: 600px;
+}
+
+@media screen and (max-width: 900px) {
+  .achievement {
+    height: 740px;
+  }
 }
 
 .achievement .inner .title-en /*  */{
@@ -1200,14 +1245,6 @@ header { /* header共通設定 */
   }
 }
 
-.achievement__slick-slide +.achievement__slick-slide {
-  margin-left: 20px;
-}
-
-.achievement__slick-slide-current {
-  border: 3px solid var(--main-color);
-}
-
 .achievement__slick-slide-flex {
   display: flex;
   flex-direction: row;
@@ -1281,45 +1318,6 @@ header { /* header共通設定 */
     font-size: 18px;
   }
 }
-
-
-
-.achievement__slick-slide-current:hover .achievement__slick-slide-title {
-  color: var(--main-color);
-}
-
-.achievement__slick-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.achievement__slick-dots li {
-  list-style: none;
-}
-
-.achievement__slick-dots li + li {
-  margin-right: 20px;
-}
-
-.achievement__slick-dots li button {
-  width: 15px;
-  height: 15px;
-  background: var(--sub-color2);
-}
-
-.achievement__slick-dots-active {
-  background-color: var(--main-color);
-}
-
-.achievement__content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
 
 .achievement__content {
   aspect-ratio: 13/17;
@@ -1412,8 +1410,6 @@ header { /* header共通設定 */
 
 @media screen and (max-width: 767px) {
   .achievement__content-about {
-    /* ↓ 220 */
-    /* height: 28.683181225554105vw;  */
     height: auto;
   }
 }
@@ -1482,6 +1478,17 @@ header { /* header共通設定 */
   .achievement__content-about-text {
     font-size: 3.3333333333333335vw; /* 14 */
   }
+}
+
+.slick-dots li button:before{
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.slick-dots li button {
+  width: 15px;
+  height: 15px;
+  padding: 0;
 }
 
 /* お問い合わせブロック -------------------------------------------------------------------------------- */
