@@ -23,15 +23,21 @@
 
     <header>
       <div class="header__logo">
-        <img class="header__logo-img" src="./img/runningPerson3.png" alt="シンボルマーク">
-        <p class="header__logo-name">FitEdge</p>
+
       </div>
+      <a href="#">
+        <div class="header__logo-sp">
+          
+        </div>  
+      </a>
+      
     </header>
   
     <section class="mv"> <!-- メインビジュアル全体 -->
-      <div class="mv__image"> <!-- 走っている人の写真 -->
+      <!-- 走っている人の写真 ↓ -->
+      <!-- <div class="mv__image">  -->
         <!-- <img src="..."> をここに -->
-        <div class="mv__image-content-sp">
+        <!-- <div class="mv__image-content-sp">
           <div class="mv__image-content-sp-icon">
             <img class="mv__image-content-sp-icon-img" src="img/runningPerson.png" alt="symbol">
             <p class="mv__image-content-sp-icon-name">FitEdge</p>
@@ -42,45 +48,46 @@
             時間がないあなたへ。<br>
             毎日15分からはじめる変化。
           </p>
-        </div>
-      </div>
-      <div class="mv__content"> <!-- テキストやロゴ、ボタンをまとめるエリア -->
-
-        <div class="mv__branding"> <!-- ロゴとアプリ名 -->
-          <img class="mv__logo" src="img/runningPerson.png" alt="アプリロゴ"> <!-- ロゴ -->
-          <p class="mv__app-name">FitEdge</p> <!-- アプリ名 -->
-        </div>
-
-        <div class="mv__catchcopy"> <!-- キャッチコピー -->
-          <p class="mv__catchcopy-text">
-            理想の自分に、<br>
-            最短で近づけ。
-          </p>
-          <p class="mv__catchcopy-text-sub">
-            時間がないあなたへ。<br>
-            毎日15分からはじめる変化。
-          </p>
-        </div>
-
-        <div class="mv__download"> <!-- ダウンロードボタン -->
-          <a href="#pre-registration" class="mv__download-link">
-            <div class="mv__download-btn">
-              <img src="img/icon_download.png" alt="DL">
-              <p>アプリをダウンロード</p>
-            </div>
-          </a>
-        </div>
-
+        </div> -->
+      <!-- </div> -->
+      <!-- テキストやロゴ、ボタンをまとめるエリア ↓ --> 
+      <div class="mv__content">
+        <p>
+          理想の自分に<br class="mv__content-br-sp"><span>自分で近づけ。</span>
+        </p>
+        <p>
+          時間がないあなたへ。<br class="mv__content-br-sp"><span>毎日<span>15</span>分</span>からはじめる変化。
+        </p>
       </div>
     </section>
 
-    <section class="download" id="download">
+    
+
+    <!-- <section class="download" id="download">
       <div class="download__sp-btn">
         <a href="#pre-registration" class="download__sp-btn-link">
           <img class="download__sp-btn-link-icon" src="img/icon_download.png" alt="DL">
           <p>アプリをダウンロード</p>
         </a>
       </div>
+    </section> -->
+
+    <section class="data">
+      <div class="inner">
+        <div class="data__content-flex">
+          <div class="data__content">
+            <p>継続率</p>
+            <p><span>78</span>%</p>
+            <p>（30日間）</p>
+          </div>
+          <div class="data__content">
+            <p>1日平均</p>
+            <p><span>15</span>分</p>
+            <p>中断再開OK！</p>
+          </div>
+        </div>  
+      </div>
+      
     </section>
 
     <section class="introduction">
@@ -227,7 +234,15 @@
               簡単にスマホで<br>入力・確認できる！
             </p>
           </div>
-        </div>  
+        </div>
+        <!-- <div class="usage__menu">
+          <h3>メニュー例</h3>
+          <ul>
+            <li>朝の流れストレッチ･･･<span><span>5</span>分</span></li>
+            <li>昼休みスキマ運動･･･<span><span>8</span>分</span></li>
+            <li>夜のリカバリー･･･<span><span>12</span>分</span></li>
+          </ul>
+        </div> -->
       </div>
     </section>
 
@@ -440,7 +455,7 @@
 
     <section class="pre-registration" id="pre-registration">
       <div class="inner">
-        <h2>今すぐはじめる！<br class="pre-registration__br-sp">登録はこちら</h2>
+        <h2 class="section__title">今すぐはじめる！<br class="pre-registration__br-sp">登録はこちら</h2>
         <form class="pre-registration__form" action="">
           <div class="pre-registration__form-row">
             <label for="name">
