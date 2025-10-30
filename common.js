@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
 
   // 見出し部の取得
-  const headline = document.querySelector('.headline');
+  const headline = document.querySelector('.headline__content');
 
   // activeを付与
   headline.classList.add('active');

@@ -413,21 +413,22 @@ header .inner {
 .headline {
   border-bottom: 4px solid var(--main-color);
   margin-bottom: 30px;
-  opacity: 0;
   padding-bottom: -10px;
-  transform: translateX(-20px);
-  transition: all 3s ease;
   width: 100%;
 }
 
-.headline.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.headline .inner {
+.headline__content {
   display: flex;
   flex-direction: row;
+  margin-left: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 3s ease;
+}
+
+.headline__content.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .headline__en /* 仮、あとからh1に直す？ */ {
@@ -441,7 +442,7 @@ header .inner {
 }
 
 @media screen and (max-width: 768px) {
-  .headline .inner {
+  .headline__content {
     flex-direction: column;
   }
 

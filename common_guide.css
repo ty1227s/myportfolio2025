@@ -27,6 +27,17 @@
   }
 } */
 
+.works__attention {
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .works__attention {
+    font-size: 14px;
+  }
+}
+
 .overview__title-number {
   font-family: "kozuka-gothic-pro", sans-serif;
   font-size: 90px;
@@ -391,9 +402,7 @@
 
 @media screen and (max-width: 767px) {
   .explanation__table-item {
-    /* ↓ 仮 */
-    /* height: 2.3vw;  */
-    height: 20px;
+    height: 27px;
     min-width: initial;
     width: calc(100% - 10px);
   }
@@ -441,9 +450,13 @@
   }
 }
 
+.explanation__table-content ul {
+  padding-left: 25px;
+}
+
 .explanation__table-content p {
   overflow-wrap: break-word;
-  text-align: right;
+  text-align: left;
 }
 
 @media screen and (max-width: 767px) {
@@ -473,13 +486,7 @@
 
 @media screen and (max-width: 767px) {
   .explanation__sentence-text {
-    font-size: 2.0860495436766624vw; /* 767基準 16px */
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .explanation__sentence-text {
-    font-size: 3.8095238095238098vw; /* 420基準 16px */
+    line-height: 1.5;
   }
 }
 
