@@ -417,8 +417,9 @@
 
 @media screen and (max-width: 767px) {
   .explanation__table-item p {
-    line-height: 16px;
-    padding-top: 0.65vw;
+    /* line-height: ; */
+    font-size: 16px;
+    padding-top: 0.85vw;
   }
 }
 
