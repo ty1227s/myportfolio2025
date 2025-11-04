@@ -247,8 +247,8 @@
 @media screen and (max-width: 768px) {
   .screenshot__pc summary, .screenshot__sp summary {
     font-size: 16px;
-    height: 6.510416666666667vw;
-    padding-top: 7px;
+    height: 30px;
+    padding-top: 5px;
     padding-bottom: 8px;
     padding-left: 3.90625vw; /* 30 */
   }
@@ -354,6 +354,8 @@
 
 @media screen and (max-width: 767px) {
   .explanation__table {
+    border-top: none;
+    border-bottom: none;
     margin-bottom: 6.51890482398957vw;
     width: 100%;
   }
