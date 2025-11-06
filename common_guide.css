@@ -507,7 +507,7 @@
 
 @media screen and (max-width: 767px) {
   .works__wrapper {
-    width: 100%;
+    width: calc(100% - 30px);
   }
 }
 
@@ -550,7 +550,7 @@
     --i: 0 !important;
     /* height: 75vw; */
     height: auto;
-    width: 100vw;
+    width: calc(100vw - 50px);
   }
 }
 
@@ -672,7 +672,9 @@
 @media screen and (max-width: 479px) {
   .works__unit-img {
     height: 55.11482254697286vw; /* 264 */
-    width: 92.69311064718163vw; /* 440 */
+    /* 440 */
+    width: 82.29311064718163vw;
+    /* width: calc(100vw - 70px); */
   }
 } 
 
