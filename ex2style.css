@@ -1533,6 +1533,96 @@ header {
   
 }
 
+.qanda__unit-a {
+  margin: 15px auto;
+  text-align: left;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 767px) {
+  .qanda__unit-a {
+    margin: 4px auto;
+  }
+}
+
+.qanda__unit-a dl dt {
+  align-items: flex-start;
+  display: flex;
+  cursor: pointer;
+  font-size: 24px;  
+  position: relative;
+  padding: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  .qanda__unit-a dl dt {
+    font-size: 18px;
+  }
+}
+
+.qanda__unit-a dl dt span {
+  margin-top: 12px;
+}
+
+.qanda__unit-a dl dt::before {
+  background-color: var(--sub-color2);
+  border-radius: 30px;
+  border: 1px solid black;
+  color: #fff;
+  content: 'Q';
+  display: inline-block;
+  font-size: 25px;
+  height: 40px;
+  margin-right: 10px;
+  min-width: 40px;
+  padding: 10px;
+  text-align: center;
+  width: 40px;
+}
+
+.qanda__unit-a dl dd {
+  align-items: flex-start;
+  display: flex;
+  font-size: 24px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1em;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .qanda__unit-a dl dd {
+    font-size: 18px;
+  }
+}
+
+.qanda__unit-a dl dd.open {
+  max-height: 200px;
+  padding: 1em;
+}
+
+.qanda__unit-a dl dd::before {
+  background-color: var(--main-color);
+  border-radius: 30px;
+  border: 1px solid var(--main-color);
+  color: #fff;
+  content: 'A';
+  display: inline-block;
+  font-size: 25px;
+  height: 40px;
+  margin-right: 10px;
+  min-width: 40px;
+  padding: 10px;
+  text-align: center;
+  width: 40px;
+}
+
+.qanda__unit-a dl dd span {
+  margin-top: 12px;
+}
+
+
+
 .qanda__unit-question { /* Q&A 質問エリア */
   background-color: #e0f4ff; /* 仮 */
   border-radius: 15px;

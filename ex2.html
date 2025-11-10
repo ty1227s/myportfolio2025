@@ -77,12 +77,12 @@
         <div class="data__content-flex">
           <div class="data__content">
             <p>継続率</p>
-            <p><span>78</span>%</p>
+            <p><span class="data__content-percent">78</span>%</p>
             <p>（30日間）</p>
           </div>
           <div class="data__content">
             <p>1日平均</p>
-            <p><span>15</span>分</p>
+            <p><span class="data__content-minute">15</span>分</p>
             <p>中断再開OK！</p>
           </div>
         </div>  
@@ -315,139 +315,84 @@
           <!--「安全・料金・解約・継続」など不安度の高い順に並べ替え。-->
         </h2>
 
-        <div class="qanda__unit"><!-- 安全？ -->
-          <div class="qanda__unit-question">
-            <div class="qanda__unit-question-content">
-              <p>
-                食事制限はありますか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                厳しい食事制限は必要ありません。ライフスタイルや目標に合わせた食事のアドバイス機能もありますが、無理のない範囲で続けていただくことを大切にしています。
-              </p>
-            </div>
-          </div>
+        <div class="qanda__unit-a"><!-- 安全？ -->
+          <dl>
+            <dt>
+              <span>食事制限はありますか？</span>
+            </dt>
+            <dd>
+              <span>厳しい食事制限は必要ありません。ライフスタイルや目標に合わせた食事のアドバイス機能もありますが、無理のない範囲で続けていただくことを大切にしています。</span>
+            </dd>
+          </dl>
         </div>
 
-        <div class="qanda__unit"><!-- 安全 -->
-          <div class="qanda__unit-question">
-            <div class="qanda__unit-question-content">
-              <p>
-                トレーニング中にけがをした場合はどうすればいいですか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                無理のない範囲でご利用いただくことを推奨しています。アプリ内には安全のための注意点や正しいフォーム解説も掲載しています。万が一体調に異常を感じた場合は、すぐに中止し医師にご相談ください。
-              </p>
-            </div>
-          </div>
+        <div class="qanda__unit-a"><!-- 安全 -->
+          <dl>
+            <dt>
+              <span>トレーニング中にけがをした場合はどうすればいいですか？</span>
+            </dt>
+            <dd>
+              <span>無理のない範囲でご利用いただくことを推奨しています。アプリ内には安全のための注意点や正しいフォーム解説も掲載しています。万が一体調に異常を感じた場合は、すぐに中止し医師にご相談ください。</span>
+            </dd>
+          </dl>
         </div>
 
-         <div class="qanda__unit"><!-- 料金 -->
-          <div class="qanda__unit-question">
-            <div class="qanda__unit-question-content">
-              <p>
-                有料プランの料金はいつ引き落とされますか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                ご登録日を起点に、毎月自動的に更新・引き落としが行われます。事前にアプリ内でご確認いただけます。
-              </p>
-            </div>
-          </div>
+        <div class="qanda__unit-a"><!-- 料金 -->
+          <dl>
+            <dt>
+              <span>有料プランの料金はいつ引き落とされますか？</span>
+            </dt>
+            <dd>
+              <span>ご登録日を起点に、毎月自動的に更新・引き落としが行われます。事前にアプリ内でご確認いただけます。</span>
+            </dd>
+          </dl>
         </div>
 
-        <div class="qanda__unit"><!-- 解約 -->
-          <div class="qanda__unit-question">
-            <div class="qanda__unit-question-content">
-              <p>
-                解約は簡単にできますか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                はい、アプリ内の「アカウント設定」からいつでも手続き可能です。解約後は次回更新日まで有料機能を引き続きご利用いただけます。
-              </p>
-            </div>
-          </div>
+        <div class="qanda__unit-a"><!-- 解約 -->
+          <dl>
+            <dt>
+              <span>解約は簡単にできますか？</span>
+            </dt>
+            <dd>
+              <span>はい、アプリ内の「アカウント設定」からいつでも手続き可能です。解約後は次回更新日まで有料機能を引き続きご利用いただけます。</span>
+            </dd>
+          </dl>
         </div>
 
-        <div class="qanda__unit"><!-- 継続-->
-          <div class="qanda__unit-question">
-            
-
-            <div class="qanda__unit-question-content">
-              <p>
-                初心者でも続けられますか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                はい、まったくの初心者の方でも無理なく続けられるよう、体力や目的に応じたメニューを用意しています。1日5分から始められるプランもあるので、自分のペースで安心して取り組めます。
-              </p>  
-            </div>
-          </div>
+        <div class="qanda__unit-a"><!-- 継続 -->
+          <dl>
+            <dt>
+              <span>初心者でも続けられますか？</span>
+            </dt>
+            <dd>
+              <span>はい、まったくの初心者の方でも無理なく続けられるよう、体力や目的に応じたメニューを用意しています。1日5分から始められるプランもあるので、自分のペースで安心して取り組めます。</span>
+            </dd>
+          </dl>
         </div>
 
-        <div class="qanda__unit"><!-- 継続-->
-          <div class="qanda__unit-question">
-            
+        <div class="qanda__unit-a"><!-- 継続 -->
+          <dl>
+            <dt>
+              <span>継続できるか不安です、途中で挫折しない工夫はありますか？</span>
+            </dt>
+            <dd>
+              <span>毎日の運動記録や達成バッジ機能、AIによる運動提案が継続をサポートします。小さな目標を積み重ねることで無理なく続けられる設計になっています。</span>
+            </dd>
+          </dl>
+        </div>
 
-            <div class="qanda__unit-question-content">
-              <p>
-                継続できるか不安です、途中で挫折しない工夫はありますか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                毎日の運動記録や達成バッジ機能、AIによる運動提案が継続をサポートします。小さな目標を積み重ねることで無理なく続けられる設計になっています。
-              </p>  
-            </div>
-          </div>
+        <div class="qanda__unit-a"><!-- 継続 -->
+          <dl>
+            <dt>
+              <span>ジムに通っていなくても使えますか？</span>
+            </dt>
+            <dd>
+              <span>もちろんです！ご自宅でできるトレーニングメニューを中心に構成されているので、ジムに通っていない方や忙しい方でも安心してご利用いただけます。</span>
+            </dd>
+          </dl>
         </div>
 
         
-
-        <div class="qanda__unit">
-          <div class="qanda__unit-question">
-            
-
-            <div class="qanda__unit-question-content">
-              <p>
-                ジムに通っていなくても使えますか？
-              </p>
-            </div>
-          </div>
-          <div class="qanda__unit-answer">
-            <div class="qanda__unit-answer-content">
-              
-              <p>
-                もちろんです！ご自宅でできるトレーニングメニューを中心に構成されているので、ジムに通っていない方や忙しい方でも安心してご利用いただけます。
-              </p>  
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 

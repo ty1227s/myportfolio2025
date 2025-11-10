@@ -252,7 +252,7 @@ h2:not(.enthusiasm__content-heading) {
 .career__view-year-number {
   font-size: 20px;
   font-weight: 700;
-  padding-top: 48px;
+  padding-top: 50px;
   text-align: center;
 }
 
@@ -280,7 +280,7 @@ h2:not(.enthusiasm__content-heading) {
   /* height: 50px; */
   margin-left: 8px;
   margin-right: 8px;
-  padding-top: 3px;
+  padding-top: 0px;
   text-orientation: mixed;
   vertical-align: middle;
   width: 230px;

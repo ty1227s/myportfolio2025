@@ -89,17 +89,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll('.data__content');
   if (!items.length) return;
 
+
   let enabled = false; //有効化フラグ
+
   // 最初のスクロール（またはタッチ）で有効化
-  const enable = () => { enabled = true; window.removeEventListener('scroll', enable); window.removeEventListener('touchmove', enable); };
+  const enable = () => {
+    enabled = true;
+    window.removeEventListener('scroll', enable);
+    window.removeEventListener('touchmove', enable);
+  };
   window.addEventListener('scroll', enable, { once: true, passive: true});
   window.addEventListener('touchmove', enable, { once: true, passive: true });
 
+  // カウントアップ関数
+  function countUp(element, targetValue, duration) {
+    let current = 0;
+    const interval = 20;
+    const increment = targetValue/ (duration / interval);
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= targetValue) {
+        current = targetValue;
+        clearInterval(timer);
+      }
+      element.textContent = Math.floor(current);
+    }, interval)
+  }
+  
+  // Intersection Observer
   const io = new IntersectionObserver((entries, observer) => {
     if (!enabled) return; // まだスクロールが起きていないから何もしない
+
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
+
       entry.target.classList.add('show');
+
+      // カウントアップ処理
+      const percentE1 = entry.target.querySelector('.data__content-percent');
+      const minuteE1 =entry.target.querySelector('.data__content-minute');
+      if (percentE1) countUp(percentE1, 78, 1500);
+      if (minuteE1) countUp(minuteE1, 15, 1500);
+
       observer.unobserve(entry.target); // 一度きり発動
     });
   }, {
@@ -152,4 +183,19 @@ document.addEventListener('scroll', () => {
   });
 
   items.forEach(el => io.observe(el));
+});
+
+
+// Q&A 開閉機構
+document.addEventListener('DOMContentLoaded', () => {
+  const questions = document.querySelectorAll('.qanda__unit-a dl dt');
+
+  questions.forEach((q) => {
+    q.addEventListener("click", () => {
+      const answer = q.nextElementSibling;
+
+      q.classList.toggle("active");
+      answer.classList.toggle("open");
+    });
+  });
 });

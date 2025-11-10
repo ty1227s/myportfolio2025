@@ -444,6 +444,7 @@ header .inner {
 @media screen and (max-width: 768px) {
   .headline__content {
     flex-direction: column;
+    margin-left: 0;
   }
 
   .headline__en {
