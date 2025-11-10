@@ -255,6 +255,7 @@ header {
 .mv {
   background-image: url(./img/mv2-min-c.png);
   background-repeat: none;
+  background-position: 55% 45%;
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -269,8 +270,8 @@ header {
 
 @media screen and (max-width: 1335px) {
   .mv {
-    background-position: 68% 50%;
-    height: 90vh;
+    background-position: 55% 50%;
+    height: 600px;
   }
 }
 
@@ -367,7 +368,8 @@ header {
 @media screen and (max-width: 851px) {
   .mv__content {
     font-size: 28px;
-    padding-top: 381px;
+    padding-top: 340px;
+    padding-right: 30px;
     text-align: right;
   }
 }
@@ -408,12 +410,18 @@ header {
 
 @media screen and (max-width: 851px) {
   .mv__content p:nth-of-type(2) {
-    font-size: 24px;
+    font-size: 22px;
     margin-right: -0.9em;
   }
 }
 
-.mv__content p:nth-of-type(2) span {
+@media screen and (max-width: 851px) {
+  .mv__content-highlight {
+    margin-right: 15px;s
+  }
+}
+
+.mv__content-emphasis {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.4);
@@ -425,13 +433,13 @@ header {
 }
 
 @media screen and (max-width: 851px) {
-  .mv__content p:nth-of-type(2) span {
+  .mv__content-emphasis {
     margin-left: 1em;
     margin-right: 0.2em;
   }
 }
 
-.mv__content p:nth-of-type(2) span span {
+.mv__content-emphasis-minute {
   background-color: transparent;
   box-shadow:none;
   font-weight: 700;
@@ -442,7 +450,7 @@ header {
 }
 
 @media screen and (max-width: 851px) {
-  .mv__content p:nth-of-type(2) span span {
+  .mv__content-emphasis-minute {
     font-size: 31px;
     margin-left: 0.2em;
     padding-left: 0.2em;
