@@ -205,6 +205,35 @@
   padding-top: 14px;
 }
 
+.overview__screenshot {
+  background-size: cover;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 650px;
+  transition: opacity .5s ease;
+  height: 450px;
+}
+
+.overview__screenshot:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 767px) {
+  .overview__screenshot {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+}
+
+.overview__screenshot a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+
+
 
 
 /* スクリーンショット ------------------------------------------- */
