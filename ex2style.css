@@ -374,6 +374,12 @@ header {
   }
 }
 
+@media screen and (max-width: 420px) {
+  .mv__content {
+    padding-top: 390px;
+  }
+}
+
 .mv__content-br-sp {
   
 }
@@ -398,6 +404,12 @@ header {
   }
 }
 
+@media screen and (max-width: 420px) {
+  .mv__content p:nth-of-type(1) {
+    font-size: 36px;
+  }
+}
+
 @media screen and (max-width: 851px) {
   .mv__content p:nth-of-type(1) span {
     margin-right: -0.8em;
@@ -411,13 +423,21 @@ header {
 @media screen and (max-width: 851px) {
   .mv__content p:nth-of-type(2) {
     font-size: 22px;
+    margin-top: 10px;
     margin-right: -0.9em;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .mv__content p:nth-of-type(2) {
+    font-size: 18px;
+    line-height: 0.6;
   }
 }
 
 @media screen and (max-width: 851px) {
   .mv__content-highlight {
-    margin-right: 15px;s
+    margin-right: 15px;
   }
 }
 
@@ -726,6 +746,7 @@ header {
 
 @media screen and (max-width: 768px) {
   .data__content {
+    font-size: 26px;
     height: 180px;
     width: 200px;
   }
@@ -784,7 +805,7 @@ header {
 
 @media screen and (max-width: 768px) {
   .data__content p:nth-of-type(3) {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -795,6 +816,12 @@ header {
   font-size: 54px;
   font-weight: 700;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .data__content p span {
+    font-size: 40px;
+  }
 }
 
 
@@ -1389,6 +1416,12 @@ header {
   width: 150px;
 }
 
+@media screen and (max-width: 420px) {
+  .review__unit-icon {
+    margin: 0 auto;
+  }
+}
+
 .review__unit:nth-of-type(1) .review__unit-icon { /* レビュー１のアイコン */
   background-image: url(img/review1.jpg);
   background-position: 40% 15%;
@@ -1416,6 +1449,12 @@ header {
   flex-direction: column;
 }
 
+@media screen and (max-width: 420px) {
+  .review__unit-attribute {
+    margin-top: 10px;
+  }
+}
+
 .review__unit-attribute-text {
   color: #8f8f8f;
   text-align: left;
@@ -1430,13 +1469,13 @@ header {
 
 @media screen and (max-width: 767px) {
   .review__unit-attribute-phrase {
-    font-size: 3.3805736636245vw; /* 18 */
+    font-size: 18px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .review__unit-attribute-phrase {
-    font-size: 5.8714285714286vw;;
+    font-size: 18px;
   }
 }
 
@@ -1472,13 +1511,14 @@ header {
 
 @media screen and (max-width: 767px) {
   .review__unit-content-text {
-    font-size: 2.446805736636245vw; /* 16 */
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 420px) {
   .review__unit-content-text {
-    font-size: 3.8095238095238098vw; /* 16 */
+    font-size: 16px;
+    margin-top: -10px;
   }
 }
 
@@ -1638,99 +1678,6 @@ header {
 }
 
 
-
-.qanda__unit-question { /* Q&A 質問エリア */
-  background-color: #e0f4ff; /* 仮 */
-  border-radius: 15px;
-  margin-top: 25px;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  position: relative;
-  width: 100%;
-}
-
-.qanda__unit-question::before {
-  content: '';
-  position: absolute;
-  left: -19px;
-  top: 10px;
-  border: 10px solid transparent;
-  border-right-color: #e0f4ff;
-}
-
-.qanda__unit-question-content /* 質問の内容 */{
-  border-radius: 50px;
-  line-height: 1.5;
-  /* margin: 0; */
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 1px;
-  text-align: left;
-  vertical-align: middle;
-  /* width: calc(100% - 75px); */
-}
-
-.qanda__unit-question-content p {
-  display: inline-block;
-  font-size: 18px;
-  vertical-align: middle;
-  line-height: none;
-  word-wrap: break-word;
-}
-
-@media screen and (max-width: 767px) {
-  .qanda__unit-question-content p {
-    font-size: 16px;
-  }
-}
-
-.qanda__unit-answer { /* Q&A 解答エリア */
-  background-color: #dfe7f3; /* 仮 */
-  border-radius: 15px;
-  margin-top: 15px;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  position: relative;
-  width: 100%;
-}
-
-.qanda__unit-answer::before {
-  content: '';
-  position: absolute;
-  right: -19px;
-  transform: rotate(180deg);
-  top: 10px;
-  border: 10px solid transparent;
-  border-right-color: #dfe7f3;
-}
-
-@media screen and (max-width: 767px) {
-  .qanda__unit-answer::before {
-    right: initial;
-    left: -19px;
-    transform: initial;
-  }
-}
-
-.qanda__unit-answer-content {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-
-.qanda__unit-answer-content p {
-  font-size: 18px;
-  text-align: left;
-}
-
-@media screen and (max-width: 767px) {
-  .qanda__unit-answer-content p {
-    font-size: 16px;
-  }
-}
-
 /* 事前登録ブロック -------------------------------------------------------------- */
 .pre-registration /* ブロック全体 */ {
   background-color: var(--sub-color1);
@@ -1773,6 +1720,11 @@ header {
   width: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .pre-registration__form-row {
+    height: 40px;
+  }
+}
 
 
 .pre-registration__form-row-icon { /* アイコン表示領域 */
@@ -1787,6 +1739,18 @@ header {
   width: 55px;
 }
 
+@media screen and (max-width: 767px) {
+  .pre-registration__form-row-icon {
+    height: 40px;
+    margin-left: auto;
+    max-height: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    width: 40px;
+  }
+}
+
 .pre-registration__form-row-icon-img { /* アイコン表示位置 */
   height: 30px;
   margin: 0 auto;
@@ -1794,6 +1758,16 @@ header {
   max-width: 30px;
   padding-top: 12px;
   width: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .pre-registration__form-row-icon-img {
+    height: 22px;
+    max-height: 22px;
+    max-width: 22px;
+    padding-top: 8px;
+    width: 22px;
+  }
 }
 
 .pre-registration__form-agree-label input[type="checkbox"] {
@@ -1832,6 +1806,14 @@ header {
   width: calc(100% - 100px);
 }
 
+@media screen and (max-width: 767px) {
+  .pre-registration__form-row-input {
+    font-size: 18px;
+    height: 35px;
+    width: calc(100% - 20px);
+  }
+}
+
 
 
 
@@ -1845,7 +1827,8 @@ header {
 
 @media screen and (max-width: 767px) {
   .pre-registration__mail {
-    font-size: 21px;
+    height: 35px;
+    font-size: 18px;
   }
 }
 
