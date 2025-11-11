@@ -169,7 +169,7 @@ window.addEventListener('load', () => {
 
 // Q&A 各ペア単位に到達したらフェードイン
 document.addEventListener('scroll', () => {
-  const items = document.querySelectorAll('.qanda__unit');
+  const items = document.querySelectorAll('.qanda__unit-a');
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

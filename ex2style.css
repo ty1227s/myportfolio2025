@@ -1535,7 +1535,12 @@ header {
 
 .qanda__unit-a {
   margin: 15px auto;
+  opacity: 0;
   text-align: left;
+  transform: translateX(-20px);
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
   max-width: 1200px;
 }
 
@@ -1543,6 +1548,11 @@ header {
   .qanda__unit-a {
     margin: 4px auto;
   }
+}
+
+.qanda__unit-a.show {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 .qanda__unit-a dl dt {
@@ -1571,8 +1581,11 @@ header {
   color: #fff;
   content: 'Q';
   display: inline-block;
+  font-family: "arial", sans-serif;
   font-size: 25px;
+  font-weight: 700;
   height: 40px;
+  line-height: 1.55;
   margin-right: 10px;
   min-width: 40px;
   padding: 10px;
@@ -1608,7 +1621,10 @@ header {
   color: #fff;
   content: 'A';
   display: inline-block;
+  font-family: "arial", sans-serif;
   font-size: 25px;
+  font-weight: 700;
+  line-height: 1.55;
   height: 40px;
   margin-right: 10px;
   min-width: 40px;
