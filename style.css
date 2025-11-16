@@ -179,6 +179,12 @@
   width: 50px;
 }
 
+@media screen and (max-width: 767px) {
+  .menu__item-link-arrow {
+    display: none;
+  }
+}
+
 .menu__item-link:hover .menu__item-link-arrow {
   height: 60px;
   margin-top: 95px;
